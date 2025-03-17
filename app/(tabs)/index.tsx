@@ -40,10 +40,20 @@ export default function Login() {
         color={'#808080'}
       />
     </view>
-    <view style={styles.boxBottom}>
+    
+       <view style={styles.boxBottom}>
         <TouchableOpacity style={styles.button}>
           <text style={styles.texto_botao}>Entrar</text>
         </TouchableOpacity>
+
+      <ThemedView style={styles.linhabranca}>
+          <text style={styles.palavralinha}>OU</text>
+          <view style={styles.boxBottom1}>
+              <TouchableOpacity style={styles.button}>
+                <text style={styles.texto_botao1}>Inscrever-se gratuitamente</text>
+              </TouchableOpacity>
+          </view>
+      </ThemedView>
     </view>
 
     </ThemedView>
@@ -64,7 +74,7 @@ const styles = StyleSheet.create({
   },
   boxMid: {
     backgroundImage: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
-    height: Dimensions.get('window').height/4,
+    //height: Dimensions.get('window').height/4,
     width: '100%',
     paddingHorizontal: 37,
   },
@@ -73,7 +83,16 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems:'center',
     justifyContent: 'center',
-    marginTop: 10,
+    marginTop: 20,
+    marginLeft: 15,
+  },
+  boxBottom1: {
+    height: Dimensions.get('window').height/3,
+    width: '100%',
+    alignItems:'center',
+    justifyContent: 'center',
+    marginTop: 25,
+    marginLeft: 3,
   },
   container: {
     flex: 1,
@@ -132,7 +151,32 @@ const styles = StyleSheet.create({
   },
   texto_botao: {
     fontSize: 16,
-    color: '#fff',
+    color: '#c76700',
     fontWeight: 'bold',
+  },
+  texto_botao1:{
+    fontSize: 16,
+    color: '#9A2401',
+    fontWeight: 'bold',
+  },
+  linhabranca: {
+    position: 'relative',
+    width: '90%',
+    height: 3, /* Espessura da linha */
+    backgroundColor: '#fff',
+    marginTop: 30,
+    flexGrow: 1,
+  },
+  palavralinha: {
+    position: 'absolute',
+    top: -16, /* Ajuste a posição do texto em relação à linha */
+    left: '50%',
+    transform: 'translateX(-50%)',
+    backgroundColor: '#000',
+    borderRadius: 40,
+    padding:   10, /* Espaçamento em torno da palavra */
+    fontSize: 10, /* Tamanho da fonte */
+    fontWeight: 'bold',
+    color: '#fff', 
   },
 });
