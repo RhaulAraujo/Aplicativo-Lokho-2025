@@ -1,9 +1,8 @@
-import { Image, StyleSheet, Platform, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, Platform, TouchableOpacity, TextInput, View, Text} from 'react-native';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Dimensions } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
 import { MaterialIcons } from '@expo/vector-icons';
 
 export default function Login() {
@@ -18,7 +17,7 @@ export default function Login() {
 
     <ThemedView style={styles.boxMid}>
      <ThemedText style={styles.titulo_input}>ENDEREÇO DE E-MAIL</ThemedText>
-    <view style={styles.Box_input}>
+    <View style={styles.Box_input}>
       <TextInput 
         style={styles.input}
       />
@@ -27,10 +26,10 @@ export default function Login() {
         size={20}
         color={'#808080'}
       />
-    </view>
+    </View>
 
       <ThemedText style={styles.titulo_input}>SENHA</ThemedText>
-      <view style={styles.Box_input}>
+      <View style={styles.Box_input}>
       <TextInput 
         style={styles.input}
       />
@@ -39,22 +38,25 @@ export default function Login() {
         size={20}
         color={'#808080'}
       />
-    </view>
+    </View>
     
-       <view style={styles.boxBottom}>
+       <View style={styles.boxBottom}>
         <TouchableOpacity style={styles.button}>
-          <text style={styles.texto_botao}>Entrar</text>
+          <Text style={styles.texto_botao}>Entrar</Text>
         </TouchableOpacity>
-
+       </View>
+      
       <ThemedView style={styles.linhabranca}>
-          <text style={styles.palavralinha}>OU</text>
-          <view style={styles.boxBottom1}>
-              <TouchableOpacity style={styles.button}>
-                <text style={styles.texto_botao1}>Inscrever-se gratuitamente</text>
-              </TouchableOpacity>
-          </view>
+          <Text style={styles.palavralinha}>OU</Text>
       </ThemedView>
-    </view>
+      
+          <View style={styles.boxBottom1}>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.texto_botao1}>Inscrever-se gratuitamente</Text>
+              </TouchableOpacity>
+          </View>
+      
+   
 
     </ThemedView>
 
@@ -73,30 +75,30 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   boxMid: {
-    backgroundImage: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
+    backgroundColor: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
     //height: Dimensions.get('window').height/4,
     width: '100%',
     paddingHorizontal: 37,
   },
   boxBottom: {
-    height: Dimensions.get('window').height/3,
+    //height: Dimensions.get('window').height/3,
     width: '100%',
     alignItems:'center',
     justifyContent: 'center',
-    marginTop: 20,
-    marginLeft: 15,
+    marginTop: 30,
+    marginLeft: 4,
   },
   boxBottom1: {
-    height: Dimensions.get('window').height/3,
+    //height: Dimensions.get('window').height/3,
     width: '100%',
     alignItems:'center',
     justifyContent: 'center',
-    marginTop: 25,
+    marginTop: 30,
     marginLeft: 3,
   },
   container: {
     flex: 1,
-    backgroundImage: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
+    backgroundColor: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -117,7 +119,7 @@ const styles = StyleSheet.create({
   },
   Box_input: {
     width: '100%',
-    height: 40,
+    height: 45,
     borderWidth:1,
     borderRadius: 40,
     marginTop: 10,
@@ -162,15 +164,15 @@ const styles = StyleSheet.create({
   linhabranca: {
     position: 'relative',
     width: '90%',
-    height: 3, /* Espessura da linha */
+    height: 1, /* Espessura da linha */
     backgroundColor: '#fff',
     marginTop: 30,
-    flexGrow: 1,
+    flexGrow: 3,
   },
   palavralinha: {
     position: 'absolute',
     top: -16, /* Ajuste a posição do texto em relação à linha */
-    left: '50%',
+    left: '65%',
     transform: 'translateX(-50%)',
     backgroundColor: '#000',
     borderRadius: 40,
