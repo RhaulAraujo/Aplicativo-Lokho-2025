@@ -4,8 +4,24 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Dimensions } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import registrar from '@/app/(tabs)/registrar';
+import explore from '@/app/(tabs)/explore';
+
+
+type RootStackParamList = {
+    registrar: undefined;
+    login: undefined;
+    explore: undefined;
+
+  };
+
+    type NavigationProp = StackNavigationProp<RootStackParamList, 'login'>;
+  
 
 export default function Login() {
+        const navigation = useNavigation<NavigationProp>(); // Tipar o hook 
   return (
     <ThemedView style={styles.container}>
 
@@ -41,7 +57,7 @@ export default function Login() {
     </View>
     
        <View style={styles.boxBottom}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('explore')}>
           <Text style={styles.texto_botao}>Entrar</Text>
         </TouchableOpacity>
        </View>
@@ -51,7 +67,7 @@ export default function Login() {
       </ThemedView>
       
           <View style={styles.boxBottom1}>
-              <TouchableOpacity style={styles.button}>
+              <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('registrar')}>
                 <Text style={styles.texto_botao1}>Inscrever-se gratuitamente</Text>
               </TouchableOpacity>
           </View>

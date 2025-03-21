@@ -4,19 +4,30 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Dimensions } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { TabRouter } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import explore from '@/app/(tabs)/explore';
 
-export default function Login() {
+type RootStackParamList = {
+    registrar: undefined;
+    explore: undefined;
+  };
+
+  type NavigationProp = StackNavigationProp<RootStackParamList, 'registrar'>;
+
+export default function registrar() {
+    const navigation = useNavigation<NavigationProp>(); // Tipar o hook 
   return (
     <ThemedView style={styles.container}>
 
     <ThemedView style={styles.boxTop}>
     <Image style={styles.logo} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-    <ThemedText style={styles.titu_tex}>LBS  -  LOKHO</ThemedText>
-    <ThemedText style={styles.titu_tex}>Bem Vindo de Volta</ThemedText>
+    <ThemedText style={styles.titu_tex}>Criar Conta</ThemedText>
    </ThemedView>
 
     <ThemedView style={styles.boxMid}>
-     <ThemedText style={styles.titulo_input}>ENDEREÇO DE E-MAIL</ThemedText>
+     <ThemedText style={styles.titulo_input}>Inscreva-se com um E-mail</ThemedText>
     <View style={styles.Box_input}>
       <TextInput 
         style={styles.input}
@@ -28,7 +39,7 @@ export default function Login() {
       />
     </View>
 
-      <ThemedText style={styles.titulo_input}>SENHA</ThemedText>
+      <ThemedText style={styles.titulo_input}>Criar uma Senha</ThemedText>
       <View style={styles.Box_input}>
       <TextInput 
         style={styles.input}
@@ -41,26 +52,13 @@ export default function Login() {
     </View>
     
        <View style={styles.boxBottom}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.texto_botao}>Entrar</Text>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('explore')}>
+          <Text style={styles.texto_botao}>CRIAR</Text>
         </TouchableOpacity>
        </View>
       
-      <ThemedView style={styles.linhabranca}>
-          <Text style={styles.palavralinha}>OU</Text>
-      </ThemedView>
-      
-          <View style={styles.boxBottom1}>
-              <TouchableOpacity style={styles.button}>
-                <Text style={styles.texto_botao1}>Inscrever-se gratuitamente</Text>
-              </TouchableOpacity>
-          </View>
-      
-   
-
     </ThemedView>
-
-
+                                
  </ThemedView>
 
   );}
