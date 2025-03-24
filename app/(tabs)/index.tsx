@@ -4,8 +4,21 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Dimensions } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import registrar from '@/app/(tabs)/registrar';
+import explore from '@/app/(tabs)/explore';
+import { Link, router } from 'expo-router';
 
-export default function Login() {
+
+
+export default function index() {
+        function gotoExplore(){
+            router.push("/(tabs)/explore")
+        }
+        function gotoregister(){
+            router.push("/(tabs)/registrar")
+        }
   return (
     <ThemedView style={styles.container}>
 
@@ -41,7 +54,7 @@ export default function Login() {
     </View>
     
        <View style={styles.boxBottom}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={gotoExplore} >
           <Text style={styles.texto_botao}>Entrar</Text>
         </TouchableOpacity>
        </View>
@@ -51,7 +64,7 @@ export default function Login() {
       </ThemedView>
       
           <View style={styles.boxBottom1}>
-              <TouchableOpacity style={styles.button}>
+              <TouchableOpacity style={styles.button} onPress={gotoregister}>
                 <Text style={styles.texto_botao1}>Inscrever-se gratuitamente</Text>
               </TouchableOpacity>
           </View>
