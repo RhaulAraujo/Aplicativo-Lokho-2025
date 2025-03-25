@@ -1,5 +1,5 @@
-import { StyleSheet, Image, Platform } from 'react-native';
-
+import { StyleSheet, Image, Platform, View, Text, TouchableOpacity } from 'react-native';
+import { FontAwesome } from "@expo/vector-icons";
 import { Collapsible } from '@/components/Collapsible';
 import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -12,6 +12,17 @@ export default function TabTwoScreen() {
   return (
 
       <ThemedView style={styles.container}>
+
+      <View style={styles.navBar}>
+        <TouchableOpacity style={styles.navItem} onPress={() => console.log('Opção 1')}>
+          <FontAwesome name="home" size={24} color="black" />
+        </TouchableOpacity>
+        <Text style={styles.navTitle}>Explorar</Text>
+        <TouchableOpacity style={styles.navItem} onPress={() => console.log('Opção 2')}>
+          <FontAwesome name="search" size={24} color="black" />
+        </TouchableOpacity>
+      </View>
+
 
         <ThemedView style={styles.boxtop}>
           <ThemedText style={styles.titu_tex1}>Explore</ThemedText>
@@ -69,4 +80,22 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 40,
   },
+
+  navBar: {
+    width: '100%',
+    height: 60, // altura da barra
+    backgroundColor: 'white',
+    flexDirection: 'row', // Organizar os itens da barra em linha
+    justifyContent: 'space-between', // Espaçar os itens igualmente
+    alignItems: 'center', // Centralizar verticalmente
+    paddingHorizontal: 16, // Distância das bordas   
+    },
+    navItem: {
+      padding: 8,
+    },
+    navTitle: {
+      fontSize: 18,
+      fontWeight: 'bold',
+      color: 'black',
+    },
 });

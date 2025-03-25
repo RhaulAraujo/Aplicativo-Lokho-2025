@@ -6,18 +6,18 @@ import { Dimensions } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import registrar from '@/app/(tabs)/registrar';
-import explore from '@/app/(tabs)/explore';
+import registrar from '@/app/registrar';
+import explore from '@/app/tabs/explore';
 import { Link, router } from 'expo-router';
 
 
 
 export default function index() {
         function gotoExplore(){
-            router.push("/(tabs)/explore")
+            router.push("/tabs/explore")
         }
         function gotoregister(){
-            router.push("/(tabs)/registrar")
+            router.push("/registrar")
         }
   return (
     <ThemedView style={styles.container}>

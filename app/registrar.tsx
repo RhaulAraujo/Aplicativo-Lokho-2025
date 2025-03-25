@@ -7,17 +7,14 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { TabRouter } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import explore from '@/app/(tabs)/explore';
+import explore from '@/app/tabs/explore';
+import { Link, router } from 'expo-router';
 
-type RootStackParamList = {
-    registrar: undefined;
-    explore: undefined;
-  };
-
-  type NavigationProp = StackNavigationProp<RootStackParamList, 'registrar'>;
 
 export default function registrar() {
-    const navigation = useNavigation<NavigationProp>(); // Tipar o hook 
+  function gotoExplore(){
+    router.push("/tabs/explore")
+}
   return (
     <ThemedView style={styles.container}>
 
@@ -52,7 +49,7 @@ export default function registrar() {
     </View>
     
        <View style={styles.boxBottom}>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('explore')}>
+        <TouchableOpacity style={styles.button} onPress={gotoExplore}>
           <Text style={styles.texto_botao}>CRIAR</Text>
         </TouchableOpacity>
        </View>

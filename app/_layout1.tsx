@@ -1,6 +1,6 @@
 import { Stack } from "expo-router";
-import { Tabs } from 'expo-router';
 import { FontAwesome } from "@expo/vector-icons";
+import explore from "@/app/tabs/explore";
 
 
 
@@ -13,15 +13,25 @@ export default function RootLayout () {
         <Stack.Screen name="registrar"options={{
             headerShown: false,
         }}/>
-
-        <Stack.Screen name="explore" options={{
-             headerLeft: () => null, // Isso remove o botão de voltar
-        }}/>
-
+        <Stack.Screen name="explore"options={{
+          headerShown: false, // Ocultar o cabeçalho
+          gestureEnabled: false, // Desabilitar a navegação por gesto de voltar
+        }} 
+      />
+       
     </Stack>
     
 
-    /*<Tabs>
+    /*
+     <Stack.Screen name="explorar" options={{  
+            headerShown: false,
+        }}/>  
+    
+    
+    
+    
+    
+    <Tabs>
         <Tabs.Screen
             name="index"
             options={{
