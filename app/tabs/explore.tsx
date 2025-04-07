@@ -23,6 +23,9 @@ export default function TabTwoScreen() {
         </TouchableOpacity>
       </View>
 
+      <View style={styles.nav}>
+        <ThemedText style={styles.titu_tex3}>Módulo 1</ThemedText>
+      </View>
 
         <ThemedView style={styles.boxtop}>
           <ThemedText style={styles.titu_tex1}>Explore</ThemedText>
@@ -74,13 +77,27 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 40,
   },
+  titu_tex3: {
+    color: '#000',
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginTop: 40,
+  },
   titu_tex1: {
     color: '#fff',
     fontSize: 30,
     fontWeight: 'bold',
     marginTop: 40,
   },
-
+  nav: {
+    width: '100%',
+    height: 60,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+  },
   navBar: {
     width: '100%',
     height: 60, // altura da barra
