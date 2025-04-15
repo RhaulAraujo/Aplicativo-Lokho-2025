@@ -8,6 +8,11 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import React, {useState} from 'react';
+import { Link, router } from 'expo-router';
+import atividade from '@/app/Atividade';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+
 
 export default function TabTwoScreen() {
       const [progress, setProgress] = useState(0);
@@ -17,6 +22,10 @@ export default function TabTwoScreen() {
           setProgress(progress + 1);
         }
       };
+
+        function gotoActiv(){
+        router.push("/Atividade")
+        }
 
       return (
       <ThemedView style={styles.container}>
@@ -50,7 +59,7 @@ export default function TabTwoScreen() {
             <ThemedText style={styles.subtitu_tex1}>0/5 Atividades</ThemedText>
               <View style={styles.containeractiv}>
                 <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-                <TouchableOpacity style={styles.navItem} onPress={() => console.log('Opção 1')}>   
+                <TouchableOpacity style={styles.navItem} onPress={gotoActiv}>   
                   <ThemedText style={styles.foto_texto}>Alfabeto</ThemedText>
                   </TouchableOpacity>
               </View>
