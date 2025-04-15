@@ -26,6 +26,15 @@ export default function TabTwoScreen() {
         function gotoActiv(){
         router.push("/atividade2")
         }
+        function gotoActiv2(){
+        router.push("/atividade2")
+        }
+        function gotoActiv3(){
+        router.push("/atividade2")
+        }
+        function gotoActiv4(){
+        router.push("/atividade2")
+        }
 
       return (
       <ThemedView style={styles.container}>
@@ -63,17 +72,26 @@ export default function TabTwoScreen() {
                   <ThemedText style={styles.foto_texto}>Alfabeto</ThemedText>
                   </TouchableOpacity>
               </View>
+
               <View style={styles.containeractiv}>
               <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+              <TouchableOpacity style={styles.navItem} onPress={gotoActiv2}>
               <ThemedText style={styles.foto_texto2}>Cumprimentos</ThemedText>
+              </TouchableOpacity>  
               </View>
+
               <View style={styles.containeractiv}>
               <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+              <TouchableOpacity style={styles.navItem} onPress={gotoActiv3}>
               <ThemedText style={styles.foto_texto3}>Soletrando</ThemedText>
+              </TouchableOpacity>
               </View>
+
               <View style={styles.containeractiv}>
               <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+              <TouchableOpacity style={styles.navItem} onPress={gotoActiv4}>
               <ThemedText style={styles.foto_texto4}>Frases</ThemedText>
+              </TouchableOpacity>
               </View>
    
         </ThemedView>
