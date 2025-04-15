@@ -9,7 +9,7 @@ import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import React, {useState} from 'react';
 import { Link, router } from 'expo-router';
-import atividade from '@/app/Atividade';
+import atividade from '@/app/atividade2';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
@@ -24,7 +24,7 @@ export default function TabTwoScreen() {
       };
 
         function gotoActiv(){
-        router.push("/Atividade")
+        router.push("/atividade2")
         }
 
       return (

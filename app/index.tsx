@@ -17,7 +17,7 @@ export default function index() {
             router.push("/tabs/explore")
         }
         function gotoregister(){
-            router.push("/registrar")
+            router.push("/atividade")
         }
   return (
     <ThemedView style={styles.container}>
