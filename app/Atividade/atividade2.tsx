@@ -10,7 +10,7 @@ export default function Login() {
   return (
     <ThemedView style={styles.container}>
 
-    <Image style={styles.logo} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+    <Image style={styles.logo} source={require('@/assets/images/lbs.png')} resizeMode='contain'></Image>
     <ThemedText style={styles.titu_tex}>LBS  -  LOKHO</ThemedText>
 
     </ThemedView>

@@ -9,7 +9,7 @@ import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import React, {useState} from 'react';
 import { Link, router } from 'expo-router';
-import atividade from '@/app/atividade2';
+import atividade from '@/app/Atividade/atividade1';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
@@ -24,16 +24,16 @@ export default function TabTwoScreen() {
       };
 
         function gotoActiv(){
-        router.push("/atividade2")
+        router.push("/Atividade/atividade1")
         }
         function gotoActiv2(){
-        router.push("/atividade2")
+        router.push("/Atividade/atividade2")
         }
         function gotoActiv3(){
-        router.push("/atividade2")
+        router.push("/Atividade/atividade3")
         }
         function gotoActiv4(){
-        router.push("/atividade2")
+        router.push("/Atividade/atividade4")
         }
 
       return (

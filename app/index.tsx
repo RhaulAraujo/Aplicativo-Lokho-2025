@@ -9,6 +9,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import registrar from '@/app/registrar';
 import explore from '@/app/tabs/explore';
 import { Link, router } from 'expo-router';
+import React, {useState} from 'react';
 
 
 
@@ -19,11 +20,14 @@ export default function index() {
         function gotoregister(){
             router.push("/registrar")
         }
+
+        const [password, setPassword] = useState<string>('');
+
   return (
     <ThemedView style={styles.container}>
 
     <ThemedView style={styles.boxTop}>
-    <Image style={styles.logo} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+    <Image style={styles.logo} source={require('@/assets/images/lbs.png')} resizeMode='contain'></Image>
     <ThemedText style={styles.titu_tex}>LBS  -  LOKHO</ThemedText>
     <ThemedText style={styles.titu_tex}>Bem Vindo de Volta</ThemedText>
    </ThemedView>
@@ -45,6 +49,9 @@ export default function index() {
       <View style={styles.Box_input}>
       <TextInput 
         style={styles.input}
+        secureTextEntry={true}
+        value={password}
+        onChangeText={setPassword}
       />
       <MaterialIcons 
         name='remove-red-eye'
@@ -116,14 +123,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logo: {
-    height: 80,
+    height: 100,
     width: 80,
   },
   titu_tex: {
     color: '#fff',
     fontSize: 24,
     fontWeight: 'bold',
-    marginTop: 40,
+    marginTop: 30,
   },
   titulo_input: {
     marginLeft: 5,

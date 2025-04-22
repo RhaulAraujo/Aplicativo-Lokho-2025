@@ -19,7 +19,7 @@ export default function registrar() {
     <ThemedView style={styles.container}>
 
     <ThemedView style={styles.boxTop}>
-    <Image style={styles.logo} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+    <Image style={styles.logo} source={require('@/assets/images/lbs.png')} resizeMode='contain'></Image>
     <ThemedText style={styles.titu_tex}>Criar Conta</ThemedText>
    </ThemedView>
 
