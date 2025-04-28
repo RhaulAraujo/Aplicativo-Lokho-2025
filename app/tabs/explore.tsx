@@ -1,4 +1,4 @@
-import { StyleSheet, Image, Platform, View, Text, TouchableOpacity, Button, ViewStyle } from 'react-native';
+import { StyleSheet, Image, Platform, View, Text, TouchableOpacity, Button, ViewStyle, ScrollView } from 'react-native';
 import { FontAwesome } from "@expo/vector-icons";
 import { Collapsible } from '@/components/Collapsible';
 import { ExternalLink } from '@/components/ExternalLink';
@@ -9,7 +9,7 @@ import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import React, {useState} from 'react';
 import { Link, router } from 'expo-router';
-import atividade from '@/app/Atividade/atividade1';
+import atividade from '@/app/Atividade/atividade1/atividade1';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
@@ -18,13 +18,13 @@ export default function TabTwoScreen() {
       const [progress, setProgress] = useState(0);
 
       const handlePress = () => {
-        if (progress < 3) {
+        if (progress < 5) {
           setProgress(progress + 1);
         }
       };
 
         function gotoActiv(){
-        router.push("/Atividade/atividade1")
+        router.push("/Atividade/atividade1/atividade1")
         }
         function gotoActiv2(){
         router.push("/Atividade/atividade2")
@@ -37,7 +37,7 @@ export default function TabTwoScreen() {
         }
 
       return (
-      <ThemedView style={styles.container}>
+      <ScrollView style={styles.container}>
 
       <View style={styles.navBar}>
         <TouchableOpacity style={styles.navItem} onPress={() => console.log('Opção 1')}>
@@ -54,8 +54,8 @@ export default function TabTwoScreen() {
         <View style={styles.progressBarContainer}>
         <View style={[styles.progressBar, 
           { 
-            backgroundColor: progress >= 3 ? 'blue' : 'blue',
-            width: `${progress * 33.33}%`,
+            backgroundColor: progress >= 1 ? 'blue' : 'blue',
+            width: `${progress * 22.22}%`,
             } as ViewStyle, 
           ]} 
           />
@@ -95,7 +95,7 @@ export default function TabTwoScreen() {
               </View>
    
         </ThemedView>
-      </ThemedView>
+      </ScrollView>
 
   );
 }
