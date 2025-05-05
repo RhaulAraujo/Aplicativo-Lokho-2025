@@ -14,6 +14,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Atv_Alfabeto() {
 
+    const [letter, setLetter] = useState<string>('')
+
     const [progress, setProgress] = useState(0);
   
     const handlePress = () => {
@@ -65,7 +67,12 @@ export default function Atv_Alfabeto() {
 
         <ThemedView style={styles.BlocoFundo}>
 
-
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_a.jpeg')} resizeMode='contain'/>
+         <TextInput 
+          style={styles.input} placeholder="?" maxLength={1} value={letter} onChangeText={setLetter}
+         />
+         </View>
 
 
 
@@ -102,14 +109,13 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   box: {
-    width: 80,
-    height: 80,
+    width: 200,
+    height: 180,
     backgroundColor: 'white',
     borderColor: 'black',
     borderWidth: 2,
     borderRadius: 10,
     marginTop: 10,
-    alignItems: 'center',
   },
   progressBarContainer: {
     width: '60%',
@@ -136,8 +142,6 @@ const styles = StyleSheet.create({
   },
   containeractiv: {
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
     padding: 1,
   },
   botao: {
@@ -169,5 +173,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#fcbf6f',
     borderRadius: 10,
     marginBlock: 10,
+  },
+  input: {
+    width: 40,
+    height: 40,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    textAlign: 'center',
+    fontSize: 20,
   },
 });

@@ -12,7 +12,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
-export default function Alfabeto_Numerico() {
+export default function Cumprimentos_basicos() {
 
     const [progress, setProgress] = useState(0);
   

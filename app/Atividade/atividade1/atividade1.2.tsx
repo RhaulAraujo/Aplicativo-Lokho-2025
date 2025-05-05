@@ -17,7 +17,7 @@ export default function Alfabeto_Numerico() {
     const [progress, setProgress] = useState(0);
   
     const handlePress = () => {
-     if (progress < 4) {
+     if (progress < 2) {
        setProgress(progress + 1);
        AsyncStorage.setItem('progress', String(progress + 1)); // Salva o progresso
      }
@@ -66,10 +66,19 @@ export default function Alfabeto_Numerico() {
         <ThemedView style={styles.BlocoFundo}>
              <View style={styles.containeractiv}>
              <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_1_a_5.jpeg')} resizeMode='contain'/>
+             </View>
+
+             <View style={styles.containeractiv}>
              <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_6_a_9.jpeg')} resizeMode='contain'/>
+             </View>
+
+             <View style={styles.containeractiv}>
              <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_10_a_50.jpeg')} resizeMode='contain'/>
+             </View>
+            
+             <View style={styles.containeractiv}>
              <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_60_a_100.jpeg')} resizeMode='contain'/>
-              </View>
+             </View>
        </ThemedView>
 
 
@@ -100,14 +109,14 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   box: {
-    width: 80,
-    height: 80,
+    width: 200,
+    height: 180,
     backgroundColor: 'white',
     borderColor: 'black',
     borderWidth: 2,
     borderRadius: 10,
     marginTop: 10,
-    alignItems: 'center',
+    padding: 1,
   },
   progressBarContainer: {
     width: '60%',

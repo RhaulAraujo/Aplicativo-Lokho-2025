@@ -57,6 +57,29 @@ export default function TabTwoScreen() {
         router.push("/Atividade/atividade4/atividade4")
         }
 
+
+        function gotomod2_ativ1(){
+          router.push("/modulo_2/atividade1/atividade1")
+        }
+        function gotomod2_ativ2(){
+          router.push("/modulo_2/atividade2/atividade2")
+        }
+        function gotomod2_ativ3(){
+          router.push("/modulo_2/atividade3/atividade3")
+        }
+
+
+        function gotomod3_ativ1(){
+          router.push("/modulo_3/atividade1/atividade1")
+        }
+        function gotomod3_ativ2(){
+          router.push("/modulo_3/atividade2/atividade2")
+        }
+        function gotomod3_ativ3(){
+          router.push("/modulo_3/atividade3/atividade3")
+        }
+
+
       return (
       <ScrollView style={styles.container}>
 
@@ -85,7 +108,7 @@ export default function TabTwoScreen() {
 
         <ThemedView style={styles.boxtop}>
           <ThemedText style={styles.titu_tex1}>Módulo 1</ThemedText>
-            <ThemedText style={styles.subtitu_tex1}>0/5 Atividades</ThemedText>
+            <ThemedText style={styles.subtitu_tex1}>0/4 Atividades</ThemedText>
               <View style={styles.containeractiv}>
                 <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
                 <TouchableOpacity style={styles.navItem} onPress={gotoActiv}>   
@@ -113,8 +136,62 @@ export default function TabTwoScreen() {
               <ThemedText style={styles.foto_texto4}>Frases</ThemedText>
               </TouchableOpacity>
               </View>
-   
+
+
+
+
+              <ThemedText style={styles.titu_tex1}>Módulo 2</ThemedText>
+            <ThemedText style={styles.subtitu_tex1}>0/3 Atividades</ThemedText>
+              <View style={styles.containeractiv}>
+                <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+                <TouchableOpacity style={styles.navItem} onPress={gotomod2_ativ1}>   
+                  <ThemedText style={styles.foto_texto}>yyyyyyyy</ThemedText>
+                  </TouchableOpacity>
+              </View>
+
+              <View style={styles.containeractiv}>
+              <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+              <TouchableOpacity style={styles.navItem} onPress={gotomod2_ativ2}>
+              <ThemedText style={styles.foto_texto2}>xxxxxxxxx</ThemedText>
+              </TouchableOpacity>  
+              </View>
+
+              <View style={styles.containeractiv}>
+              <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+              <TouchableOpacity style={styles.navItem} onPress={gotomod2_ativ3}>
+              <ThemedText style={styles.foto_texto2}>zzzzzzz</ThemedText>
+              </TouchableOpacity>  
+              </View>
+
+
+
+              <ThemedText style={styles.titu_tex1}>Módulo 3</ThemedText>
+            <ThemedText style={styles.subtitu_tex1}>0/3 Atividades</ThemedText>
+              <View style={styles.containeractiv}>
+                <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+                <TouchableOpacity style={styles.navItem} onPress={gotomod3_ativ1}>   
+                  <ThemedText style={styles.foto_texto}>aaaaaaa</ThemedText>
+                  </TouchableOpacity>
+              </View>
+
+              <View style={styles.containeractiv}>
+              <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+              <TouchableOpacity style={styles.navItem} onPress={gotomod3_ativ2}>
+              <ThemedText style={styles.foto_texto2}>bbbbbbbb</ThemedText>
+              </TouchableOpacity>  
+              </View>
+
+              <View style={styles.containeractiv}>
+              <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+              <TouchableOpacity style={styles.navItem} onPress={gotomod3_ativ3}>
+              <ThemedText style={styles.foto_texto2}>ccccccc</ThemedText>
+              </TouchableOpacity>  
+              </View>
+
+
+
         </ThemedView>
+
       </ScrollView>
 
   );
