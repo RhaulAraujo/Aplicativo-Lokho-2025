@@ -12,9 +12,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
-export default function Alfabeto_Numerico() {
+export default function atv3_soletrando() {
 
     const [progress, setProgress] = useState(0);
+    const [progress1, setProgress1] = useState(0);
+    
   
     const handlePress = () => {
      if (progress < 4) {
@@ -23,11 +25,17 @@ export default function Alfabeto_Numerico() {
      }
    };
 
+   const handlePress1 = () => {
+    if (progress1 < 4) {
+      setProgress1(progress1 + 1);
+      AsyncStorage.setItem('progress1', String(progress1 + 1)); 
+    }
+  };
 
 
         function gotoActiv(){
-        handlePress ();
-        router.push("/Atividade/atividade1/atividade1.3")
+        handlePress1 ();
+        router.push("/tabs/explore")
         }
 
 
@@ -42,8 +50,23 @@ export default function Alfabeto_Numerico() {
             }
           };
 
+
+
+          const loadProgress1 = async () => {
+            try {
+              const savedProgress1 = await AsyncStorage.getItem('progress1');
+              if (savedProgress1 !== null) {
+                setProgress1(Number(savedProgress1)); // Carrega o progresso salvo
+              }
+            } catch (error) {
+              console.error('Failed to load progress', error);
+            }
+          };
+          
+
           useEffect(() => {
             loadProgress(); // Carrega o progresso quando a página for montada
+            loadProgress1();
           }, []);
 
 

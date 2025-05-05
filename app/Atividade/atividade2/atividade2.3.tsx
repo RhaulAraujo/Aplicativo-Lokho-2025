@@ -27,7 +27,7 @@ export default function Alfabeto_Numerico() {
 
         function gotoActiv(){
         handlePress ();
-        router.push("/Atividade/atividade1/atividade1.3")
+        router.push("/Atividade/atividade2/atividade2.4")
         }
 
 

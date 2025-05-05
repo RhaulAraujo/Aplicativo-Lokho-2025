@@ -16,7 +16,7 @@ export default function Alfabeto() {
        const [progress, setProgress] = useState(0);
   
        const handlePress = () => {
-        if (progress < 3) {
+        if (progress < 4) {
           setProgress(progress + 1);
           AsyncStorage.setItem('progress', String(progress + 1)); // Salva o progresso
         }
@@ -55,7 +55,7 @@ export default function Alfabeto() {
         <View style={styles.progressBarContainer}>
         <View style={[styles.progressBar, 
           { 
-            backgroundColor: progress >= 3 ? 'blue' : 'blue',
+            backgroundColor: progress >= 4 ? 'blue' : 'blue',
             width: `${progress * 33.33}%`,
             } as ViewStyle, 
           ]} 

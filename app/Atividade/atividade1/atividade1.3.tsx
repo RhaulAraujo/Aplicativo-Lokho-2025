@@ -12,7 +12,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
-export default function Alfabeto_Numerico() {
+export default function Atv_Alfabeto() {
 
     const [progress, setProgress] = useState(0);
   
@@ -27,7 +27,7 @@ export default function Alfabeto_Numerico() {
 
         function gotoActiv(){
         handlePress ();
-        router.push("/Atividade/atividade1/atividade1.3")
+        router.push("/Atividade/atividade1/atividade1.4")
         }
 
 
@@ -64,19 +64,21 @@ export default function Alfabeto_Numerico() {
       </View>
 
         <ThemedView style={styles.BlocoFundo}>
-             <View style={styles.containeractiv}>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_1_a_5.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_6_a_9.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_10_a_50.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_60_a_100.jpeg')} resizeMode='contain'/>
-              </View>
+
+
+
+
+
        </ThemedView>
 
 
+
+
+             
             <TouchableOpacity style={styles.botao} onPress={gotoActiv}>
               <Text style={styles.texto_botao}>Continue</Text>
             </TouchableOpacity>
-    
+            
 
 
 

@@ -7,33 +7,54 @@ import { Dimensions } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link, router } from 'expo-router';
 import atividade from '@/app/Atividade/atividade1/atividade1';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 
 export default function TabTwoScreen() {
-      const [progress, setProgress] = useState(0);
+      const [progress1, setProgress1] = useState(0);
 
       const handlePress = () => {
-        if (progress < 5) {
-          setProgress(progress + 1);
+        if (progress1 < 5) {
+          setProgress1(progress1 + 1);
         }
       };
+
+
+      const loadProgress1 = async () => {
+        try {
+          const savedProgress1 = await AsyncStorage.getItem('progress1');
+          if (savedProgress1 !== null) {
+            setProgress1(Number(savedProgress1)); // Carrega o progresso salvo
+          }
+        } catch (error) {
+          console.error('Failed to load progress', error);
+        }
+      };
+
+      useEffect(() => {
+        loadProgress1(); // Carrega o progresso quando a página for montada
+      }, []);
+
+
+
 
         function gotoActiv(){
         router.push("/Atividade/atividade1/atividade1")
         }
         function gotoActiv2(){
-        router.push("/Atividade/atividade2")
+        router.push("/Atividade/atividade2/atividade2")
         }
         function gotoActiv3(){
-        router.push("/Atividade/atividade3")
+        router.push("/Atividade/atividade3/atividade3")
         }
         function gotoActiv4(){
-        router.push("/Atividade/atividade4")
+        router.push("/Atividade/atividade4/atividade4")
         }
 
       return (
@@ -54,13 +75,12 @@ export default function TabTwoScreen() {
         <View style={styles.progressBarContainer}>
         <View style={[styles.progressBar, 
           { 
-            backgroundColor: progress >= 1 ? 'blue' : 'blue',
-            width: `${progress * 22.22}%`,
+            backgroundColor: progress1 >= 5 ? 'blue' : 'blue',
+            width: `${progress1 * 22.22}%`,
             } as ViewStyle, 
           ]} 
           />
         </View>
-        <Button title="Aumentar" onPress={handlePress} />
       </View>
 
         <ThemedView style={styles.boxtop}>

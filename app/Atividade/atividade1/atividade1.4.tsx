@@ -12,22 +12,30 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
-export default function Alfabeto_Numerico() {
+export default function Atv_numeros() {
 
     const [progress, setProgress] = useState(0);
-  
+    const [progress1, setProgress1] = useState(0);
+
     const handlePress = () => {
-     if (progress < 4) {
+     if (progress < 5) {
        setProgress(progress + 1);
        AsyncStorage.setItem('progress', String(progress + 1)); // Salva o progresso
      }
    };
 
 
+    const handlePress1 = () => {
+     if (progress1 < 1) {
+       setProgress1(progress1 + 1);
+       AsyncStorage.setItem('progress1', String(progress1 + 1)); 
+     }
+   };
+
 
         function gotoActiv(){
-        handlePress ();
-        router.push("/Atividade/atividade1/atividade1.3")
+        handlePress1 ();
+        router.push("/tabs/explore")
         }
 
 
@@ -41,6 +49,12 @@ export default function Alfabeto_Numerico() {
               console.error('Failed to load progress', error);
             }
           };
+
+
+
+      
+
+
 
           useEffect(() => {
             loadProgress(); // Carrega o progresso quando a página for montada
@@ -64,19 +78,21 @@ export default function Alfabeto_Numerico() {
       </View>
 
         <ThemedView style={styles.BlocoFundo}>
-             <View style={styles.containeractiv}>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_1_a_5.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_6_a_9.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_10_a_50.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_60_a_100.jpeg')} resizeMode='contain'/>
-              </View>
+
+
+
+
+
        </ThemedView>
 
 
+
+
+             
             <TouchableOpacity style={styles.botao} onPress={gotoActiv}>
               <Text style={styles.texto_botao}>Continue</Text>
             </TouchableOpacity>
-    
+            
 
 
 

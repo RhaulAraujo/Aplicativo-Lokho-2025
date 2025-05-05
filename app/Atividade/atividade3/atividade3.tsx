@@ -12,7 +12,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
-export default function Alfabeto_Numerico() {
+export default function Soletrando() {
 
     const [progress, setProgress] = useState(0);
   
@@ -27,7 +27,7 @@ export default function Alfabeto_Numerico() {
 
         function gotoActiv(){
         handlePress ();
-        router.push("/Atividade/atividade1/atividade1.3")
+        router.push("/Atividade/atividade3/atividade3.2")
         }
 
 
@@ -42,9 +42,6 @@ export default function Alfabeto_Numerico() {
             }
           };
 
-          useEffect(() => {
-            loadProgress(); // Carrega o progresso quando a página for montada
-          }, []);
 
 
 
