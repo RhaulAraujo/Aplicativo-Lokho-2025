@@ -98,8 +98,8 @@ export default function TabTwoScreen() {
         <View style={styles.progressBarContainer}>
         <View style={[styles.progressBar, 
           { 
-            backgroundColor: progress1 >= 5 ? 'blue' : 'blue',
-            width: `${progress1 * 22.22}%`,
+            backgroundColor: progress1 >= 10 ? 'blue' : 'blue',
+            width: `${progress1 * 12.12}%`,
             } as ViewStyle, 
           ]} 
           />

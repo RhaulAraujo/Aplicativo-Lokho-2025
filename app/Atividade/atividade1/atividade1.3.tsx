@@ -8,16 +8,31 @@ import { MaterialIcons } from '@expo/vector-icons';
 import React, {useState, useEffect} from 'react';
 import { Link, router } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import { useRouter } from 'expo-router';
+import { reload } from 'expo-router/build/global-state/routing';
 
 
 
 export default function Atv_Alfabeto() {
+    const [palavra, setPalavra] = useState('');
+    const [isError, setIsError] = useState(false);
+    const router = useRouter();
 
     const [letter, setLetter] = useState<string>('')
-
     const [progress, setProgress] = useState(0);
   
+
+    const verificarLetra = () => {
+      if (palavra.toUpperCase() === 'A') {
+        setIsError(false);
+        router.push("/Atividade/atividade1/atividade1.4");
+      } else {
+        setIsError(true);
+      }
+    };
+
+
+
     const handlePress = () => {
      if (progress < 4) {
        setProgress(progress + 1);
@@ -70,7 +85,47 @@ export default function Atv_Alfabeto() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_a.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={styles.input} placeholder="?" maxLength={1} value={letter} onChangeText={setLetter}
+          style={[styles.input, isError && styles.inputErro]} 
+          placeholder="" 
+          maxLength={1} 
+          value={palavra}
+          onChangeText={setPalavra}
+          autoCapitalize="characters"
+         />
+         </View>
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_p.jpeg')} resizeMode='contain'/>
+         <TextInput 
+          style={styles.input} placeholder="" maxLength={1} 
+         />
+         </View>
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_n.jpeg')} resizeMode='contain'/>
+         <TextInput 
+          style={styles.input} placeholder="" maxLength={1} 
+         />
+         </View>
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_w.jpeg')} resizeMode='contain'/>
+         <TextInput 
+          style={styles.input} placeholder="" maxLength={1} 
+         />
+         </View>
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_j.jpeg')} resizeMode='contain'/>
+         <TextInput 
+          style={styles.input} placeholder="" maxLength={1} 
+         />
+         </View>
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_x.jpeg')} resizeMode='contain'/>
+         <TextInput 
+          style={styles.input} placeholder="" maxLength={1} 
          />
          </View>
 
@@ -82,7 +137,7 @@ export default function Atv_Alfabeto() {
 
 
              
-            <TouchableOpacity style={styles.botao} onPress={gotoActiv}>
+            <TouchableOpacity style={styles.botao} onPress={verificarLetra}>
               <Text style={styles.texto_botao}>Continue</Text>
             </TouchableOpacity>
             
@@ -109,8 +164,8 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   box: {
-    width: 200,
-    height: 180,
+    width: 150,
+    height: 120,
     backgroundColor: 'white',
     borderColor: 'black',
     borderWidth: 2,
@@ -175,11 +230,30 @@ const styles = StyleSheet.create({
     marginBlock: 10,
   },
   input: {
-    width: 40,
-    height: 40,
+    width: 100,
+    height: 80,
     borderWidth: 1,
     borderColor: '#ccc',
+    borderRadius: 10,
     textAlign: 'center',
     fontSize: 20,
+    backgroundColor: 'white',
+    marginLeft: 40,
+    marginTop: 30,
   },
+  inputErro: {
+    width: 100,
+    height: 80,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 10,
+    textAlign: 'center',
+    fontSize: 20,
+    backgroundColor: 'red',
+    marginLeft: 40,
+    marginTop: 30,
+  },
+
+
+
 });
