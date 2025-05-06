@@ -1,6 +1,7 @@
-import { StyleSheet, Image, Platform, View, Text, TouchableOpacity, Button, ViewStyle, ScrollView } from 'react-native';
+import { StyleSheet, Image, Platform, View, Text, TouchableOpacity, Button, ViewStyle, ScrollView, Alert } from 'react-native';
 import { FontAwesome } from "@expo/vector-icons";
 import { Collapsible } from '@/components/Collapsible';
+import { useRouter } from 'expo-router';
 import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { Dimensions } from 'react-native';
@@ -16,7 +17,32 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
+
 export default function TabTwoScreen() {
+
+const [unlocked, setUnlocked] = useState<boolean>(false);
+const router = useRouter();
+
+useEffect(() => {
+  const checkProgress = async () => {
+    const savedProgress = await AsyncStorage.getItem('unlockedModules');
+    setUnlocked(savedProgress ? JSON.parse(savedProgress) : false);
+  };
+  checkProgress();
+}, []);
+
+
+const accessActivity1 = () => {
+  setUnlocked(true);
+  AsyncStorage.setItem('unlockedModules', JSON.stringify(true));
+  Alert.alert('Atividade 1 acessada!')
+  router.push("/Atividade/atividade1/atividade1")
+};
+
+const accessLockedModule = () =>{
+  Alert.alert('Este módulo está bloqueado! Complete a Atividade 1.');
+};
+  
       const [progress1, setProgress1] = useState(0);
 
       const handlePress = () => {
@@ -111,16 +137,12 @@ export default function TabTwoScreen() {
             <ThemedText style={styles.subtitu_tex1}>0/4 Atividades</ThemedText>
               <View style={styles.containeractiv}>
                 <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-                <TouchableOpacity style={styles.navItem} onPress={gotoActiv}>   
-                  <ThemedText style={styles.foto_texto}>Alfabeto</ThemedText>
-                  </TouchableOpacity>
+                <Button title="Alfabeto" onPress={accessActivity1} />
               </View>
 
               <View style={styles.containeractiv}>
               <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-              <TouchableOpacity style={styles.navItem} onPress={gotoActiv2}>
-              <ThemedText style={styles.foto_texto2}>Cumprimentos</ThemedText>
-              </TouchableOpacity>  
+              <Button title="Cumprimentos" onPress={unlocked ? () => router.push("/Atividade/atividade2/atividade2") : accessLockedModule} /> 
               </View>
 
               <View style={styles.containeractiv}>
