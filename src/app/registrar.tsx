@@ -4,36 +4,28 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Dimensions } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { TabRouter } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import registrar from '@/app/registrar';
-import explore from '@/app/tabs/explore';
+import explore from '@/src/app/tabs/explore';
 import { Link, router } from 'expo-router';
-import React, {useState} from 'react';
 
 
 
-export default function index() {
-        function gotoExplore(){
-            router.push("/tabs/explore")
-        }
-        function gotoregister(){
-            router.push("/registrar")
-        }
-
-        const [password, setPassword] = useState<string>('');
-
+export default function registrar() {
+  function gotoExplore(){
+    router.push("/tabs/explore")
+}
   return (
     <ThemedView style={styles.container}>
 
     <ThemedView style={styles.boxTop}>
     <Image style={styles.logo} source={require('@/assets/images/lbs.png')} resizeMode='contain'></Image>
-    <ThemedText style={styles.titu_tex}>LBS  -  LOKHO</ThemedText>
-    <ThemedText style={styles.titu_tex}>Bem Vindo de Volta</ThemedText>
+    <ThemedText style={styles.titu_tex}>Criar Conta</ThemedText>
    </ThemedView>
 
     <ThemedView style={styles.boxMid}>
-     <ThemedText style={styles.titulo_input}>ENDEREÇO DE E-MAIL</ThemedText>
+     <ThemedText style={styles.titulo_input}>Inscreva-se com um E-mail</ThemedText>
     <View style={styles.Box_input}>
       <TextInput 
         style={styles.input}
@@ -45,13 +37,10 @@ export default function index() {
       />
     </View>
 
-      <ThemedText style={styles.titulo_input}>SENHA</ThemedText>
+      <ThemedText style={styles.titulo_input}>Criar uma Senha</ThemedText>
       <View style={styles.Box_input}>
       <TextInput 
         style={styles.input}
-        secureTextEntry={true}
-        value={password}
-        onChangeText={setPassword}
       />
       <MaterialIcons 
         name='remove-red-eye'
@@ -61,26 +50,13 @@ export default function index() {
     </View>
     
        <View style={styles.boxBottom}>
-        <TouchableOpacity style={styles.button} onPress={gotoExplore} >
-          <Text style={styles.texto_botao}>Entrar</Text>
+        <TouchableOpacity style={styles.button} onPress={gotoExplore}>
+          <Text style={styles.texto_botao}>CRIAR</Text>
         </TouchableOpacity>
        </View>
       
-      <ThemedView style={styles.linhabranca}>
-          <Text style={styles.palavralinha}>OU</Text>
-      </ThemedView>
-      
-          <View style={styles.boxBottom1}>
-              <TouchableOpacity style={styles.button} onPress={gotoregister}>
-                <Text style={styles.texto_botao1}>Inscrever-se gratuitamente</Text>
-              </TouchableOpacity>
-          </View>
-      
-   
-
     </ThemedView>
-
-
+                                
  </ThemedView>
 
   );}
@@ -123,14 +99,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logo: {
-    height: 100,
+    height: 80,
     width: 80,
   },
   titu_tex: {
     color: '#fff',
     fontSize: 24,
     fontWeight: 'bold',
-    marginTop: 30,
+    marginTop: 40,
   },
   titulo_input: {
     marginLeft: 5,
