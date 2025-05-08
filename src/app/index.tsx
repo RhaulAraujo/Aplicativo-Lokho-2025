@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform, TouchableOpacity, TextInput, View, Text} from 'react-native';
+import { Image, StyleSheet, Platform, TouchableOpacity, TextInput, View, Text, Alert} from 'react-native';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -10,10 +10,41 @@ import registrar from '@/src/app/registrar';
 import explore from '@/src/app/tabs/explore';
 import { Link, router } from 'expo-router';
 import React, {useState} from 'react';
+import { auth } from '../database/firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 
 
 export default function index() {
+      const [email, setEmail] = useState("");
+      const [password, setPassword] = useState("")
+
+
+
+      const handlelogin = async () => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!emailRegex.test(email)) {
+          Alert.alert("Email inválido");
+          return;
+        }
+      
+        try {
+          // Tenta logar com email e senha
+          await signInWithEmailAndPassword(auth, email, password);
+          
+          // Se chegar aqui, o login funcionou
+          Alert.alert("Login realizado com sucesso!");
+          router.push("/tabs/explore");
+          
+        } catch (error) {
+          // Se o login falhar, mostra erro
+          Alert.alert("Falha no login", "Email ou senha incorretos.");
+        }
+      };
+
+
+
         function gotoExplore(){
             router.push("/tabs/explore")
         }
@@ -21,7 +52,7 @@ export default function index() {
             router.push("/registrar")
         }
 
-        const [password, setPassword] = useState<string>('');
+        //const [password, setPassword] = useState<string>('');
 
   return (
     <ThemedView style={styles.container}>
@@ -37,6 +68,8 @@ export default function index() {
     <View style={styles.Box_input}>
       <TextInput 
         style={styles.input}
+        value={email}
+        onChangeText={setEmail}
       />
       <MaterialIcons 
         name='email'
@@ -61,7 +94,7 @@ export default function index() {
     </View>
     
        <View style={styles.boxBottom}>
-        <TouchableOpacity style={styles.button} onPress={gotoExplore} >
+        <TouchableOpacity style={styles.button} onPress={handlelogin} >
           <Text style={styles.texto_botao}>Entrar</Text>
         </TouchableOpacity>
        </View>
