@@ -10,7 +10,7 @@ import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import React, {useState, useEffect} from 'react';
 import { Link, router } from 'expo-router';
-import atividade from '@/app/Atividade/atividade1/atividade1';
+import atividade from '@/src/app/Atividade/atividade1/atividade1';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -70,42 +70,6 @@ const accessLockedModule = () =>{
 
 
 
-        function gotoActiv(){
-        router.push("/Atividade/atividade1/atividade1")
-        }
-        function gotoActiv2(){
-        router.push("/Atividade/atividade2/atividade2")
-        }
-        function gotoActiv3(){
-        router.push("/Atividade/atividade3/atividade3")
-        }
-        function gotoActiv4(){
-        router.push("/Atividade/atividade4/atividade4")
-        }
-
-
-        function gotomod2_ativ1(){
-          router.push("/modulo_2/atividade1/atividade1")
-        }
-        function gotomod2_ativ2(){
-          router.push("/modulo_2/atividade2/atividade2")
-        }
-        function gotomod2_ativ3(){
-          router.push("/modulo_2/atividade3/atividade3")
-        }
-
-
-        function gotomod3_ativ1(){
-          router.push("/modulo_3/atividade1/atividade1")
-        }
-        function gotomod3_ativ2(){
-          router.push("/modulo_3/atividade2/atividade2")
-        }
-        function gotomod3_ativ3(){
-          router.push("/modulo_3/atividade3/atividade3")
-        }
-
-
       return (
       <ScrollView style={styles.container}>
 
@@ -125,7 +89,7 @@ const accessLockedModule = () =>{
         <View style={[styles.progressBar, 
           { 
             backgroundColor: progress1 >= 10 ? 'blue' : 'blue',
-            width: `${progress1 * 12.12}%`,
+            width: `${progress1 * 11.11}%`,
             } as ViewStyle, 
           ]} 
           />
@@ -137,24 +101,28 @@ const accessLockedModule = () =>{
             <ThemedText style={styles.subtitu_tex1}>0/4 Atividades</ThemedText>
               <View style={styles.containeractiv}>
                 <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-                <Button title="Alfabeto" onPress={accessActivity1} />
+                <TouchableOpacity onPress={accessActivity1}>
+                <ThemedText style={styles.foto_texto}>Alfabeto</ThemedText>
+                </TouchableOpacity>
               </View>
 
               <View style={styles.containeractiv}>
               <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-              <Button title="Cumprimentos" onPress={unlocked ? () => router.push("/Atividade/atividade2/atividade2") : accessLockedModule} /> 
+              <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/Atividade/atividade2/atividade2") : accessLockedModule}>
+              <ThemedText style={styles.foto_texto2}>Cumprimentos</ThemedText>
+              </TouchableOpacity>  
               </View>
 
               <View style={styles.containeractiv}>
               <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-              <TouchableOpacity style={styles.navItem} onPress={gotoActiv3}>
-              <ThemedText style={styles.foto_texto3}>Soletrando</ThemedText>
+              <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/Atividade/atividade3/atividade3") : accessLockedModule}>
+              <ThemedText style={styles.foto_texto3}>Algarismos</ThemedText>
               </TouchableOpacity>
               </View>
 
               <View style={styles.containeractiv}>
               <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-              <TouchableOpacity style={styles.navItem} onPress={gotoActiv4}>
+              <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/Atividade/atividade4/atividade4") : accessLockedModule}>
               <ThemedText style={styles.foto_texto4}>Frases</ThemedText>
               </TouchableOpacity>
               </View>
@@ -166,21 +134,21 @@ const accessLockedModule = () =>{
             <ThemedText style={styles.subtitu_tex1}>0/3 Atividades</ThemedText>
               <View style={styles.containeractiv}>
                 <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-                <TouchableOpacity style={styles.navItem} onPress={gotomod2_ativ1}>   
+                <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/modulo_2/atividade1/atividade1") : accessLockedModule}>   
                   <ThemedText style={styles.foto_texto}>yyyyyyyy</ThemedText>
                   </TouchableOpacity>
               </View>
 
               <View style={styles.containeractiv}>
               <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-              <TouchableOpacity style={styles.navItem} onPress={gotomod2_ativ2}>
+              <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/modulo_2/atividade2/atividade2") : accessLockedModule}>
               <ThemedText style={styles.foto_texto2}>xxxxxxxxx</ThemedText>
               </TouchableOpacity>  
               </View>
 
               <View style={styles.containeractiv}>
               <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-              <TouchableOpacity style={styles.navItem} onPress={gotomod2_ativ3}>
+              <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/modulo_2/atividade3/atividade3") : accessLockedModule}>
               <ThemedText style={styles.foto_texto2}>zzzzzzz</ThemedText>
               </TouchableOpacity>  
               </View>
@@ -191,21 +159,21 @@ const accessLockedModule = () =>{
             <ThemedText style={styles.subtitu_tex1}>0/3 Atividades</ThemedText>
               <View style={styles.containeractiv}>
                 <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-                <TouchableOpacity style={styles.navItem} onPress={gotomod3_ativ1}>   
+                <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/modulo_3/atividade1/atividade1") : accessLockedModule}>   
                   <ThemedText style={styles.foto_texto}>aaaaaaa</ThemedText>
                   </TouchableOpacity>
               </View>
 
               <View style={styles.containeractiv}>
               <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-              <TouchableOpacity style={styles.navItem} onPress={gotomod3_ativ2}>
+              <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/modulo_3/atividade2/atividade2") : accessLockedModule}>
               <ThemedText style={styles.foto_texto2}>bbbbbbbb</ThemedText>
               </TouchableOpacity>  
               </View>
 
               <View style={styles.containeractiv}>
               <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-              <TouchableOpacity style={styles.navItem} onPress={gotomod3_ativ3}>
+              <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/modulo_3/atividade3/atividade3") : accessLockedModule}>
               <ThemedText style={styles.foto_texto2}>ccccccc</ThemedText>
               </TouchableOpacity>  
               </View>

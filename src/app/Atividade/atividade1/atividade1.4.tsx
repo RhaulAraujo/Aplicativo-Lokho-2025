@@ -52,10 +52,6 @@ export default function Atv_numeros() {
 
 
 
-      
-
-
-
           useEffect(() => {
             loadProgress(); // Carrega o progresso quando a página for montada
           }, []);
@@ -103,7 +99,7 @@ export default function Atv_numeros() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundImage: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%)',
+   backgroundColor:  '#be6704',
   },
   logo: {
     height: 80,

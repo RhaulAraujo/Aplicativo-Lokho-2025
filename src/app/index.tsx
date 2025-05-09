@@ -86,11 +86,7 @@ export default function index() {
         value={password}
         onChangeText={setPassword}
       />
-      <MaterialIcons 
-        name='remove-red-eye'
-        size={20}
-        color={'#808080'}
-      />
+  
     </View>
     
        <View style={styles.boxBottom}>

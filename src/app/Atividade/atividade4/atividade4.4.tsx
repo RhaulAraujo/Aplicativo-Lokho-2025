@@ -18,12 +18,6 @@ export default function atv3_soletrando() {
     const [progress1, setProgress1] = useState(0);
     
   
-    const handlePress = () => {
-     if (progress < 4) {
-       setProgress(progress + 1);
-       AsyncStorage.setItem('progress', String(progress + 1)); // Salva o progresso
-     }
-   };
 
    const handlePress1 = () => {
     if (progress1 < 4) {
@@ -110,7 +104,7 @@ export default function atv3_soletrando() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundImage: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%)',
+   backgroundColor:  '#be6704',
   },
   logo: {
     height: 80,

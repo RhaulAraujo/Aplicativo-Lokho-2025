@@ -87,7 +87,7 @@ export default function atv2_soletrando() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundImage: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%)',
+   backgroundColor:  '#be6704',
   },
   logo: {
     height: 80,

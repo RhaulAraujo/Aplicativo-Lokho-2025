@@ -13,7 +13,15 @@ import { reload } from 'expo-router/build/global-state/routing';
 
 
 export default function Atv_Alfabeto() {
-    const [palavra, setPalavra] = useState('');
+    const [palavra_A, setPalavra_A] = useState('');
+    const [palavra_P, setPalavra_P] = useState('');
+    const [palavra_N, setPalavra_N] = useState('');
+    const [palavra_W, setPalavra_W] = useState('');
+    const [palavra_J, setPalavra_J] = useState('');
+    const [palavra_X, setPalavra_X] = useState('');
+
+
+
     const [isError, setIsError] = useState(false);
     const router = useRouter();
 
@@ -22,14 +30,15 @@ export default function Atv_Alfabeto() {
   
 
     const verificarLetra = () => {
-      if (palavra.toUpperCase() === 'A') {
+      if (palavra_A.toUpperCase() === 'A', palavra_P.toUpperCase() == 'P', palavra_N.toUpperCase() == 'N', palavra_W.toUpperCase() == 'W', palavra_J.toUpperCase() == 'J', palavra_X.toUpperCase() == 'X') {
         setIsError(false);
-        router.push("/Atividade/atividade1/atividade1.4");
+        router.push("/Atividade/atividade1/atividade1.4")
       } else {
         setIsError(true);
       }
     };
 
+   
 
 
     const handlePress = () => {
@@ -87,8 +96,8 @@ export default function Atv_Alfabeto() {
           style={[styles.input, isError && styles.inputErro]} 
           placeholder="" 
           maxLength={1} 
-          value={palavra}
-          onChangeText={setPalavra}
+          value={palavra_A}
+          onChangeText={setPalavra_A}
           autoCapitalize="characters"
          />
          </View>
@@ -96,35 +105,60 @@ export default function Atv_Alfabeto() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_p.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={styles.input} placeholder="" maxLength={1} 
+          style={[styles.input, isError && styles.inputErro]} 
+          placeholder="" 
+          maxLength={1} 
+          value={palavra_P}
+          onChangeText={setPalavra_P}
+          autoCapitalize="characters"
          />
          </View>
 
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_n.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={styles.input} placeholder="" maxLength={1} 
+          style={[styles.input, isError && styles.inputErro]} 
+          placeholder=""
+          maxLength={1} 
+          value={palavra_N}
+          onChangeText={setPalavra_N}
+          autoCapitalize="characters"
          />
          </View>
 
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_w.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={styles.input} placeholder="" maxLength={1} 
+          style={[styles.input, isError && styles.inputErro]} 
+          placeholder="" 
+          maxLength={1} 
+          value={palavra_W}
+          onChangeText={setPalavra_W}
+          autoCapitalize="characters"
          />
          </View>
 
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_j.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={styles.input} placeholder="" maxLength={1} 
+          style={[styles.input, isError && styles.inputErro]} 
+          placeholder="" 
+          maxLength={1} 
+          value={palavra_J}
+          onChangeText={setPalavra_J}
+          autoCapitalize="characters"
          />
          </View>
 
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_x.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={styles.input} placeholder="" maxLength={1} 
+          style={[styles.input, isError && styles.inputErro]} 
+          placeholder=""
+          maxLength={1} 
+          value={palavra_X}
+          onChangeText={setPalavra_X}
+          autoCapitalize="characters"
          />
          </View>
 
@@ -150,7 +184,7 @@ export default function Atv_Alfabeto() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundImage: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%)',
+   backgroundColor:  '#be6704',
   },
   logo: {
     height: 80,
