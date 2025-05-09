@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform, TouchableOpacity, View, ViewStyle, Text, ScrollView  } from 'react-native';
+import { Image, StyleSheet, Platform, TouchableOpacity, View, ViewStyle, Text, ScrollView, Alert  } from 'react-native';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -6,13 +6,35 @@ import { Dimensions } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import { MaterialIcons } from '@expo/vector-icons';
 import React, {useState, useEffect} from 'react';
-import { Link, router } from 'expo-router';
+import { Link, router, useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
 
 export default function Atv_numeros() {
+
+const router = useRouter();
+
+const [selectedButtons, setSelectedButtons] = useState<string[]>([]);
+const correctPair = ['A', '1']; 
+
+const handleSelect = (option: string)=> {
+if (selectedButtons.includes(option)) {
+  setSelectedButtons(selectedButtons.filter(btn => btn !== option));
+} else if (selectedButtons.length < 2) {
+  setSelectedButtons([...selectedButtons, option]);
+}
+};
+
+const checkAnswer = () => {
+  if (selectedButtons.sort().join() === correctPair.sort().join()) {
+    Alert.alert('Par correto! Avançando...');
+    router.push('/tabs/explore');
+  } else {
+    Alert.alert('Par incorreto! Tente novamente.');
+  }
+};
 
     const [progress, setProgress] = useState(0);
     const [progress1, setProgress1] = useState(0);
@@ -75,6 +97,20 @@ export default function Atv_numeros() {
 
         <ThemedView style={styles.BlocoFundo}>
 
+          <TouchableOpacity
+          style={[styles.button, selectedButtons.includes('A') && styles.selectedButton]}
+          onPress={() => handleSelect('A')}
+          >
+            <Text style={styles.buttonText}>A</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+          style={[styles.button, selectedButtons.includes('B') && styles.selectedButton]}
+          onPress={() => handleSelect('B')}
+          >
+            <Text style={styles.buttonText}>B</Text>
+          </TouchableOpacity>
+
 
 
 
@@ -85,8 +121,8 @@ export default function Atv_numeros() {
 
 
              
-            <TouchableOpacity style={styles.botao} onPress={gotoActiv}>
-              <Text style={styles.texto_botao}>Continue</Text>
+            <TouchableOpacity style={[styles.verifyButton, selectedButtons.length === 2 && correctPair.includes(selectedButtons[0]) && correctPair.includes(selectedButtons[1]) ? styles.correctButton : styles.wrongButton]} onPress={checkAnswer}>
+              <Text style={styles.verifyButtonText}>Continue</Text>
             </TouchableOpacity>
             
 
@@ -180,4 +216,35 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBlock: 10,
   },
+  button: {
+    width: 80,
+    height: 80,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#DDD',
+    margin: 10,
+    borderRadius: 10,
+  },
+  selectedButton: {
+    backgroundColor: '#ADD8E6'
+  },
+  buttonText: {
+    fontSize: 18,
+  },
+  correctButton: {
+    backgroundColor: 'green',
+  },
+  wrongButton: {
+    backgroundColor: 'red'
+  },
+  verifyButton: {
+    marginTop: 20,
+    padding: 10,
+    borderRadius: 5,
+    backgroundColor: "#DDD"
+  },
+  verifyButtonText: {
+    fontSize: 18,
+    color: 'white',
+  }
 });
