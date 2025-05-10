@@ -30,6 +30,7 @@ if (selectedButtons.includes(option)) {
 const checkAnswer = () => {
   if (selectedButtons.sort().join() === correctPair.sort().join()) {
     Alert.alert('Par correto! Avançando...');
+    Pressionar_barra1 ();
     router.push('/tabs/explore');
   } else {
     Alert.alert('Par incorreto! Tente novamente.');
@@ -37,45 +38,33 @@ const checkAnswer = () => {
 };
 
     const [progress, setProgress] = useState(0);
-    const [progress1, setProgress1] = useState(0);
+    const [progresso1, setProgresso1] = useState(0);
 
-    const handlePress = () => {
-     if (progress < 5) {
-       setProgress(progress + 1);
-       AsyncStorage.setItem('progress', String(progress + 1)); // Salva o progresso
+
+
+    const Pressionar_barra1 = () => {
+     if (progresso1 < 1) {
+       setProgresso1(progresso1 + 1);
+       AsyncStorage.setItem('progresso1', String(progresso1 + 1)); 
      }
    };
 
 
-    const handlePress1 = () => {
-     if (progress1 < 1) {
-       setProgress1(progress1 + 1);
-       AsyncStorage.setItem('progress1', String(progress1 + 1)); 
-     }
-   };
 
-
-        function gotoActiv(){
-        handlePress1 ();
-        router.push("/tabs/explore")
-        }
-
-
-        const loadProgress = async () => {
+        const carregar_Progresso = async () => {
             try {
               const savedProgress = await AsyncStorage.getItem('progress');
               if (savedProgress !== null) {
-                setProgress(Number(savedProgress)); // Carrega o progresso salvo
+                setProgress(Number(savedProgress)); 
               }
             } catch (error) {
-              console.error('Failed to load progress', error);
             }
           };
 
 
 
           useEffect(() => {
-            loadProgress(); // Carrega o progresso quando a página for montada
+            carregar_Progresso(); 
           }, []);
 
 
@@ -105,8 +94,8 @@ const checkAnswer = () => {
           </TouchableOpacity>
 
           <TouchableOpacity
-          style={[styles.button, selectedButtons.includes('B') && styles.selectedButton]}
-          onPress={() => handleSelect('B')}
+          style={[styles.button, selectedButtons.includes('1') && styles.selectedButton]}
+          onPress={() => handleSelect('1')}
           >
             <Text style={styles.buttonText}>B</Text>
           </TouchableOpacity>

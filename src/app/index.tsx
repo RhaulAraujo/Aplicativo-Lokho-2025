@@ -14,14 +14,13 @@ import { auth } from '../database/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 
-
 export default function index() {
       const [email, setEmail] = useState("");
-      const [password, setPassword] = useState("")
+      const [senha, setSenha] = useState("")
 
 
 
-      const handlelogin = async () => {
+      const fazer_login = async () => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         
         if (!emailRegex.test(email)) {
@@ -31,7 +30,7 @@ export default function index() {
       
         try {
           // Tenta logar com email e senha
-          await signInWithEmailAndPassword(auth, email, password);
+          await signInWithEmailAndPassword(auth, email, senha);
           
           // Se chegar aqui, o login funcionou
           Alert.alert("Login realizado com sucesso!");
@@ -45,10 +44,10 @@ export default function index() {
 
 
 
-        function gotoExplore(){
+        function vá_para_explore(){
             router.push("/tabs/explore")
         }
-        function gotoregister(){
+        function vá_para_registrar(){
             router.push("/registrar")
         }
 
@@ -57,15 +56,15 @@ export default function index() {
   return (
     <ThemedView style={styles.container}>
 
-    <ThemedView style={styles.boxTop}>
+    <ThemedView style={styles.Topo_da_caixa}>
     <Image style={styles.logo} source={require('@/assets/images/lbs.png')} resizeMode='contain'></Image>
-    <ThemedText style={styles.titu_tex}>LBS  -  LOKHO</ThemedText>
-    <ThemedText style={styles.titu_tex}>Bem Vindo de Volta</ThemedText>
+    <ThemedText style={styles.titulo_texto}>LBS  -  LOKHO</ThemedText>
+    <ThemedText style={styles.titulo_texto}>Bem Vindo de Volta</ThemedText>
    </ThemedView>
 
-    <ThemedView style={styles.boxMid}>
-     <ThemedText style={styles.titulo_input}>ENDEREÇO DE E-MAIL</ThemedText>
-    <View style={styles.Box_input}>
+    <ThemedView style={styles.Meio_da_caixa}>
+     <ThemedText style={styles.titulo_do_input}>ENDEREÇO DE E-MAIL</ThemedText>
+    <View style={styles.caixa_do_input}>
       <TextInput 
         style={styles.input}
         value={email}
@@ -78,13 +77,13 @@ export default function index() {
       />
     </View>
 
-      <ThemedText style={styles.titulo_input}>SENHA</ThemedText>
-      <View style={styles.Box_input}>
+      <ThemedText style={styles.titulo_do_input}>SENHA</ThemedText>
+      <View style={styles.caixa_do_input}>
       <TextInput 
         style={styles.input}
         secureTextEntry={true}
-        value={password}
-        onChangeText={setPassword}
+        value={senha}
+        onChangeText={setSenha}
       />
       <MaterialIcons 
         name='remove-red-eye'
@@ -93,9 +92,9 @@ export default function index() {
       />
     </View>
     
-       <View style={styles.boxBottom}>
-        <TouchableOpacity style={styles.button} onPress={handlelogin} >
-          <Text style={styles.texto_botao}>Entrar</Text>
+       <View style={styles.caixa_botão}>
+        <TouchableOpacity style={styles.botão} onPress={fazer_login} >
+          <Text style={styles.texto_botão}>Entrar</Text>
         </TouchableOpacity>
        </View>
       
@@ -103,23 +102,20 @@ export default function index() {
           <Text style={styles.palavralinha}>OU</Text>
       </ThemedView>
       
-          <View style={styles.boxBottom1}>
-              <TouchableOpacity style={styles.button} onPress={gotoregister}>
-                <Text style={styles.texto_botao1}>Inscrever-se gratuitamente</Text>
+          <View style={styles.caixa_botão1}>
+              <TouchableOpacity style={styles.botão} onPress={vá_para_registrar}>
+                <Text style={styles.texto_botão1}>Inscrever-se gratuitamente</Text>
               </TouchableOpacity>
           </View>
       
-   
-
     </ThemedView>
-
 
  </ThemedView>
 
   );}
 
 const styles = StyleSheet.create({
-  boxTop: {
+  Topo_da_caixa: {
    // backgroundImage: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
    backgroundColor:  '#be6704',
    height: Dimensions.get('window').height/3,
@@ -127,13 +123,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  boxMid: {
+  Meio_da_caixa: {
     backgroundColor: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
     //height: Dimensions.get('window').height/4,
     width: '100%',
     paddingHorizontal: 37,
   },
-  boxBottom: {
+  caixa_botão: {
     //height: Dimensions.get('window').height/3,
     width: '100%',
     alignItems:'center',
@@ -141,7 +137,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginLeft: 4,
   },
-  boxBottom1: {
+  caixa_botão1: {
     //height: Dimensions.get('window').height/3,
     width: '100%',
     alignItems:'center',
@@ -159,18 +155,18 @@ const styles = StyleSheet.create({
     height: 100,
     width: 80,
   },
-  titu_tex: {
+  titulo_texto: {
     color: '#fff',
     fontSize: 24,
     fontWeight: 'bold',
     marginTop: 30,
   },
-  titulo_input: {
+  titulo_do_input: {
     marginLeft: 5,
     color: '#D3D3D3',
     marginTop: 20,  
   },
-  Box_input: {
+  caixa_do_input: {
     width: '100%',
     height: 45,
     borderWidth:1,
@@ -188,7 +184,7 @@ const styles = StyleSheet.create({
     width: '90%',
     borderRadius: 40,
   },
-  button: {
+  botão: {
     width: 250,
     height: 50,
     alignItems: 'center',
@@ -204,12 +200,12 @@ const styles = StyleSheet.create({
     shadowRadius: 4.65,
     elevation:7,
   },
-  texto_botao: {
+  texto_botão: {
     fontSize: 16,
     color: '#c76700',
     fontWeight: 'bold',
   },
-  texto_botao1:{
+  texto_botão1:{
     fontSize: 16,
     color: '#9A2401',
     fontWeight: 'bold',

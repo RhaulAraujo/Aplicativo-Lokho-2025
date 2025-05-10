@@ -11,7 +11,7 @@ export default function Login() {
     <ThemedView style={styles.container}>
 
     <Image style={styles.logo} source={require('@/assets/images/lbs.png')} resizeMode='contain'></Image>
-    <ThemedText style={styles.titu_tex}>LBS  -  LOKHO</ThemedText>
+    <ThemedText style={styles.titulo_texto}>LBS  -  LOKHO</ThemedText>
 
     </ThemedView>
 
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     height: 80,
     width: 80,
   },
-  titu_tex: {
+  titulo_texto: {
     color: '#fff',
     fontSize: 24,
     fontWeight: 'bold',

@@ -20,43 +20,37 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function TabTwoScreen() {
 
-const [unlocked, setUnlocked] = useState<boolean>(false);
+const [desbloqueio, setDesbloqueio] = useState<boolean>(false);
 const router = useRouter();
 
 useEffect(() => {
-  const checkProgress = async () => {
-    const savedProgress = await AsyncStorage.getItem('unlockedModules');
-    setUnlocked(savedProgress ? JSON.parse(savedProgress) : false);
+  const veja_Progresso = async () => {
+    const Progresso_salvo = await AsyncStorage.getItem('DesbloqueieModulos');
+    setDesbloqueio(Progresso_salvo ? JSON.parse(Progresso_salvo) : false);
   };
-  checkProgress();
+  veja_Progresso();
 }, []);
 
 
-const accessActivity1 = () => {
-  setUnlocked(true);
-  AsyncStorage.setItem('unlockedModules', JSON.stringify(true));
-  Alert.alert('Atividade 1 acessada!')
+const acesse_Atividade1 = () => {
+  setDesbloqueio(true);
+  AsyncStorage.setItem('DesbloqueieModulos', JSON.stringify(true));
   router.push("/Atividade/atividade1/atividade1")
 };
 
-const accessLockedModule = () =>{
+const acesse_Modulo_trancado = () =>{
   Alert.alert('Este módulo está bloqueado! Complete a Atividade 1.');
 };
   
-      const [progress1, setProgress1] = useState(0);
-
-      const handlePress = () => {
-        if (progress1 < 5) {
-          setProgress1(progress1 + 1);
-        }
-      };
+      const [progresso1, setProgresso1] = useState(0);
 
 
-      const loadProgress1 = async () => {
+
+      const carregar_Progresso_1 = async () => {
         try {
-          const savedProgress1 = await AsyncStorage.getItem('progress1');
-          if (savedProgress1 !== null) {
-            setProgress1(Number(savedProgress1)); // Carrega o progresso salvo
+          const Progresso1_salvo = await AsyncStorage.getItem('progresso1');
+          if (Progresso1_salvo !== null) {
+            setProgresso1(Number(Progresso1_salvo)); // Carrega o progresso salvo
           }
         } catch (error) {
           console.error('Failed to load progress', error);
@@ -64,7 +58,7 @@ const accessLockedModule = () =>{
       };
 
       useEffect(() => {
-        loadProgress1(); // Carrega o progresso quando a página for montada
+        carregar_Progresso_1(); // Carrega o progresso quando a página for montada
       }, []);
 
 
@@ -73,56 +67,56 @@ const accessLockedModule = () =>{
       return (
       <ScrollView style={styles.container}>
 
-      <View style={styles.navBar}>
-        <TouchableOpacity style={styles.navItem} onPress={() => console.log('Opção 1')}>
+      <View style={styles.Barra_de_navegação}>
+        <TouchableOpacity style={styles.Item_navegação} onPress={() => console.log('Opção 1')}>
           <FontAwesome name="home" size={24} color="black" />
         </TouchableOpacity>
-        <Text style={styles.navTitle}></Text>
-        <TouchableOpacity style={styles.navItem} onPress={() => console.log('Opção 2')}>
+        <Text style={styles.Titulo_navegação}></Text>
+        <TouchableOpacity style={styles.Item_navegação} onPress={() => console.log('Opção 2')}>
           <FontAwesome name="search" size={24} color="black" />
         </TouchableOpacity>
       </View>
 
-      <View style={styles.nav}>
-        <ThemedText style={styles.titu_tex3}>Iniciante</ThemedText>
-        <View style={styles.progressBarContainer}>
-        <View style={[styles.progressBar, 
+      <View style={styles.navegação}>
+        <ThemedText style={styles.titulo_texto3}>Iniciante</ThemedText>
+        <View style={styles.progresso_Barra_Container}>
+        <View style={[styles.progresso_da_Barra, 
           { 
-            backgroundColor: progress1 >= 10 ? 'blue' : 'blue',
-            width: `${progress1 * 11.11}%`,
+            backgroundColor: progresso1 >= 10 ? 'blue' : 'blue',
+            width: `${progresso1 * 11.11}%`,
             } as ViewStyle, 
           ]} 
           />
         </View>
       </View>
 
-        <ThemedView style={styles.boxtop}>
-          <ThemedText style={styles.titu_tex1}>Módulo 1</ThemedText>
-            <ThemedText style={styles.subtitu_tex1}>0/4 Atividades</ThemedText>
-              <View style={styles.containeractiv}>
-                <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-                <TouchableOpacity onPress={accessActivity1}>
+        <ThemedView style={styles.topo_caixa}>
+          <ThemedText style={styles.titulo_texto1}>Módulo 1</ThemedText>
+            <ThemedText style={styles.subtitulo_texto1}>0/4 Atividades</ThemedText>
+              <View style={styles.container_dividido}>
+                <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+                <TouchableOpacity onPress={acesse_Atividade1}>
                 <ThemedText style={styles.foto_texto}>Alfabeto</ThemedText>
                 </TouchableOpacity>
               </View>
 
-              <View style={styles.containeractiv}>
-              <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-              <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/Atividade/atividade2/atividade2") : accessLockedModule}>
+              <View style={styles.container_dividido}>
+              <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+              <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/Atividade/atividade2/atividade2") : acesse_Modulo_trancado}>
               <ThemedText style={styles.foto_texto2}>Cumprimentos</ThemedText>
               </TouchableOpacity>  
               </View>
 
-              <View style={styles.containeractiv}>
-              <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-              <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/Atividade/atividade3/atividade3") : accessLockedModule}>
+              <View style={styles.container_dividido}>
+              <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+              <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/Atividade/atividade3/atividade3") : acesse_Modulo_trancado}>
               <ThemedText style={styles.foto_texto3}>Algarismos</ThemedText>
               </TouchableOpacity>
               </View>
 
-              <View style={styles.containeractiv}>
-              <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-              <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/Atividade/atividade4/atividade4") : accessLockedModule}>
+              <View style={styles.container_dividido}>
+              <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+              <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/Atividade/atividade4/atividade4") : acesse_Modulo_trancado}>
               <ThemedText style={styles.foto_texto4}>Frases</ThemedText>
               </TouchableOpacity>
               </View>
@@ -130,50 +124,50 @@ const accessLockedModule = () =>{
 
 
 
-              <ThemedText style={styles.titu_tex1}>Módulo 2</ThemedText>
-            <ThemedText style={styles.subtitu_tex1}>0/3 Atividades</ThemedText>
-              <View style={styles.containeractiv}>
-                <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-                <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/modulo_2/atividade1/atividade1") : accessLockedModule}>   
+              <ThemedText style={styles.titulo_texto1}>Módulo 2</ThemedText>
+            <ThemedText style={styles.subtitulo_texto1}>0/3 Atividades</ThemedText>
+              <View style={styles.container_dividido}>
+                <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+                <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/modulo_2/atividade1/atividade1") : acesse_Modulo_trancado}>   
                   <ThemedText style={styles.foto_texto}>yyyyyyyy</ThemedText>
                   </TouchableOpacity>
               </View>
 
-              <View style={styles.containeractiv}>
-              <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-              <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/modulo_2/atividade2/atividade2") : accessLockedModule}>
+              <View style={styles.container_dividido}>
+              <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+              <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/modulo_2/atividade2/atividade2") : acesse_Modulo_trancado}>
               <ThemedText style={styles.foto_texto2}>xxxxxxxxx</ThemedText>
               </TouchableOpacity>  
               </View>
 
-              <View style={styles.containeractiv}>
-              <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-              <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/modulo_2/atividade3/atividade3") : accessLockedModule}>
+              <View style={styles.container_dividido}>
+              <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+              <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/modulo_2/atividade3/atividade3") : acesse_Modulo_trancado}>
               <ThemedText style={styles.foto_texto2}>zzzzzzz</ThemedText>
               </TouchableOpacity>  
               </View>
 
 
 
-              <ThemedText style={styles.titu_tex1}>Módulo 3</ThemedText>
-            <ThemedText style={styles.subtitu_tex1}>0/3 Atividades</ThemedText>
-              <View style={styles.containeractiv}>
-                <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-                <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/modulo_3/atividade1/atividade1") : accessLockedModule}>   
+              <ThemedText style={styles.titulo_texto1}>Módulo 3</ThemedText>
+            <ThemedText style={styles.subtitulo_texto1}>0/3 Atividades</ThemedText>
+              <View style={styles.container_dividido}>
+                <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+                <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/modulo_3/atividade1/atividade1") : acesse_Modulo_trancado}>   
                   <ThemedText style={styles.foto_texto}>aaaaaaa</ThemedText>
                   </TouchableOpacity>
               </View>
 
-              <View style={styles.containeractiv}>
-              <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-              <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/modulo_3/atividade2/atividade2") : accessLockedModule}>
+              <View style={styles.container_dividido}>
+              <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+              <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/modulo_3/atividade2/atividade2") : acesse_Modulo_trancado}>
               <ThemedText style={styles.foto_texto2}>bbbbbbbb</ThemedText>
               </TouchableOpacity>  
               </View>
 
-              <View style={styles.containeractiv}>
-              <Image style={styles.Foto_t} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
-              <TouchableOpacity style={styles.navItem} onPress={unlocked ? () => router.push("/modulo_3/atividade3/atividade3") : accessLockedModule}>
+              <View style={styles.container_dividido}>
+              <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
+              <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/modulo_3/atividade3/atividade3") : acesse_Modulo_trancado}>
               <ThemedText style={styles.foto_texto2}>ccccccc</ThemedText>
               </TouchableOpacity>  
               </View>
@@ -188,23 +182,13 @@ const accessLockedModule = () =>{
 }
 
 const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
-  },
-  titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
-  },
   container: {
     flex: 1,
     backgroundColor: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
  //   alignItems: 'center',
    // justifyContent: 'center',
   },
-  progressBarContainer: {
+  progresso_Barra_Container: {
     width: '60%',
     height: 20,
     backgroundColor: '#e0e0e0',
@@ -213,10 +197,10 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 10,
   },
-  progressBar: {
+  progresso_da_Barra: {
     height: '100%',
   },
-  boxtop: {
+  topo_caixa: {
    // backgroundImage: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
    backgroundColor:  '#be6704',
    height: Dimensions.get('window').height/2,
@@ -224,39 +208,25 @@ const styles = StyleSheet.create({
     padding: 15,
     marginLeft: 5,
   },
-  boxMid: {
-    backgroundColor: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
-    //height: Dimensions.get('window').height/4,
-    width: '100%',
-    paddingHorizontal: 37,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  titu_tex: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
-    marginTop: 40,
-  },
-  titu_tex3: {
+  titulo_texto3: {
     color: '#000',
     fontSize: 20,
     fontWeight: 'bold',
     marginTop: 5,
   },
-  titu_tex1: {
+  titulo_texto1: {
     color: '#fff',
     fontSize: 30,
     fontWeight: 'bold',
     marginTop: 20,
   },
-  subtitu_tex1: {
+  subtitulo_texto1: {
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
     marginTop: 5,
   },
-  nav: {
+  navegação: {
     width: '100%',
     height: 60,
     backgroundColor: 'white',
@@ -265,7 +235,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 16,
   },
-  navBar: {
+  Barra_de_navegação: {
     width: '100%',
     height: 60, // altura da barra
     backgroundColor: 'white',
@@ -274,15 +244,15 @@ const styles = StyleSheet.create({
     alignItems: 'center', // Centralizar verticalmente
     paddingHorizontal: 16, // Distância das bordas   
     },
-    navItem: {
+    Item_navegação: {
       padding: 8,
     },
-    navTitle: {
+    Titulo_navegação: {
       fontSize: 18,
       fontWeight: 'bold',
       color: 'black',
     },
-    Foto_t: {
+    Foto_container: {
       marginTop: 15,
       height: 90,
       width: 90,
@@ -311,7 +281,7 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       marginTop: 5,
     },
-    containeractiv: {
+    container_dividido: {
       flexDirection: 'row',
       alignItems: 'center',
       padding: 10,

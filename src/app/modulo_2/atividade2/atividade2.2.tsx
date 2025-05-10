@@ -16,34 +16,33 @@ export default function atv3_soletrando() {
 
     const [progress, setProgress] = useState(0);
   
-    const handlePress = () => {
-     if (progress < 4) {
+    const Pressionar_barra = () => {
+     if (progress < 3) {
        setProgress(progress + 1);
-       AsyncStorage.setItem('progress', String(progress + 1)); // Salva o progresso
+       AsyncStorage.setItem('progress', String(progress + 1)); 
      }
    };
 
 
 
         function gotoActiv(){
-        handlePress ();
+        Pressionar_barra ();
         router.push("/modulo_2/atividade2/atividade2.3")
         }
 
 
-        const loadProgress = async () => {
+        const carregar_Progresso = async () => {
             try {
               const savedProgress = await AsyncStorage.getItem('progress');
               if (savedProgress !== null) {
-                setProgress(Number(savedProgress)); // Carrega o progresso salvo
+                setProgress(Number(savedProgress)); 
               }
             } catch (error) {
-              console.error('Failed to load progress', error);
             }
           };
 
           useEffect(() => {
-            loadProgress(); // Carrega o progresso quando a página for montada
+            carregar_Progresso(); 
           }, []);
 
 
@@ -55,7 +54,7 @@ export default function atv3_soletrando() {
         <View style={styles.progressBarContainer}>
         <View style={[styles.progressBar, 
           { 
-            backgroundColor: progress >= 4 ? 'blue' : 'blue',
+            backgroundColor: progress >= 3 ? 'blue' : 'blue',
             width: `${progress * 33.33}%`,
             } as ViewStyle, 
           ]} 

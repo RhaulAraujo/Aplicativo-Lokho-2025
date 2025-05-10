@@ -14,51 +14,49 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function atv3_soletrando() {
 
-    const [progress1, setProgress1] = useState(0);
+    const [progresso1, setProgresso1] = useState(0);
     const [progress, setProgress] = useState(0);
   
-    const handlePress1 = () => {
-     if (progress1 < 8) {
-       setProgress1(progress1 + 1);
-       AsyncStorage.setItem('progress1', String(progress1 + 1)); 
+    const Pressionar_barra1 = () => {
+     if (progresso1 < 8) {
+       setProgresso1(progresso1 + 1);
+       AsyncStorage.setItem('progresso1', String(progresso1 + 1)); 
      }
    };
 
 
 
         function gotoActiv(){
-        handlePress1 ();
+        Pressionar_barra1 ();
         router.push("/tabs/explore")
         }
 
 
-        const loadProgress = async () => {
+        const carregar_Progresso = async () => {
             try {
               const savedProgress = await AsyncStorage.getItem('progress');
               if (savedProgress !== null) {
-                setProgress(Number(savedProgress)); // Carrega o progresso salvo
+                setProgress(Number(savedProgress)); 
               }
             } catch (error) {
-              console.error('Failed to load progress', error);
             }
           };
 
 
 
-          const loadProgress1 = async () => {
+          const carregar_Progresso_1 = async () => {
             try {
-              const savedProgress1 = await AsyncStorage.getItem('progress1');
-              if (savedProgress1 !== null) {
-                setProgress1(Number(savedProgress1)); // Carrega o progresso salvo
+              const Progresso1_salvo = await AsyncStorage.getItem('progresso1');
+              if (Progresso1_salvo !== null) {
+                setProgresso1(Number(Progresso1_salvo)); 
               }
             } catch (error) {
-              console.error('Failed to load progress', error);
             }
           };
 
           useEffect(() => {
-            loadProgress(); // Carrega o progresso quando a página for montada
-            loadProgress1();
+            carregar_Progresso(); 
+            carregar_Progresso_1();
           }, []);
 
 
@@ -70,7 +68,7 @@ export default function atv3_soletrando() {
         <View style={styles.progressBarContainer}>
         <View style={[styles.progressBar, 
           { 
-            backgroundColor: progress >= 4 ? 'blue' : 'blue',
+            backgroundColor: progress >= 3 ? 'blue' : 'blue',
             width: `${progress * 33.33}%`,
             } as ViewStyle, 
           ]} 

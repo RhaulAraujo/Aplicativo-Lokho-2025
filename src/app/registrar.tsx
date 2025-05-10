@@ -11,22 +11,21 @@ import explore from '@/src/app/tabs/explore';
 import { Link, router } from 'expo-router';
 
 
-
 export default function registrar() {
-  function gotoExplore(){
+  function vá_para_explore(){
     router.push("/tabs/explore")
 }
   return (
     <ThemedView style={styles.container}>
 
-    <ThemedView style={styles.boxTop}>
+    <ThemedView style={styles.Topo_caixa}>
     <Image style={styles.logo} source={require('@/assets/images/lbs.png')} resizeMode='contain'></Image>
-    <ThemedText style={styles.titu_tex}>Criar Conta</ThemedText>
+    <ThemedText style={styles.titulo_texto}>Criar Conta</ThemedText>
    </ThemedView>
 
-    <ThemedView style={styles.boxMid}>
+    <ThemedView style={styles.Meio_caixa}>
      <ThemedText style={styles.titulo_input}>Inscreva-se com um E-mail</ThemedText>
-    <View style={styles.Box_input}>
+    <View style={styles.caixa_input}>
       <TextInput 
         style={styles.input}
       />
@@ -38,7 +37,7 @@ export default function registrar() {
     </View>
 
       <ThemedText style={styles.titulo_input}>Criar uma Senha</ThemedText>
-      <View style={styles.Box_input}>
+      <View style={styles.caixa_input}>
       <TextInput 
         style={styles.input}
       />
@@ -49,8 +48,8 @@ export default function registrar() {
       />
     </View>
     
-       <View style={styles.boxBottom}>
-        <TouchableOpacity style={styles.button} onPress={gotoExplore}>
+       <View style={styles.caixa_botão}>
+        <TouchableOpacity style={styles.botão} onPress={vá_para_explore}>
           <Text style={styles.texto_botao}>CRIAR</Text>
         </TouchableOpacity>
        </View>
@@ -62,7 +61,7 @@ export default function registrar() {
   );}
 
 const styles = StyleSheet.create({
-  boxTop: {
+  Topo_caixa: {
    // backgroundImage: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
    backgroundColor:  '#be6704',
    height: Dimensions.get('window').height/3,
@@ -70,27 +69,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  boxMid: {
+  Meio_caixa: {
     backgroundColor: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
     //height: Dimensions.get('window').height/4,
     width: '100%',
     paddingHorizontal: 37,
   },
-  boxBottom: {
+  caixa_botão: {
     //height: Dimensions.get('window').height/3,
     width: '100%',
     alignItems:'center',
     justifyContent: 'center',
     marginTop: 30,
     marginLeft: 4,
-  },
-  boxBottom1: {
-    //height: Dimensions.get('window').height/3,
-    width: '100%',
-    alignItems:'center',
-    justifyContent: 'center',
-    marginTop: 30,
-    marginLeft: 3,
   },
   container: {
     flex: 1,
@@ -102,7 +93,7 @@ const styles = StyleSheet.create({
     height: 80,
     width: 80,
   },
-  titu_tex: {
+  titulo_texto: {
     color: '#fff',
     fontSize: 24,
     fontWeight: 'bold',
@@ -113,7 +104,7 @@ const styles = StyleSheet.create({
     color: '#D3D3D3',
     marginTop: 20,  
   },
-  Box_input: {
+  caixa_input: {
     width: '100%',
     height: 45,
     borderWidth:1,
@@ -131,7 +122,7 @@ const styles = StyleSheet.create({
     width: '90%',
     borderRadius: 40,
   },
-  button: {
+  botão: {
     width: 250,
     height: 50,
     alignItems: 'center',
@@ -151,30 +142,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#c76700',
     fontWeight: 'bold',
-  },
-  texto_botao1:{
-    fontSize: 16,
-    color: '#9A2401',
-    fontWeight: 'bold',
-  },
-  linhabranca: {
-    position: 'relative',
-    width: '90%',
-    height: 1, 
-    backgroundColor: '#fff',
-    marginTop: 30,
-    flexGrow: 3,
-  },
-  palavralinha: {
-    position: 'absolute',
-    top: -16,
-    left: '65%',
-    transform: 'translateX(-50%)',
-    backgroundColor: '#000',
-    borderRadius: 40,
-    padding:   10, 
-    fontSize: 10,
-    fontWeight: 'bold',
-    color: '#fff', 
   },
 });

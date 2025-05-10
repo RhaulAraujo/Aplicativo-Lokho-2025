@@ -16,34 +16,33 @@ export default function atv2_soletrando() {
 
     const [progress, setProgress] = useState(0);
   
-    const handlePress = () => {
+    const Pressionar_barra = () => {
      if (progress < 4) {
        setProgress(progress + 1);
-       AsyncStorage.setItem('progress', String(progress + 1)); // Salva o progresso
+       AsyncStorage.setItem('progress', String(progress + 1)); 
      }
    };
 
 
 
         function gotoActiv(){
-        handlePress ();
+        Pressionar_barra ();
         router.push("/Atividade/atividade3/atividade3.4")
         }
 
 
-        const loadProgress = async () => {
+        const carregar_Progresso = async () => {
             try {
               const savedProgress = await AsyncStorage.getItem('progress');
               if (savedProgress !== null) {
-                setProgress(Number(savedProgress)); // Carrega o progresso salvo
+                setProgress(Number(savedProgress)); 
               }
             } catch (error) {
-              console.error('Failed to load progress', error);
             }
           };
 
           useEffect(() => {
-            loadProgress(); // Carrega o progresso quando a página for montada
+            carregar_Progresso(); 
           }, []);
 
 

@@ -32,6 +32,7 @@ export default function Atv_Alfabeto() {
     const verificarLetra = () => {
       if (palavra_A.toUpperCase() === 'A', palavra_P.toUpperCase() == 'P', palavra_N.toUpperCase() == 'N', palavra_W.toUpperCase() == 'W', palavra_J.toUpperCase() == 'J', palavra_X.toUpperCase() == 'X') {
         setIsError(false);
+        Pressionar_barra ();
         router.push("/Atividade/atividade1/atividade1.4")
       } else {
         setIsError(true);
@@ -40,35 +41,28 @@ export default function Atv_Alfabeto() {
 
    
 
-
-    const handlePress = () => {
+    const Pressionar_barra = () => {
      if (progress < 4) {
        setProgress(progress + 1);
-       AsyncStorage.setItem('progress', String(progress + 1)); // Salva o progresso
+       AsyncStorage.setItem('progress', String(progress + 1)); 
      }
    };
 
 
 
-        function gotoActiv(){
-        handlePress ();
-        router.push("/Atividade/atividade1/atividade1.4")
-        }
 
-
-        const loadProgress = async () => {
+        const carregar_Progresso = async () => {
             try {
               const savedProgress = await AsyncStorage.getItem('progress');
               if (savedProgress !== null) {
-                setProgress(Number(savedProgress)); // Carrega o progresso salvo
+                setProgress(Number(savedProgress)); 
               }
             } catch (error) {
-              console.error('Failed to load progress', error);
             }
           };
 
           useEffect(() => {
-            loadProgress(); // Carrega o progresso quando a página for montada
+            carregar_Progresso(); 
           }, []);
 
 

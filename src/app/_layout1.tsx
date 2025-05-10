@@ -1,6 +1,6 @@
 import { Stack } from "expo-router";
 import { FontAwesome } from "@expo/vector-icons";
-import explore from "@/app/tabs/explore";
+import explore from "@/src/app/tabs/explore";
 
 
 
