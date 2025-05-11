@@ -8,10 +8,28 @@ import { TabRouter } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import explore from '@/src/app/tabs/explore';
+import React, {useState} from 'react';
 import { Link, router } from 'expo-router';
+import { auth } from '../database/firebase';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
 
 export default function registrar() {
+
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("")
+
+  const fazer_registro = async () => {
+  createUserWithEmailAndPassword(auth, email, senha).then((userCredential) => {
+    const user = userCredential.user;
+    router.push("/tabs/explore")
+  })
+  .catch((error) =>{
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+  }
+
   function vá_para_explore(){
     router.push("/tabs/explore")
 }
@@ -28,6 +46,8 @@ export default function registrar() {
     <View style={styles.caixa_input}>
       <TextInput 
         style={styles.input}
+        value={email}
+        onChangeText={setEmail}
       />
       <MaterialIcons 
         name='email'
@@ -40,6 +60,8 @@ export default function registrar() {
       <View style={styles.caixa_input}>
       <TextInput 
         style={styles.input}
+        value={senha}
+        onChangeText={setSenha}
       />
       <MaterialIcons 
         name='remove-red-eye'
@@ -49,7 +71,7 @@ export default function registrar() {
     </View>
     
        <View style={styles.caixa_botão}>
-        <TouchableOpacity style={styles.botão} onPress={vá_para_explore}>
+        <TouchableOpacity style={styles.botão} onPress={fazer_registro}>
           <Text style={styles.texto_botao}>CRIAR</Text>
         </TouchableOpacity>
        </View>

@@ -50,7 +50,7 @@ const acesse_Modulo_trancado = () =>{
         try {
           const Progresso1_salvo = await AsyncStorage.getItem('progresso1');
           if (Progresso1_salvo !== null) {
-            setProgresso1(Number(Progresso1_salvo)); // Carrega o progresso salvo
+            setProgresso1(Number(Progresso1_salvo)); 
           }
         } catch (error) {
           console.error('Failed to load progress', error);
@@ -58,7 +58,7 @@ const acesse_Modulo_trancado = () =>{
       };
 
       useEffect(() => {
-        carregar_Progresso_1(); // Carrega o progresso quando a página for montada
+        carregar_Progresso_1(); 
       }, []);
 
 
@@ -67,15 +67,7 @@ const acesse_Modulo_trancado = () =>{
       return (
       <ScrollView style={styles.container}>
 
-      <View style={styles.Barra_de_navegação}>
-        <TouchableOpacity style={styles.Item_navegação} onPress={() => console.log('Opção 1')}>
-          <FontAwesome name="home" size={24} color="black" />
-        </TouchableOpacity>
-        <Text style={styles.Titulo_navegação}></Text>
-        <TouchableOpacity style={styles.Item_navegação} onPress={() => console.log('Opção 2')}>
-          <FontAwesome name="search" size={24} color="black" />
-        </TouchableOpacity>
-      </View>
+      <View style={styles.Barra_de_navegação}></View>
 
       <View style={styles.navegação}>
         <ThemedText style={styles.titulo_texto3}>Iniciante</ThemedText>

@@ -7,12 +7,37 @@ import { TextInput } from 'react-native-gesture-handler';
 import { MaterialIcons } from '@expo/vector-icons';
 import React, {useState, useEffect} from 'react';
 import { Link, router } from 'expo-router';
+import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
 
 export default function atv2_soletrando() {
+    const [palavra_A, setPalavra_A] = useState('');
+    const [palavra_P, setPalavra_P] = useState('');
+    const [palavra_N, setPalavra_N] = useState('');
+    const [palavra_W, setPalavra_W] = useState('');
+    const [palavra_J, setPalavra_J] = useState('');
+    const [palavra_X, setPalavra_X] = useState('');
+
+
+
+    const [isError, setIsError] = useState(false);
+    const router = useRouter();
+
+    const [letter, setLetter] = useState<string>('')
+  
+    const verificarLetra = () => {
+      if (palavra_A.toUpperCase() === 'A', palavra_P.toUpperCase() == 'P', palavra_N.toUpperCase() == 'N', palavra_W.toUpperCase() == 'W', palavra_J.toUpperCase() == 'J', palavra_X.toUpperCase() == 'X') {
+        setIsError(false);
+        Pressionar_barra ();
+        router.push("/Atividade/atividade3/atividade3.4")
+      } else {
+        setIsError(true);
+      }
+    };
+
 
     const [progress, setProgress] = useState(0);
   
@@ -25,10 +50,6 @@ export default function atv2_soletrando() {
 
 
 
-        function gotoActiv(){
-        Pressionar_barra ();
-        router.push("/Atividade/atividade3/atividade3.4")
-        }
 
 
         const carregar_Progresso = async () => {
@@ -63,21 +84,87 @@ export default function atv2_soletrando() {
       </View>
 
         <ThemedView style={styles.BlocoFundo}>
-             <View style={styles.containeractiv}>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_1_a_5.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_6_a_9.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_10_a_50.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_60_a_100.jpeg')} resizeMode='contain'/>
-              </View>
-       </ThemedView>
-
-
-            <TouchableOpacity style={styles.botao} onPress={gotoActiv}>
-              <Text style={styles.texto_botao}>Continue</Text>
-            </TouchableOpacity>
+        
+                 <View style={styles.containeractiv}>
+                 <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_a.jpeg')} resizeMode='contain'/>
+                 <TextInput 
+                  style={[styles.input, isError && styles.inputErro]} 
+                  placeholder="" 
+                  maxLength={1} 
+                  value={palavra_A}
+                  onChangeText={setPalavra_A}
+                  autoCapitalize="characters"
+                 />
+                 </View>
+        
+                 <View style={styles.containeractiv}>
+                 <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_p.jpeg')} resizeMode='contain'/>
+                 <TextInput 
+                  style={[styles.input, isError && styles.inputErro]} 
+                  placeholder="" 
+                  maxLength={1} 
+                  value={palavra_P}
+                  onChangeText={setPalavra_P}
+                  autoCapitalize="characters"
+                 />
+                 </View>
+        
+                 <View style={styles.containeractiv}>
+                 <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_n.jpeg')} resizeMode='contain'/>
+                 <TextInput 
+                  style={[styles.input, isError && styles.inputErro]} 
+                  placeholder=""
+                  maxLength={1} 
+                  value={palavra_N}
+                  onChangeText={setPalavra_N}
+                  autoCapitalize="characters"
+                 />
+                 </View>
+        
+                 <View style={styles.containeractiv}>
+                 <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_w.jpeg')} resizeMode='contain'/>
+                 <TextInput 
+                  style={[styles.input, isError && styles.inputErro]} 
+                  placeholder="" 
+                  maxLength={1} 
+                  value={palavra_W}
+                  onChangeText={setPalavra_W}
+                  autoCapitalize="characters"
+                 />
+                 </View>
+        
+                 <View style={styles.containeractiv}>
+                 <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_j.jpeg')} resizeMode='contain'/>
+                 <TextInput 
+                  style={[styles.input, isError && styles.inputErro]} 
+                  placeholder="" 
+                  maxLength={1} 
+                  value={palavra_J}
+                  onChangeText={setPalavra_J}
+                  autoCapitalize="characters"
+                 />
+                 </View>
+        
+                 <View style={styles.containeractiv}>
+                 <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_x.jpeg')} resizeMode='contain'/>
+                 <TextInput 
+                  style={[styles.input, isError && styles.inputErro]} 
+                  placeholder=""
+                  maxLength={1} 
+                  value={palavra_X}
+                  onChangeText={setPalavra_X}
+                  autoCapitalize="characters"
+                 />
+                 </View>
+        
+               </ThemedView>
+            
+       
+                    <TouchableOpacity style={styles.botao} onPress={verificarLetra}>
+                      <Text style={styles.texto_botao}>Continue</Text>
+                    </TouchableOpacity>
+                    
     
-
-
 
     </ScrollView>
 
@@ -166,5 +253,29 @@ const styles = StyleSheet.create({
     backgroundColor: '#fcbf6f',
     borderRadius: 10,
     marginBlock: 10,
+  },
+   input: {
+    width: 100,
+    height: 80,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 10,
+    textAlign: 'center',
+    fontSize: 20,
+    backgroundColor: 'white',
+    marginLeft: 40,
+    marginTop: 30,
+  },
+  inputErro: {
+    width: 100,
+    height: 80,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 10,
+    textAlign: 'center',
+    fontSize: 20,
+    backgroundColor: 'red',
+    marginLeft: 40,
+    marginTop: 30,
   },
 });
