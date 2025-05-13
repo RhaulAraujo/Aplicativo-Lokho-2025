@@ -1,25 +1,24 @@
-import { Image, StyleSheet, Platform, TouchableOpacity, View, ViewStyle, Text, ScrollView  } from 'react-native';
+import { Image, StyleSheet, Platform, TouchableOpacity, View, ViewStyle, Text, ScrollView, TextInput  } from 'react-native';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Dimensions } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
 import { MaterialIcons } from '@expo/vector-icons';
 import React, {useState, useEffect} from 'react';
 import { Link, router } from 'expo-router';
-import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useRouter } from 'expo-router';
+import { reload } from 'expo-router/build/global-state/routing';
 
 
 
-
-export default function atv2_soletrando() {
-    const [palavra_A, setPalavra_A] = useState('');
-    const [palavra_P, setPalavra_P] = useState('');
-    const [palavra_N, setPalavra_N] = useState('');
-    const [palavra_W, setPalavra_W] = useState('');
-    const [palavra_J, setPalavra_J] = useState('');
-    const [palavra_X, setPalavra_X] = useState('');
+export default function Atv_Alfabeto() {
+    const [palavra_1, setPalavra_1] = useState('');
+    const [palavra_2, setPalavra_2] = useState('');
+    const [palavra_3, setPalavra_3] = useState('');
+    const [palavra_4, setPalavra_4] = useState('');
+    const [palavra_5, setPalavra_5] = useState('');
+    const [palavra_6, setPalavra_6] = useState('');
 
 
 
@@ -27,9 +26,11 @@ export default function atv2_soletrando() {
     const router = useRouter();
 
     const [letter, setLetter] = useState<string>('')
+    const [progress, setProgress] = useState(0);
   
+
     const verificarLetra = () => {
-      if (palavra_A.toUpperCase() === 'A', palavra_P.toUpperCase() == 'P', palavra_N.toUpperCase() == 'N', palavra_W.toUpperCase() == 'W', palavra_J.toUpperCase() == 'J', palavra_X.toUpperCase() == 'X') {
+      if (palavra_1.toUpperCase() === 'POR FAVOR', palavra_2.toUpperCase() == 'EU ESTOU BEM', palavra_3.toUpperCase() == 'SAUDADE', palavra_4.toUpperCase() == 'OI', palavra_5.toUpperCase() == 'DESCULPE', palavra_6.toUpperCase() == 'TUDO BEM?') {
         setIsError(false);
         Pressionar_barra ();
         router.push("/Atividade/atividade3/atividade3.4")
@@ -38,16 +39,14 @@ export default function atv2_soletrando() {
       }
     };
 
+   
 
-    const [progress, setProgress] = useState(0);
-  
     const Pressionar_barra = () => {
      if (progress < 4) {
        setProgress(progress + 1);
        AsyncStorage.setItem('progress', String(progress + 1)); 
      }
    };
-
 
 
 
@@ -84,87 +83,93 @@ export default function atv2_soletrando() {
       </View>
 
         <ThemedView style={styles.BlocoFundo}>
-        
-                 <View style={styles.containeractiv}>
-                 <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_a.jpeg')} resizeMode='contain'/>
-                 <TextInput 
-                  style={[styles.input, isError && styles.inputErro]} 
-                  placeholder="" 
-                  maxLength={1} 
-                  value={palavra_A}
-                  onChangeText={setPalavra_A}
-                  autoCapitalize="characters"
-                 />
-                 </View>
-        
-                 <View style={styles.containeractiv}>
-                 <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_p.jpeg')} resizeMode='contain'/>
-                 <TextInput 
-                  style={[styles.input, isError && styles.inputErro]} 
-                  placeholder="" 
-                  maxLength={1} 
-                  value={palavra_P}
-                  onChangeText={setPalavra_P}
-                  autoCapitalize="characters"
-                 />
-                 </View>
-        
-                 <View style={styles.containeractiv}>
-                 <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_n.jpeg')} resizeMode='contain'/>
-                 <TextInput 
-                  style={[styles.input, isError && styles.inputErro]} 
-                  placeholder=""
-                  maxLength={1} 
-                  value={palavra_N}
-                  onChangeText={setPalavra_N}
-                  autoCapitalize="characters"
-                 />
-                 </View>
-        
-                 <View style={styles.containeractiv}>
-                 <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_w.jpeg')} resizeMode='contain'/>
-                 <TextInput 
-                  style={[styles.input, isError && styles.inputErro]} 
-                  placeholder="" 
-                  maxLength={1} 
-                  value={palavra_W}
-                  onChangeText={setPalavra_W}
-                  autoCapitalize="characters"
-                 />
-                 </View>
-        
-                 <View style={styles.containeractiv}>
-                 <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_j.jpeg')} resizeMode='contain'/>
-                 <TextInput 
-                  style={[styles.input, isError && styles.inputErro]} 
-                  placeholder="" 
-                  maxLength={1} 
-                  value={palavra_J}
-                  onChangeText={setPalavra_J}
-                  autoCapitalize="characters"
-                 />
-                 </View>
-        
-                 <View style={styles.containeractiv}>
-                 <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_x.jpeg')} resizeMode='contain'/>
-                 <TextInput 
-                  style={[styles.input, isError && styles.inputErro]} 
-                  placeholder=""
-                  maxLength={1} 
-                  value={palavra_X}
-                  onChangeText={setPalavra_X}
-                  autoCapitalize="characters"
-                 />
-                 </View>
-        
-               </ThemedView>
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/ativ-2/Por favor_gesto.jpeg')} resizeMode='contain'/>
+         <TextInput 
+          style={[styles.input, isError && styles.inputErro]} 
+          placeholder="" 
+          maxLength={100} 
+          value={palavra_1}
+          onChangeText={setPalavra_1}
+          autoCapitalize="characters"
+         />
+         </View>
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/ativ-2/Estou bem_sinal.jpeg')} resizeMode='contain'/>
+         <TextInput 
+          style={[styles.input, isError && styles.inputErro]} 
+          placeholder="" 
+          maxLength={100} 
+          value={palavra_2}
+          onChangeText={setPalavra_2}
+          autoCapitalize="characters"
+         />
+         </View>
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/ativ-2/Saudade_gesto.jpeg')} resizeMode='contain'/>
+         <TextInput 
+          style={[styles.input, isError && styles.inputErro]} 
+          placeholder=""
+          maxLength={100} 
+          value={palavra_3}
+          onChangeText={setPalavra_3}
+          autoCapitalize="characters"
+         />
+         </View>
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/ativ-2/oi-tchau_gesto.jpeg')} resizeMode='contain'/>
+         <TextInput 
+          style={[styles.input, isError && styles.inputErro]} 
+          placeholder="" 
+          maxLength={100} 
+          value={palavra_4}
+          onChangeText={setPalavra_4}
+          autoCapitalize="characters"
+         />
+         </View>
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/ativ-2/Desculpe_gesto.jpeg')} resizeMode='contain'/>
+         <TextInput 
+          style={[styles.input, isError && styles.inputErro]} 
+          placeholder="" 
+          maxLength={100} 
+          value={palavra_5}
+          onChangeText={setPalavra_5}
+          autoCapitalize="characters"
+         />
+         </View>
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/ativ-2/Tudo bem_gesto.jpeg')} resizeMode='contain'/>
+         <TextInput 
+          style={[styles.input, isError && styles.inputErro]} 
+          placeholder=""
+          maxLength={100} 
+          value={palavra_6}
+          onChangeText={setPalavra_6}
+          autoCapitalize="characters"
+         />
+         </View>
+
+
+
+       </ThemedView>
+
+
+
+
+             
+            <TouchableOpacity style={styles.botao} onPress={verificarLetra}>
+              <Text style={styles.texto_botao}>Continue</Text>
+            </TouchableOpacity>
             
-       
-                    <TouchableOpacity style={styles.botao} onPress={verificarLetra}>
-                      <Text style={styles.texto_botao}>Continue</Text>
-                    </TouchableOpacity>
-                    
-    
+
+
 
     </ScrollView>
 
@@ -186,14 +191,13 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   box: {
-    width: 80,
-    height: 80,
+    width: 150,
+    height: 120,
     backgroundColor: 'white',
     borderColor: 'black',
     borderWidth: 2,
     borderRadius: 10,
     marginTop: 10,
-    alignItems: 'center',
   },
   progressBarContainer: {
     width: '60%',
@@ -220,8 +224,6 @@ const styles = StyleSheet.create({
   },
   containeractiv: {
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
     padding: 1,
   },
   botao: {
@@ -254,8 +256,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBlock: 10,
   },
-   input: {
-    width: 100,
+  input: {
+    width: 140,
     height: 80,
     borderWidth: 1,
     borderColor: '#ccc',
@@ -267,7 +269,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   inputErro: {
-    width: 100,
+    width: 140,
     height: 80,
     borderWidth: 1,
     borderColor: '#ccc',
@@ -278,4 +280,7 @@ const styles = StyleSheet.create({
     marginLeft: 40,
     marginTop: 30,
   },
+
+
+
 });

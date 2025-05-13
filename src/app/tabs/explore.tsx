@@ -88,21 +88,21 @@ const acesse_Modulo_trancado = () =>{
               <View style={styles.container_dividido}>
                 <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
                 <TouchableOpacity onPress={acesse_Atividade1}>
-                <ThemedText style={styles.foto_texto}>Alfabeto</ThemedText>
+                <ThemedText style={styles.foto_texto}>Alfabeto e Números</ThemedText>
                 </TouchableOpacity>
               </View>
 
               <View style={styles.container_dividido}>
               <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
               <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/Atividade/atividade2/atividade2") : acesse_Modulo_trancado}>
-              <ThemedText style={styles.foto_texto2}>Cumprimentos</ThemedText>
+              <ThemedText style={styles.foto_texto2}>Algarismos</ThemedText>
               </TouchableOpacity>  
               </View>
 
               <View style={styles.container_dividido}>
               <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
               <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/Atividade/atividade3/atividade3") : acesse_Modulo_trancado}>
-              <ThemedText style={styles.foto_texto3}>Algarismos</ThemedText>
+              <ThemedText style={styles.foto_texto3}>Cumprimentos</ThemedText>
               </TouchableOpacity>
               </View>
 
@@ -121,21 +121,21 @@ const acesse_Modulo_trancado = () =>{
               <View style={styles.container_dividido}>
                 <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
                 <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/modulo_2/atividade1/atividade1") : acesse_Modulo_trancado}>   
-                  <ThemedText style={styles.foto_texto}>yyyyyyyy</ThemedText>
+                  <ThemedText style={styles.foto_texto}>Soletrando</ThemedText>
                   </TouchableOpacity>
               </View>
 
               <View style={styles.container_dividido}>
               <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
               <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/modulo_2/atividade2/atividade2") : acesse_Modulo_trancado}>
-              <ThemedText style={styles.foto_texto2}>xxxxxxxxx</ThemedText>
+              <ThemedText style={styles.foto_texto2}>Soma</ThemedText>
               </TouchableOpacity>  
               </View>
 
               <View style={styles.container_dividido}>
               <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
               <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/modulo_2/atividade3/atividade3") : acesse_Modulo_trancado}>
-              <ThemedText style={styles.foto_texto2}>zzzzzzz</ThemedText>
+              <ThemedText style={styles.foto_texto2}>Subtração</ThemedText>
               </TouchableOpacity>  
               </View>
 
@@ -146,21 +146,21 @@ const acesse_Modulo_trancado = () =>{
               <View style={styles.container_dividido}>
                 <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
                 <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/modulo_3/atividade1/atividade1") : acesse_Modulo_trancado}>   
-                  <ThemedText style={styles.foto_texto}>aaaaaaa</ThemedText>
+                  <ThemedText style={styles.foto_texto}>Cores</ThemedText>
                   </TouchableOpacity>
               </View>
 
               <View style={styles.container_dividido}>
               <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
               <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/modulo_3/atividade2/atividade2") : acesse_Modulo_trancado}>
-              <ThemedText style={styles.foto_texto2}>bbbbbbbb</ThemedText>
+              <ThemedText style={styles.foto_texto2}>Animais</ThemedText>
               </TouchableOpacity>  
               </View>
 
               <View style={styles.container_dividido}>
               <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
               <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/modulo_3/atividade3/atividade3") : acesse_Modulo_trancado}>
-              <ThemedText style={styles.foto_texto2}>ccccccc</ThemedText>
+              <ThemedText style={styles.foto_texto2}>Formas</ThemedText>
               </TouchableOpacity>  
               </View>
 

@@ -1,25 +1,24 @@
-import { Image, StyleSheet, Platform, TouchableOpacity, View, ViewStyle, Text, ScrollView  } from 'react-native';
+import { Image, StyleSheet, Platform, TouchableOpacity, View, ViewStyle, Text, ScrollView, TextInput  } from 'react-native';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Dimensions } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
 import { MaterialIcons } from '@expo/vector-icons';
 import React, {useState, useEffect} from 'react';
 import { Link, router } from 'expo-router';
-import { useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useRouter } from 'expo-router';
+import { reload } from 'expo-router/build/global-state/routing';
 
 
 
-
-export default function atv2_cumprimentos() {
-    const [palavra_A, setPalavra_A] = useState('');
-    const [palavra_P, setPalavra_P] = useState('');
-    const [palavra_N, setPalavra_N] = useState('');
-    const [palavra_W, setPalavra_W] = useState('');
-    const [palavra_J, setPalavra_J] = useState('');
-    const [palavra_X, setPalavra_X] = useState('');
+export default function Atv_Alfabeto() {
+    const [palavra_1, setPalavra_1] = useState('');
+    const [palavra_8, setPalavra_8] = useState('');
+    const [palavra_5, setPalavra_5] = useState('');
+    const [palavra_4, setPalavra_4] = useState('');
+    const [palavra_9, setPalavra_9] = useState('');
+    const [palavra_0, setPalavra_0] = useState('');
 
 
 
@@ -27,9 +26,11 @@ export default function atv2_cumprimentos() {
     const router = useRouter();
 
     const [letter, setLetter] = useState<string>('')
+    const [progress, setProgress] = useState(0);
   
+
     const verificarLetra = () => {
-      if (palavra_A.toUpperCase() === 'A', palavra_P.toUpperCase() == 'P', palavra_N.toUpperCase() == 'N', palavra_W.toUpperCase() == 'W', palavra_J.toUpperCase() == 'J', palavra_X.toUpperCase() == 'X') {
+      if (palavra_1.toUpperCase() === '1', palavra_8.toUpperCase() == '8', palavra_5.toUpperCase() == '5', palavra_4.toUpperCase() == '4', palavra_9.toUpperCase() == '9', palavra_0.toUpperCase() == '0') {
         setIsError(false);
         Pressionar_barra ();
         router.push("/Atividade/atividade2/atividade2.4")
@@ -38,10 +39,8 @@ export default function atv2_cumprimentos() {
       }
     };
 
+   
 
-
-    const [progress, setProgress] = useState(0);
-  
     const Pressionar_barra = () => {
      if (progress < 4) {
        setProgress(progress + 1);
@@ -63,11 +62,8 @@ export default function atv2_cumprimentos() {
           };
 
           useEffect(() => {
-            carregar_Progresso();
+            carregar_Progresso(); 
           }, []);
-
-
-
 
 
 
@@ -86,76 +82,76 @@ export default function atv2_cumprimentos() {
         </View>
       </View>
 
-<ThemedView style={styles.BlocoFundo}>
+        <ThemedView style={styles.BlocoFundo}>
 
          <View style={styles.containeractiv}>
-         <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_a.jpeg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/algarismas/1.jpeg')} resizeMode='contain'/>
          <TextInput 
           style={[styles.input, isError && styles.inputErro]} 
           placeholder="" 
           maxLength={1} 
-          value={palavra_A}
-          onChangeText={setPalavra_A}
+          value={palavra_1}
+          onChangeText={setPalavra_1}
           autoCapitalize="characters"
          />
          </View>
 
          <View style={styles.containeractiv}>
-         <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_p.jpeg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/algarismas/8.jpeg')} resizeMode='contain'/>
          <TextInput 
           style={[styles.input, isError && styles.inputErro]} 
           placeholder="" 
           maxLength={1} 
-          value={palavra_P}
-          onChangeText={setPalavra_P}
+          value={palavra_8}
+          onChangeText={setPalavra_8}
           autoCapitalize="characters"
          />
          </View>
 
          <View style={styles.containeractiv}>
-         <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_n.jpeg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/algarismas/5.jpeg')} resizeMode='contain'/>
          <TextInput 
           style={[styles.input, isError && styles.inputErro]} 
           placeholder=""
           maxLength={1} 
-          value={palavra_N}
-          onChangeText={setPalavra_N}
+          value={palavra_5}
+          onChangeText={setPalavra_5}
           autoCapitalize="characters"
          />
          </View>
 
          <View style={styles.containeractiv}>
-         <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_w.jpeg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/algarismas/4.jpeg')} resizeMode='contain'/>
          <TextInput 
           style={[styles.input, isError && styles.inputErro]} 
           placeholder="" 
           maxLength={1} 
-          value={palavra_W}
-          onChangeText={setPalavra_W}
+          value={palavra_4}
+          onChangeText={setPalavra_4}
           autoCapitalize="characters"
          />
          </View>
 
          <View style={styles.containeractiv}>
-         <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_j.jpeg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/algarismas/9.jpeg')} resizeMode='contain'/>
          <TextInput 
           style={[styles.input, isError && styles.inputErro]} 
           placeholder="" 
           maxLength={1} 
-          value={palavra_J}
-          onChangeText={setPalavra_J}
+          value={palavra_9}
+          onChangeText={setPalavra_9}
           autoCapitalize="characters"
          />
          </View>
 
          <View style={styles.containeractiv}>
-         <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_x.jpeg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/algarismas/0.jpeg')} resizeMode='contain'/>
          <TextInput 
           style={[styles.input, isError && styles.inputErro]} 
           placeholder=""
           maxLength={1} 
-          value={palavra_X}
-          onChangeText={setPalavra_X}
+          value={palavra_0}
+          onChangeText={setPalavra_0}
           autoCapitalize="characters"
          />
          </View>
@@ -195,14 +191,13 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   box: {
-    width: 80,
-    height: 80,
+    width: 150,
+    height: 120,
     backgroundColor: 'white',
     borderColor: 'black',
     borderWidth: 2,
     borderRadius: 10,
     marginTop: 10,
-    alignItems: 'center',
   },
   progressBarContainer: {
     width: '60%',
@@ -229,8 +224,6 @@ const styles = StyleSheet.create({
   },
   containeractiv: {
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
     padding: 1,
   },
   botao: {
@@ -263,7 +256,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBlock: 10,
   },
- input: {
+  input: {
     width: 100,
     height: 80,
     borderWidth: 1,
@@ -287,4 +280,7 @@ const styles = StyleSheet.create({
     marginLeft: 40,
     marginTop: 30,
   },
+
+
+
 });
