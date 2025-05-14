@@ -18,7 +18,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
-export default function TabTwoScreen() {
+export default function Página_inicial() {
 
 const [desbloqueio, setDesbloqueio] = useState<boolean>(false);
 const router = useRouter();
@@ -66,8 +66,6 @@ const acesse_Modulo_trancado = () =>{
 
       return (
       <ScrollView style={styles.container}>
-
-      <View style={styles.Barra_de_navegação}></View>
 
       <View style={styles.navegação}>
         <ThemedText style={styles.titulo_texto3}>Iniciante</ThemedText>
@@ -195,7 +193,7 @@ const styles = StyleSheet.create({
   topo_caixa: {
    // backgroundImage: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
    backgroundColor:  '#be6704',
-   height: Dimensions.get('window').height/2,
+   //height: Dimensions.get('window').height/2,
     width: '100%',
     padding: 15,
     marginLeft: 5,
@@ -208,7 +206,7 @@ const styles = StyleSheet.create({
   },
   titulo_texto1: {
     color: '#fff',
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: 'bold',
     marginTop: 20,
   },

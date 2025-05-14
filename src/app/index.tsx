@@ -33,7 +33,6 @@ export default function index() {
           await signInWithEmailAndPassword(auth, email, senha);
           
           // Se chegar aqui, o login funcionou
-          Alert.alert("Login realizado com sucesso!");
           router.push("/tabs/explore");
           
         } catch (error) {

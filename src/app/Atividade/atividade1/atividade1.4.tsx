@@ -30,11 +30,10 @@ if (selectedButtons.includes(option)) {
 
 const checkAnswer = () => {
   if (selectedButtons.sort().join() === correctPair.sort().join()) {
-    Alert.alert('Par correto! Avançando...');
     Pressionar_barra1 ();
     router.push('/tabs/explore');
   } else {
-    Alert.alert('Par incorreto! Tente novamente.');
+
   }
 };
 
@@ -77,7 +76,6 @@ const checkAnswer = () => {
 
           useEffect(() => {
             carregar_Progresso(); 
-            carregar_Progresso_1();
           }, []);
 
 
@@ -287,7 +285,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.29,
     shadowRadius: 4.65,
     elevation:7,
-    marginTop: 180,
+    marginTop: 10,
     marginLeft: 100,
     marginEnd: 50,
   },

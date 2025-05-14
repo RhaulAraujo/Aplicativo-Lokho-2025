@@ -31,11 +31,10 @@ export default function atv3_soletrando() {
     
     const checkAnswer = () => {
       if (selectedButtons.sort().join() === correctPair.sort().join()) {
-        Alert.alert('Par correto! Avançando...');
         Pressionar_barra1 ();
         router.push('/tabs/explore');
       } else {
-        Alert.alert('Par incorreto! Tente novamente.');
+
       }
     };
 
