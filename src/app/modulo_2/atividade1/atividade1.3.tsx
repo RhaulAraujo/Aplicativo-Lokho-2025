@@ -12,7 +12,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
-export default function Atv_numeros() {
+export default function Atv_Soletrando_2() {
 
 const router = useRouter();
 
@@ -44,7 +44,7 @@ const checkAnswer = () => {
 
 
     const Pressionar_barra1 = () => {
-     if (progresso1 < 1) {
+     if (progresso1 < 5) {
        setProgresso1(progresso1 + 1);
        AsyncStorage.setItem('progresso1', String(progresso1 + 1)); 
      }
@@ -64,8 +64,20 @@ const checkAnswer = () => {
 
 
 
+          const carregar_Progresso_1 = async () => {
+            try {
+              const Progresso1_salvo = await AsyncStorage.getItem('progresso1');
+              if (Progresso1_salvo !== null) {
+                setProgresso1(Number(Progresso1_salvo)); 
+              }
+            } catch (error) {
+            }
+          };
+
+
           useEffect(() => {
             carregar_Progresso(); 
+            carregar_Progresso_1();
           }, []);
 
 
@@ -77,7 +89,7 @@ const checkAnswer = () => {
         <View style={styles.progressBarContainer}>
         <View style={[styles.progressBar, 
           { 
-            backgroundColor: progress >= 4 ? 'blue' : 'blue',
+            backgroundColor: progress >= 3 ? 'blue' : 'blue',
             width: `${progress * 33.33}%`,
             } as ViewStyle, 
           ]} 

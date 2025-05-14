@@ -12,7 +12,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
-export default function Atv_numeros() {
+export default function Atv_Reconhecer_numeros_2() {
 
 const router = useRouter();
 
@@ -44,7 +44,7 @@ const checkAnswer = () => {
 
 
     const Pressionar_barra1 = () => {
-     if (progresso1 < 1) {
+     if (progresso1 < 2) {
        setProgresso1(progresso1 + 1);
        AsyncStorage.setItem('progresso1', String(progresso1 + 1)); 
      }
@@ -63,9 +63,21 @@ const checkAnswer = () => {
           };
 
 
+  
+          const carregar_Progresso_1 = async () => {
+            try {
+              const Progresso1_salvo = await AsyncStorage.getItem('progresso1');
+              if (Progresso1_salvo !== null) {
+                setProgresso1(Number(Progresso1_salvo)); 
+              }
+            } catch (error) {
+            }
+          };
+
 
           useEffect(() => {
             carregar_Progresso(); 
+            carregar_Progresso_1();
           }, []);
 
 
@@ -99,7 +111,7 @@ const checkAnswer = () => {
           style={[styles.button1, selectedButtons.includes('C') && styles.selectedButton]}
           onPress={() => handleSelect('C')}
           >
-         <Image style={styles.box1} source={require('@/assets/images/ativ-1/letra_f.jpeg')} resizeMode='contain'/>
+         <Image style={styles.box1} source={require('@/assets/images/algarismas/4.jpeg')} resizeMode='contain'/>
           </TouchableOpacity>   
 
       </View>
@@ -110,7 +122,7 @@ const checkAnswer = () => {
           style={[styles.button2, selectedButtons.includes('B') && styles.selectedButton]}
           onPress={() => handleSelect('B')}
           >
-         <Image style={styles.box2} source={require('@/assets/images/ativ-1/letra_a.jpeg')} resizeMode='contain'/>
+         <Image style={styles.box2} source={require('@/assets/images/algarismas/50.jpeg')} resizeMode='contain'/>
           </TouchableOpacity>   
       </View>
 
@@ -121,7 +133,7 @@ const checkAnswer = () => {
           style={[styles.button2, selectedButtons.includes('B') && styles.selectedButton]}
           onPress={() => handleSelect('B')}
           >
-         <Image style={styles.box2} source={require('@/assets/images/ativ-1/letra_h.jpeg')} resizeMode='contain'/>
+         <Image style={styles.box2} source={require('@/assets/images/algarismas/6.jpeg')} resizeMode='contain'/>
           </TouchableOpacity>   
       </View>
 
@@ -132,7 +144,7 @@ const checkAnswer = () => {
           style={[styles.button2, selectedButtons.includes('1') && styles.selectedButton]}
           onPress={() => handleSelect('1')}
           >
-         <Image style={styles.box2} source={require('@/assets/images/ativ-1/letra_o.jpeg')} resizeMode='contain'/>
+         <Image style={styles.box2} source={require('@/assets/images/algarismas/10.jpeg')} resizeMode='contain'/>
           </TouchableOpacity>   
       </View>
 

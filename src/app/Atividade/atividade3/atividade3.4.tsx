@@ -44,7 +44,7 @@ const checkAnswer = () => {
 
 
     const Pressionar_barra1 = () => {
-     if (progresso1 < 1) {
+     if (progresso1 < 3) {
        setProgresso1(progresso1 + 1);
        AsyncStorage.setItem('progresso1', String(progresso1 + 1)); 
      }
@@ -64,8 +64,22 @@ const checkAnswer = () => {
 
 
 
+
+          const carregar_Progresso_1 = async () => {
+            try {
+              const Progresso1_salvo = await AsyncStorage.getItem('progresso1');
+              if (Progresso1_salvo !== null) {
+                setProgresso1(Number(Progresso1_salvo)); 
+              }
+            } catch (error) {
+            }
+          };
+
+
+
           useEffect(() => {
             carregar_Progresso(); 
+            carregar_Progresso_1();
           }, []);
 
 

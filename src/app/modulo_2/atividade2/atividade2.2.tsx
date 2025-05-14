@@ -12,7 +12,7 @@ import { reload } from 'expo-router/build/global-state/routing';
 
 
 
-export default function Atv_Alfabeto() {
+export default function Atv_Soma() {
     const [palavra_1, setPalavra_1] = useState('');
     const [palavra_2, setPalavra_2] = useState('');
     const [palavra_3, setPalavra_3] = useState('');
@@ -42,7 +42,7 @@ export default function Atv_Alfabeto() {
    
 
     const Pressionar_barra = () => {
-     if (progress < 4) {
+     if (progress < 3) {
        setProgress(progress + 1);
        AsyncStorage.setItem('progress', String(progress + 1)); 
      }
@@ -74,7 +74,7 @@ export default function Atv_Alfabeto() {
         <View style={styles.progressBarContainer}>
         <View style={[styles.progressBar, 
           { 
-            backgroundColor: progress >= 4 ? 'blue' : 'blue',
+            backgroundColor: progress >= 3 ? 'blue' : 'blue',
             width: `${progress * 33.33}%`,
             } as ViewStyle, 
           ]} 

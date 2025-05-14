@@ -12,7 +12,7 @@ import { reload } from 'expo-router/build/global-state/routing';
 
 
 
-export default function Atv_Alfabeto() {
+export default function Atv_Reconhecer_numeros_1() {
     const [palavra_1, setPalavra_1] = useState('');
     const [palavra_8, setPalavra_8] = useState('');
     const [palavra_5, setPalavra_5] = useState('');

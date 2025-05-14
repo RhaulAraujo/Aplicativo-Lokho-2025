@@ -114,6 +114,10 @@ export default function index() {
 
   );}
 
+
+const { width, height } = Dimensions.get('window');
+
+
 const styles = StyleSheet.create({
   Topo_da_caixa: {
    // backgroundImage: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
@@ -154,17 +158,19 @@ const styles = StyleSheet.create({
   logo: {
     height: 100,
     width: 80,
+    resizeMode: 'contain',
   },
   titulo_texto: {
     color: '#fff',
     fontSize: 24,
     fontWeight: 'bold',
-    marginTop: 30,
+    marginTop: 10,
+    textAlign: 'center',
   },
   titulo_do_input: {
-    marginLeft: 5,
+    alignSelf: 'flex-start',
     color: '#D3D3D3',
-    marginTop: 20,  
+    marginTop: 20,
   },
   caixa_do_input: {
     width: '100%',
@@ -185,20 +191,17 @@ const styles = StyleSheet.create({
     borderRadius: 40,
   },
   botão: {
-    width: 250,
+    width: '80%',
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#000',
     borderRadius: 40,
     shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
+    shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.29,
     shadowRadius: 4.65,
-    elevation:7,
+    elevation: 7,
   },
   texto_botão: {
     fontSize: 16,
@@ -211,23 +214,24 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   linhabranca: {
-    position: 'relative',
-    width: '90%',
-    height: 1, 
+     width: '80%',
+    height: 1,
     backgroundColor: '#fff',
     marginTop: 30,
-    flexGrow: 3,
+    position: 'relative',
+    alignSelf: 'center',
+
   },
   palavralinha: {
     position: 'absolute',
-    top: -16,
-    left: '65%',
-    transform: 'translateX(-50%)',
+    top: -12,
+    alignSelf: 'center',
     backgroundColor: '#000',
     borderRadius: 40,
-    padding:   10, 
-    fontSize: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 2,
+    fontSize: 12,
     fontWeight: 'bold',
-    color: '#fff', 
+    color: '#fff',
   },
 });

@@ -12,7 +12,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
-export default function Atv_numeros() {
+export default function Atv_Alfabeto_2() {
 
 const router = useRouter();
 
@@ -64,8 +64,20 @@ const checkAnswer = () => {
 
 
 
+          const carregar_Progresso_1 = async () => {
+            try {
+              const Progresso1_salvo = await AsyncStorage.getItem('progresso1');
+              if (Progresso1_salvo !== null) {
+                setProgresso1(Number(Progresso1_salvo)); 
+              }
+            } catch (error) {
+            }
+          };
+
+
           useEffect(() => {
             carregar_Progresso(); 
+            carregar_Progresso_1();
           }, []);
 
 
