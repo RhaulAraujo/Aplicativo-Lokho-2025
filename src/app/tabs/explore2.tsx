@@ -13,11 +13,39 @@ import { Link, router } from 'expo-router';
 import { getAuth, signOut } from "firebase/auth";
 import { auth } from '@/src/database/firebase';
 import index from '@/src/app/index';
+import { launchImageLibrary } from 'react-native-image-picker';
 
 
 
 export default function TabTwoScreen() {
+  
+  const [ImagemPerfil, setImagemPerfil] = useState<string | null>(null);
 
+  const selectImagem = () => {
+    launchImageLibrary({ mediaType: 'photo' }, (response) => {
+      if (response.assets && response.assets.length > 0 && response.assets[0].uri) {
+        setImagemPerfil(response.assets[0].uri);
+      } else {
+        setImagemPerfil(null);
+      }
+    });
+  };
+
+
+
+
+
+
+const [email, setEmail] = useState<string>('');
+
+  useEffect(() => {
+    const user = getAuth().currentUser;
+    if (user?.email) {
+      setEmail(user.email);
+    }
+  },
+  []);
+  
   const Sair_usuario = async () => {
     signOut(auth).then(() =>{
       router.push("/")
@@ -34,7 +62,14 @@ export default function TabTwoScreen() {
         <ThemedView style={styles.topo_caixa}>
              
          <View style={styles.containeractiv}>
-           <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_a.jpeg')} resizeMode='contain'/>
+           <Image 
+            source={ImagemPerfil ? { uri: ImagemPerfil} : require('@/assets/images/Alfabeto/LetraA.jpeg')}
+            style={styles.box}
+           />
+         <Button title='Escolher Foto' onPress={selectImagem}/>
+         </View>
+            <View style={styles.containeractiv1}>
+            <Text style={styles.email_texto}>{email}</Text>
          </View>
 
       <View style={styles.caixa_botão1}>
@@ -69,12 +104,17 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderColor: 'black',
     borderWidth: 2,
-    borderRadius: 10,
+    borderRadius: 80,
     marginTop: 250,
     marginLeft: 120,
   },
     containeractiv: {
     padding: 1,
+  },
+    containeractiv1: {
+    padding: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
     caixa_botão1: {
     //height: Dimensions.get('window').height/3,
@@ -105,4 +145,9 @@ const styles = StyleSheet.create({
     color: '#c76700',
     fontWeight: 'bold',
   },
+  email_texto: {
+    color:'orange',
+    fontSize:30,
+    fontFamily: 'serif',
+  }
 });
