@@ -13,7 +13,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
-export default function atv3_soletrando() {
+export default function atv1_animais_2() {
 
     const router = useRouter();
       
@@ -102,25 +102,59 @@ export default function atv3_soletrando() {
 
  <ThemedView style={styles.BlocoFundo}>
 
+      <View style={styles.containeractiv}>
           <TouchableOpacity
           style={[styles.button, selectedButtons.includes('A') && styles.selectedButton]}
           onPress={() => handleSelect('A')}
           >
-            <Text style={styles.buttonText}>A</Text>
+         <Image style={styles.box1} source={require('@/assets/images/ativ-7/Urubu.jpeg')} resizeMode='contain'/>
           </TouchableOpacity>
 
           <TouchableOpacity
-          style={[styles.button, selectedButtons.includes('1') && styles.selectedButton]}
+          style={[styles.button1, selectedButtons.includes('B') && styles.selectedButton]}
+          onPress={() => handleSelect('B')}
+          >
+         <Image style={styles.box1} source={require('@/assets/images/ativ-7/Veado_sinal.jpeg')} resizeMode='contain'/>
+          </TouchableOpacity>   
+
+      </View>
+
+      <View style={styles.containeractiv}>
+        
+          <TouchableOpacity
+          style={[styles.button2, selectedButtons.includes('B') && styles.selectedButton]}
+          onPress={() => handleSelect('B')}
+          >
+         <Image style={styles.box2} source={require('@/assets/images/ativ-7/Panda_sinal.jpeg')} resizeMode='contain'/>
+          </TouchableOpacity>   
+      </View>
+
+
+      <View style={styles.containeractiv}>
+        
+          <TouchableOpacity
+          style={[styles.button2, selectedButtons.includes('1') && styles.selectedButton]}
           onPress={() => handleSelect('1')}
           >
-            <Text style={styles.buttonText}>B</Text>
-          </TouchableOpacity>
+         <Image style={styles.box2} source={require('@/assets/images/ativ-7/Urubu_sinal.jpeg')} resizeMode='contain'/>
+          </TouchableOpacity>   
+      </View>
 
+
+            <View style={styles.containeractiv}>
+        
+          <TouchableOpacity
+          style={[styles.button2, selectedButtons.includes('B') && styles.selectedButton]}
+          onPress={() => handleSelect('B')}
+          >
+         <Image style={styles.box2} source={require('@/assets/images/ativ-7/Zebra_sinal.jpeg')} resizeMode='contain'/>
+          </TouchableOpacity>   
+      </View>
 
        </ThemedView>
 
              
-            <TouchableOpacity style={[styles.verifyButton, selectedButtons.length === 2 && correctPair.includes(selectedButtons[0]) && correctPair.includes(selectedButtons[1]) ? styles.correctButton : styles.wrongButton]} onPress={checkAnswer}>
+            <TouchableOpacity style={[styles.botao, selectedButtons.length === 2 && correctPair.includes(selectedButtons[0]) && correctPair.includes(selectedButtons[1]) ? styles.correctButton : styles.wrongButton]} onPress={checkAnswer}>
               <Text style={styles.verifyButtonText}>Continue</Text>
             </TouchableOpacity>
 
@@ -157,6 +191,58 @@ const styles = StyleSheet.create({
     marginTop: 10,
     alignItems: 'center',
   },
+  box1: {
+    width: 110,
+    height: 110,
+    backgroundColor: 'white',
+    borderColor: 'black',
+    borderWidth: 2,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  box2: {
+    width: 110,
+    height: 110,
+    backgroundColor: 'white',
+    borderColor: 'black',
+    borderWidth: 2,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  button1: {
+    width: 110,
+    height: 110,
+    backgroundColor: 'white',
+    borderColor: 'black',
+    borderWidth: 2,
+    borderRadius: 10,
+    marginLeft: 120,
+    marginTop: 10,
+    alignItems: 'center',
+  },
+  button2: {
+    width: 110,
+    height: 110,
+    backgroundColor: 'white',
+    borderColor: 'black',
+    borderWidth: 2,
+    borderRadius: 10,
+    marginLeft: 260,
+    marginTop: 30,
+    alignItems: 'center',
+  },
+  input: {
+    width: 100,
+    height: 80,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 10,
+    textAlign: 'center',
+    fontSize: 20,
+    backgroundColor: 'white',
+    marginLeft: 40,
+    marginTop: 30,
+  },
   progressBarContainer: {
     width: '60%',
     height: 20,
@@ -182,8 +268,6 @@ const styles = StyleSheet.create({
   },
   containeractiv: {
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
     padding: 1,
   },
   botao: {
@@ -201,7 +285,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.29,
     shadowRadius: 4.65,
     elevation:7,
-    marginTop: 20,
+    marginTop: 180,
     marginLeft: 100,
     marginEnd: 50,
   },
@@ -217,19 +301,22 @@ const styles = StyleSheet.create({
     marginBlock: 10,
   },
   button: {
-  width: 80,
-  height: 80,
-  justifyContent: 'center',
-  alignItems: 'center',
-  backgroundColor: '#DDD',
-  margin: 10,
-  borderRadius: 10,
+   width: 110,
+    height: 110,
+    backgroundColor: 'white',
+    borderColor: 'black',
+    borderWidth: 2,
+    borderRadius: 10,
+    marginTop: 10,
+    alignItems: 'center',
+    marginLeft: 30,
   },
   selectedButton: {
     backgroundColor: '#ADD8E6'
   },
   buttonText: {
-    fontSize: 18,
+    fontSize: 38,
+    marginTop: 20,
   },
   correctButton: {
     backgroundColor: 'green',
@@ -237,14 +324,9 @@ const styles = StyleSheet.create({
   wrongButton: {
     backgroundColor: 'red'
   },
-  verifyButton: {
-    marginTop: 20,
-    padding: 10,
-    borderRadius: 5,
-    backgroundColor: "#DDD"
-  },
   verifyButtonText: {
     fontSize: 18,
     color: 'white',
-  },
+  }
 });
+

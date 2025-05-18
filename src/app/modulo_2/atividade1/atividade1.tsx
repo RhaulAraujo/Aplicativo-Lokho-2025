@@ -51,12 +51,66 @@ export default function atv3_soletrando() {
       </View>
 
         <ThemedView style={styles.BlocoFundo}>
-             <View style={styles.containeractiv}>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_1_a_5.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_6_a_9.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_10_a_50.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_60_a_100.jpeg')} resizeMode='contain'/>
-              </View>
+        <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraA.jpeg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraB.jpg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraC.jpg')} resizeMode='contain'/>
+         </View>
+
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraD.jpg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraE.jpg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraF.jpg')} resizeMode='contain'/>
+         </View>
+
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraG.jpg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraH.jpg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraI.jpg')} resizeMode='contain'/>
+         </View>
+
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraJ.jpg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraK.jpg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraL.jpg')} resizeMode='contain'/>
+         </View>
+
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraM.jpg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraN.jpg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraO.jpg')} resizeMode='contain'/>
+         </View>
+
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraP.jpg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraQ.jpg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraR.jpg')} resizeMode='contain'/>
+         </View>
+
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraS.jpg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraT.jpg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraU.jpg')} resizeMode='contain'/>
+         </View>
+
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraV.jpg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraW.jpg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraX.jpg')} resizeMode='contain'/>
+         </View>
+
+
+         <View style={styles.containeractiv}>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraY.jpg')} resizeMode='contain'/>
+         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraZ.jpg')} resizeMode='contain'/>
+         </View>
        </ThemedView>
 
 

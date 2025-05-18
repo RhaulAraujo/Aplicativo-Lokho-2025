@@ -12,7 +12,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
-export default function atv3_soletrando() {
+export default function atv1_Cores() {
 
     const [progress, setProgress] = useState(0);
   
@@ -51,11 +51,18 @@ export default function atv3_soletrando() {
 
         <ThemedView style={styles.BlocoFundo}>
              <View style={styles.containeractiv}>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_1_a_5.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_6_a_9.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_10_a_50.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_60_a_100.jpeg')} resizeMode='contain'/>
+             <Image style={styles.box} source={require('@/assets/images/cores/Amarelo.jpeg')} resizeMode='contain'/>
+             <Image style={styles.box} source={require('@/assets/images/cores/Vermelho.jpeg')} resizeMode='contain'/>
+             <Image style={styles.box} source={require('@/assets/images/cores/Azul.jpeg')} resizeMode='contain'/>
+             <Image style={styles.box} source={require('@/assets/images/cores/Verde.jpeg')} resizeMode='contain'/>
               </View>
+
+             <View style={styles.containeractiv}>
+             <Image style={styles.box} source={require('@/assets/images/cores/Lilás.jpeg')} resizeMode='contain'/>
+             <Image style={styles.box} source={require('@/assets/images/cores/Cinza.jpeg')} resizeMode='contain'/>
+             <Image style={styles.box} source={require('@/assets/images/cores/Laranja.jpeg')} resizeMode='contain'/>
+              </View>
+
        </ThemedView>
 
 
@@ -86,8 +93,8 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   box: {
-    width: 80,
-    height: 80,
+    width: 100,
+    height: 100,
     backgroundColor: 'white',
     borderColor: 'black',
     borderWidth: 2,

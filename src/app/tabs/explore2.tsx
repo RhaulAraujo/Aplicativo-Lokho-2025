@@ -66,8 +66,14 @@ const [email, setEmail] = useState<string>('');
             source={ImagemPerfil ? { uri: ImagemPerfil} : require('@/assets/images/Alfabeto/LetraA.jpeg')}
             style={styles.box}
            />
-         <Button title='Escolher Foto' onPress={selectImagem}/>
+          <View style={styles.caixa_botão2}>
+         <TouchableOpacity style={styles.botão2} onPress={selectImagem}>
+          <Text style={styles.texto_botão}>Foto</Text>
+         </TouchableOpacity>
          </View>
+
+         </View>
+         
             <View style={styles.containeractiv1}>
             <Text style={styles.email_texto}>{email}</Text>
          </View>
@@ -115,6 +121,7 @@ const styles = StyleSheet.create({
     padding: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 10,
   },
     caixa_botão1: {
     //height: Dimensions.get('window').height/3,
@@ -124,8 +131,32 @@ const styles = StyleSheet.create({
     marginTop: 100,
     marginLeft: 3,
   },
+    caixa_botão2: {
+    //height: Dimensions.get('window').height/3,
+    width: '100%',
+    alignItems:'center',
+    justifyContent: 'center',
+    marginTop: 10,
+    marginLeft: 3,
+  },
     botão: {
     width: 250,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#000',
+    borderRadius: 40,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.29,
+    shadowRadius: 4.65,
+    elevation:7,
+  },
+    botão2: {
+    width: 100,
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',

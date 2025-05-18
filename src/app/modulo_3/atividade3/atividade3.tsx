@@ -51,13 +51,17 @@ export default function atv3_soletrando() {
 
         <ThemedView style={styles.BlocoFundo}>
              <View style={styles.containeractiv}>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_1_a_5.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_6_a_9.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_10_a_50.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_60_a_100.jpeg')} resizeMode='contain'/>
+             <Image style={styles.box} source={require('@/assets/images/Formas/Triangulo_forma_nome.jpeg')} resizeMode='contain'/>
+             <Image style={styles.box} source={require('@/assets/images/Formas/Retangulo_forma_nome.jpeg')} resizeMode='contain'/>
+             <Image style={styles.box} source={require('@/assets/images/Formas/Estrela_forma_nome.jpeg')} resizeMode='contain'/>
               </View>
-       </ThemedView>
 
+             <View style={styles.containeractiv}>
+             <Image style={styles.box} source={require('@/assets/images/Formas/Quadrado_forma_nome.jpeg')} resizeMode='contain'/>
+             <Image style={styles.box} source={require('@/assets/images/Formas/Circulo_forma_nome.jpeg')} resizeMode='contain'/>
+             </View>
+        </ThemedView>
+ 
 
             <TouchableOpacity style={styles.botao} onPress={gotoActiv}>
               <Text style={styles.texto_botao}>Continue</Text>
@@ -86,8 +90,8 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   box: {
-    width: 80,
-    height: 80,
+    width: 100,
+    height: 100,
     backgroundColor: 'white',
     borderColor: 'black',
     borderWidth: 2,

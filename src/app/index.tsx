@@ -29,14 +29,11 @@ export default function index() {
         }
       
         try {
-          // Tenta logar com email e senha
           await signInWithEmailAndPassword(auth, email, senha);
           
-          // Se chegar aqui, o login funcionou
           router.push("/tabs/explore");
           
         } catch (error) {
-          // Se o login falhar, mostra erro
           Alert.alert("Falha no login", "Email ou senha incorretos.");
         }
       };

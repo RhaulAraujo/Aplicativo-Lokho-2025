@@ -13,7 +13,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
-export default function atv3_soletrando() {
+export default function atv1_cores_1() {
 
     const [palavra_A, setPalavra_A] = useState('');
       const [palavra_P, setPalavra_P] = useState('');
@@ -30,7 +30,7 @@ export default function atv3_soletrando() {
       const [letter, setLetter] = useState<string>('')
     
       const verificarLetra = () => {
-        if (palavra_A.toUpperCase() === 'A', palavra_P.toUpperCase() == 'P', palavra_N.toUpperCase() == 'N', palavra_W.toUpperCase() == 'W', palavra_J.toUpperCase() == 'J', palavra_X.toUpperCase() == 'X') {
+        if (palavra_A.toUpperCase() === 'CINZA', palavra_P.toUpperCase() == 'AZUL', palavra_N.toUpperCase() == 'LILÁS', palavra_W.toUpperCase() == 'VERMELHO', palavra_J.toUpperCase() == 'VERDE', palavra_X.toUpperCase() == 'AMARELO') {
           setIsError(false);
           Pressionar_barra ();
           router.push("/modulo_3/atividade1/atividade1.3")
@@ -93,11 +93,11 @@ export default function atv3_soletrando() {
         <ThemedView style={styles.BlocoFundo}>
         
         <View style={styles.containeractiv}>
-        <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_a.jpeg')} resizeMode='contain'/>
+        <Image style={styles.box} source={require('@/assets/images/ativ-6/Cinza_sinal.jpeg')} resizeMode='contain'/>
         <TextInput 
         style={[styles.input, isError && styles.inputErro]} 
         placeholder="" 
-        maxLength={1} 
+        maxLength={10} 
         value={palavra_A}
         onChangeText={setPalavra_A}
         autoCapitalize="characters"
@@ -105,11 +105,11 @@ export default function atv3_soletrando() {
         </View>
         
         <View style={styles.containeractiv}>
-        <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_p.jpeg')} resizeMode='contain'/>
+        <Image style={styles.box} source={require('@/assets/images/ativ-6/Azul_sinal.jpeg')} resizeMode='contain'/>
         <TextInput 
         style={[styles.input, isError && styles.inputErro]} 
         placeholder="" 
-        maxLength={1} 
+        maxLength={10} 
         value={palavra_P}
         onChangeText={setPalavra_P}
         autoCapitalize="characters"
@@ -117,11 +117,11 @@ export default function atv3_soletrando() {
         </View>
         
         <View style={styles.containeractiv}>
-        <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_n.jpeg')} resizeMode='contain'/>
+        <Image style={styles.box} source={require('@/assets/images/ativ-6/Lilás_sinal.jpeg')} resizeMode='contain'/>
         <TextInput 
         style={[styles.input, isError && styles.inputErro]} 
         placeholder=""
-        maxLength={1} 
+        maxLength={10} 
         value={palavra_N}
         onChangeText={setPalavra_N}
         autoCapitalize="characters"
@@ -129,11 +129,11 @@ export default function atv3_soletrando() {
         </View>
         
         <View style={styles.containeractiv}>
-        <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_w.jpeg')} resizeMode='contain'/>
+        <Image style={styles.box} source={require('@/assets/images/ativ-6/Vermelho_Sinal.jpeg')} resizeMode='contain'/>
         <TextInput 
         style={[styles.input, isError && styles.inputErro]} 
         placeholder="" 
-        maxLength={1} 
+        maxLength={10} 
         value={palavra_W}
         onChangeText={setPalavra_W}
         autoCapitalize="characters"
@@ -141,11 +141,11 @@ export default function atv3_soletrando() {
         </View>
         
         <View style={styles.containeractiv}>
-        <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_j.jpeg')} resizeMode='contain'/>
+        <Image style={styles.box} source={require('@/assets/images/ativ-6/Verde_sinal.jpeg')} resizeMode='contain'/>
         <TextInput 
         style={[styles.input, isError && styles.inputErro]} 
         placeholder="" 
-        maxLength={1} 
+        maxLength={10} 
         value={palavra_J}
         onChangeText={setPalavra_J}
         autoCapitalize="characters"
@@ -153,11 +153,11 @@ export default function atv3_soletrando() {
         </View>
         
         <View style={styles.containeractiv}>
-        <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_x.jpeg')} resizeMode='contain'/>
+        <Image style={styles.box} source={require('@/assets/images/ativ-6/Amarelo_sinal.jpeg')} resizeMode='contain'/>
         <TextInput 
         style={[styles.input, isError && styles.inputErro]} 
         placeholder=""
-        maxLength={1} 
+        maxLength={10} 
         value={palavra_X}
         onChangeText={setPalavra_X}
         autoCapitalize="characters"
@@ -170,6 +170,7 @@ export default function atv3_soletrando() {
         <TouchableOpacity style={styles.botao} onPress={verificarLetra}>
           <Text style={styles.texto_botao}>Continue</Text>
         </TouchableOpacity>
+
 
 
 
@@ -193,14 +194,13 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   box: {
-    width: 80,
-    height: 80,
+    width: 150,
+    height: 120,
     backgroundColor: 'white',
     borderColor: 'black',
     borderWidth: 2,
     borderRadius: 10,
     marginTop: 10,
-    alignItems: 'center',
   },
   progressBarContainer: {
     width: '60%',
@@ -227,8 +227,6 @@ const styles = StyleSheet.create({
   },
   containeractiv: {
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
     padding: 1,
   },
   botao: {
@@ -261,20 +259,20 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBlock: 10,
   },
- input: {
-  width: 100,
-  height: 80,
-  borderWidth: 1,
-  borderColor: '#ccc',
-  borderRadius: 10,
-  textAlign: 'center',
-  fontSize: 20,
-  backgroundColor: 'white',
-  marginLeft: 40,
-  marginTop: 30,
+  input: {
+    width: 140,
+    height: 80,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 10,
+    textAlign: 'center',
+    fontSize: 20,
+    backgroundColor: 'white',
+    marginLeft: 40,
+    marginTop: 30,
   },
   inputErro: {
-    width: 100,
+    width: 140,
     height: 80,
     borderWidth: 1,
     borderColor: '#ccc',
@@ -285,4 +283,7 @@ const styles = StyleSheet.create({
     marginLeft: 40,
     marginTop: 30,
   },
+
+
+
 });
