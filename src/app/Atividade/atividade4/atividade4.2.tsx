@@ -64,10 +64,19 @@ export default function atv3_soletrando() {
 
         <ThemedView style={styles.BlocoFundo}>
              <View style={styles.containeractiv}>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_1_a_5.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_6_a_9.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_10_a_50.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_60_a_100.jpeg')} resizeMode='contain'/>
+              <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_10_a_50.jpeg')} resizeMode='contain'/>
+              </View>
+                         
+              <View style={styles.containeractiv}>
+              <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_60_a_100.jpeg')} resizeMode='contain'/>
+              </View>
+                         
+              <View style={styles.containeractiv}>
+              <Image style={styles.box} source={require('@/assets/images/Frases/Eu estou bem.jpeg')} resizeMode='contain'/>
+              </View>
+                         
+              <View style={styles.containeractiv}>
+              <Image style={styles.box} source={require('@/assets/images/Frases/Por Favor.jpeg')} resizeMode='contain'/>
               </View>
        </ThemedView>
 
