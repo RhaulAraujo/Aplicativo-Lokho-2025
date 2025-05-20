@@ -30,7 +30,7 @@ export default function atv3_soletrando() {
     const [letter, setLetter] = useState<string>('')
   
     const verificarLetra = () => {
-      if (palavra_A.toUpperCase() === 'A', palavra_P.toUpperCase() == 'P', palavra_N.toUpperCase() == 'N', palavra_W.toUpperCase() == 'W', palavra_J.toUpperCase() == 'J', palavra_X.toUpperCase() == 'X') {
+      if (palavra_A.toUpperCase() === 'SAUDADE', palavra_P.toUpperCase() == 'POR FAVOR', palavra_N.toUpperCase() == 'ESTOU BEM', palavra_W.toUpperCase() == '7', palavra_J.toUpperCase() == '50', palavra_X.toUpperCase() == '3') {
         setIsError(false);
         Pressionar_barra ();
         router.push("/Atividade/atividade4/atividade4.4")
@@ -87,11 +87,11 @@ export default function atv3_soletrando() {
         <ThemedView style={styles.BlocoFundo}>
         
         <View style={styles.containeractiv}>
-        <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_a.jpeg')} resizeMode='contain'/>
+        <Image style={styles.box} source={require('@/assets/images/ativ-2/Saudade_gesto.jpeg')} resizeMode='contain'/>
         <TextInput 
         style={[styles.input, isError && styles.inputErro]} 
         placeholder="" 
-        maxLength={1} 
+        maxLength={10} 
         value={palavra_A}
         onChangeText={setPalavra_A}
         autoCapitalize="characters"
@@ -99,11 +99,11 @@ export default function atv3_soletrando() {
         </View>
         
         <View style={styles.containeractiv}>
-        <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_p.jpeg')} resizeMode='contain'/>
+        <Image style={styles.box} source={require('@/assets/images/ativ-2/Por favor_gesto.jpeg')} resizeMode='contain'/>
         <TextInput 
         style={[styles.input, isError && styles.inputErro]} 
         placeholder="" 
-        maxLength={1} 
+        maxLength={10} 
         value={palavra_P}
         onChangeText={setPalavra_P}
         autoCapitalize="characters"
@@ -111,11 +111,11 @@ export default function atv3_soletrando() {
         </View>
         
         <View style={styles.containeractiv}>
-        <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_n.jpeg')} resizeMode='contain'/>
+        <Image style={styles.box} source={require('@/assets/images/ativ-2/Estou bem_sinal.jpeg')} resizeMode='contain'/>
         <TextInput 
         style={[styles.input, isError && styles.inputErro]} 
         placeholder=""
-        maxLength={1} 
+        maxLength={10} 
         value={palavra_N}
         onChangeText={setPalavra_N}
         autoCapitalize="characters"
@@ -123,11 +123,11 @@ export default function atv3_soletrando() {
         </View>
         
         <View style={styles.containeractiv}>
-        <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_w.jpeg')} resizeMode='contain'/>
+        <Image style={styles.box} source={require('@/assets/images/algarismas/7.jpeg')} resizeMode='contain'/>
         <TextInput 
         style={[styles.input, isError && styles.inputErro]} 
         placeholder="" 
-        maxLength={1} 
+        maxLength={10} 
         value={palavra_W}
         onChangeText={setPalavra_W}
         autoCapitalize="characters"
@@ -135,11 +135,11 @@ export default function atv3_soletrando() {
         </View>
         
         <View style={styles.containeractiv}>
-        <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_j.jpeg')} resizeMode='contain'/>
+        <Image style={styles.box} source={require('@/assets/images/algarismas/50.jpeg')} resizeMode='contain'/>
         <TextInput 
         style={[styles.input, isError && styles.inputErro]} 
         placeholder="" 
-        maxLength={1} 
+        maxLength={10} 
         value={palavra_J}
         onChangeText={setPalavra_J}
         autoCapitalize="characters"
@@ -147,11 +147,11 @@ export default function atv3_soletrando() {
         </View>
         
         <View style={styles.containeractiv}>
-        <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_x.jpeg')} resizeMode='contain'/>
+        <Image style={styles.box} source={require('@/assets/images/algarismas/3.jpeg')} resizeMode='contain'/>
         <TextInput 
         style={[styles.input, isError && styles.inputErro]} 
         placeholder=""
-        maxLength={1} 
+        maxLength={10} 
         value={palavra_X}
         onChangeText={setPalavra_X}
         autoCapitalize="characters"
@@ -188,14 +188,13 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   box: {
-    width: 80,
-    height: 80,
+    width: 150,
+    height: 120,
     backgroundColor: 'white',
     borderColor: 'black',
     borderWidth: 2,
     borderRadius: 10,
     marginTop: 10,
-    alignItems: 'center',
   },
   progressBarContainer: {
     width: '60%',
@@ -222,8 +221,6 @@ const styles = StyleSheet.create({
   },
   containeractiv: {
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
     padding: 1,
   },
   botao: {
@@ -256,8 +253,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBlock: 10,
   },
-     input: {
-    width: 100,
+  input: {
+    width: 140,
     height: 80,
     borderWidth: 1,
     borderColor: '#ccc',
@@ -269,7 +266,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   inputErro: {
-    width: 100,
+    width: 140,
     height: 80,
     borderWidth: 1,
     borderColor: '#ccc',
@@ -280,4 +277,7 @@ const styles = StyleSheet.create({
     marginLeft: 40,
     marginTop: 30,
   },
+
+
+
 });

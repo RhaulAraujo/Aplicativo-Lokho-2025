@@ -94,8 +94,8 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   box: {
-    width: 80,
-    height: 80,
+    width: 180,
+    height: 180,
     backgroundColor: 'white',
     borderColor: 'black',
     borderWidth: 2,

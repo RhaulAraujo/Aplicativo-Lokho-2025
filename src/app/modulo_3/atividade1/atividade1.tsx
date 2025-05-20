@@ -52,14 +52,30 @@ export default function atv1_Cores() {
         <ThemedView style={styles.BlocoFundo}>
              <View style={styles.containeractiv}>
              <Image style={styles.box} source={require('@/assets/images/cores/Amarelo.jpeg')} resizeMode='contain'/>
+             </View>
+
+             <View style={styles.containeractiv}>
              <Image style={styles.box} source={require('@/assets/images/cores/Vermelho.jpeg')} resizeMode='contain'/>
+            </View>
+
+             <View style={styles.containeractiv}>
              <Image style={styles.box} source={require('@/assets/images/cores/Azul.jpeg')} resizeMode='contain'/>
+              </View>
+
+               <View style={styles.containeractiv}>
              <Image style={styles.box} source={require('@/assets/images/cores/Verde.jpeg')} resizeMode='contain'/>
               </View>
 
              <View style={styles.containeractiv}>
              <Image style={styles.box} source={require('@/assets/images/cores/Lilás.jpeg')} resizeMode='contain'/>
+             </View>
+          
+             <View style={styles.containeractiv}>
              <Image style={styles.box} source={require('@/assets/images/cores/Cinza.jpeg')} resizeMode='contain'/>
+             </View>
+
+
+               <View style={styles.containeractiv}>
              <Image style={styles.box} source={require('@/assets/images/cores/Laranja.jpeg')} resizeMode='contain'/>
               </View>
 
@@ -93,8 +109,8 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   box: {
-    width: 100,
-    height: 100,
+    width: 180,
+    height: 180,
     backgroundColor: 'white',
     borderColor: 'black',
     borderWidth: 2,

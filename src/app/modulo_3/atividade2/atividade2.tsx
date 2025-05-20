@@ -98,8 +98,8 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   box: {
-    width: 170,
-    height: 170,
+    width: 300,
+    height: 300,
     backgroundColor: 'white',
     borderColor: 'black',
     borderWidth: 2,

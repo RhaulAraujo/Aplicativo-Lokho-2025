@@ -65,7 +65,7 @@ export default function frases() {
              </View>
             
              <View style={styles.containeractiv}>
-             <Image style={styles.box} source={require('@/assets/images/Frases/tudo bem.jpeg')} resizeMode='contain'/>
+             <Image style={styles.box} source={require('@/assets/images/Frases/Saudade.jpeg')} resizeMode='contain'/>
              </View>
        </ThemedView>
 
@@ -97,8 +97,8 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   box: {
-    width: 80,
-    height: 80,
+    width: 180,
+    height: 180,
     backgroundColor: 'white',
     borderColor: 'black',
     borderWidth: 2,

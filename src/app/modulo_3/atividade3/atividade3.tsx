@@ -51,14 +51,23 @@ export default function atv3_soletrando() {
 
         <ThemedView style={styles.BlocoFundo}>
              <View style={styles.containeractiv}>
-             <Image style={styles.box} source={require('@/assets/images/Formas/Triangulo_forma_nome.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Formas/Retangulo_forma_nome.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Formas/Estrela_forma_nome.jpeg')} resizeMode='contain'/>
+             <Image style={styles.box} source={require('@/assets/images/Formas/triangulo_sinal e frase.jpeg')} resizeMode='contain'/>
+            </View>
+
+             <View style={styles.containeractiv}>
+             <Image style={styles.box} source={require('@/assets/images/Formas/retangulo_sinal e frase.jpeg')} resizeMode='contain'/>
               </View>
 
              <View style={styles.containeractiv}>
-             <Image style={styles.box} source={require('@/assets/images/Formas/Quadrado_forma_nome.jpeg')} resizeMode='contain'/>
-             <Image style={styles.box} source={require('@/assets/images/Formas/Circulo_forma_nome.jpeg')} resizeMode='contain'/>
+             <Image style={styles.box} source={require('@/assets/images/Formas/Estrela_sinal e frase.jpeg')} resizeMode='contain'/>
+              </View>
+
+             <View style={styles.containeractiv}>
+             <Image style={styles.box} source={require('@/assets/images/Formas/Quadrado_sinal e frase.jpeg')} resizeMode='contain'/>
+             </View>
+
+              <View style={styles.containeractiv}>
+             <Image style={styles.box} source={require('@/assets/images/Formas/Circulo_sinal e frase.jpeg')} resizeMode='contain'/>
              </View>
         </ThemedView>
  
@@ -90,8 +99,8 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   box: {
-    width: 100,
-    height: 100,
+    width: 250,
+    height: 250,
     backgroundColor: 'white',
     borderColor: 'black',
     borderWidth: 2,
