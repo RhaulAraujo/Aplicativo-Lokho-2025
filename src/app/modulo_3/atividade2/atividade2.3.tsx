@@ -100,6 +100,8 @@ export default function atv1_animais_2() {
         </View>
       </View>
 
+    <Text style={styles.titu_tex}>Selecione o sinal correspondente à imagem:</Text>
+
  <ThemedView style={styles.BlocoFundo}>
 
       <View style={styles.containeractiv}>
@@ -177,9 +179,10 @@ const styles = StyleSheet.create({
   },
   titu_tex: {
     color: '#fff',
-    fontSize: 24,
+    fontSize: 23,
     fontWeight: 'bold',
-    marginTop: 40,
+    textAlign: 'justify',
+    padding: 10,
   },
   box: {
     width: 80,
@@ -285,7 +288,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.29,
     shadowRadius: 4.65,
     elevation:7,
-    marginTop: 180,
+    marginTop: 10,
     marginLeft: 100,
     marginEnd: 50,
   },

@@ -103,6 +103,9 @@ export default function atv3_soletrando() {
       </View>
 
 
+     <Text style={styles.titu_tex}>Digite os cumprimentos e os números correspondente às imagens:</Text>
+
+
         <ThemedView style={styles.BlocoFundo}>
         
         <View style={styles.containeractiv}>
@@ -202,9 +205,10 @@ const styles = StyleSheet.create({
   },
   titu_tex: {
     color: '#fff',
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
-    marginTop: 40,
+    textAlign: 'justify',
+    padding: 10,
   },
   box: {
     width: 150,

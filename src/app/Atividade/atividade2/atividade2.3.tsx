@@ -98,6 +98,9 @@ export default function Atv_Reconhecer_numeros_1() {
         </View>
       </View>
 
+
+          <Text style={styles.titu_tex}>Digite o número correspondente à imagem:</Text>
+
         <ThemedView style={styles.BlocoFundo}>
 
          <View style={styles.containeractiv}>
@@ -202,9 +205,10 @@ const styles = StyleSheet.create({
   },
   titu_tex: {
     color: '#fff',
-    fontSize: 24,
+    fontSize: 25,
     fontWeight: 'bold',
-    marginTop: 40,
+    textAlign: 'justify',
+    padding: 10,
   },
   box: {
     width: 150,

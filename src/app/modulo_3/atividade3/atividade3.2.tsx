@@ -64,11 +64,6 @@ export default function atv1_formas() {
 
 
 
-        function gotoActiv(){
-        Pressionar_barra ();
-        router.push("/modulo_3/atividade3/atividade3.3")
-        }
-
 
         const carregar_Progresso = async () => {
             try {
@@ -100,6 +95,10 @@ export default function atv1_formas() {
           />
         </View>
       </View>
+
+
+    <Text style={styles.titu_tex}>Digite a forma correspondente à imagem:</Text>
+
 
     <ThemedView style={styles.BlocoFundo}>
         
@@ -189,9 +188,10 @@ const styles = StyleSheet.create({
   },
   titu_tex: {
     color: '#fff',
-    fontSize: 24,
+    fontSize: 25,
     fontWeight: 'bold',
-    marginTop: 40,
+    textAlign: 'justify',
+    padding: 10,
   },
   box: {
     width: 150,

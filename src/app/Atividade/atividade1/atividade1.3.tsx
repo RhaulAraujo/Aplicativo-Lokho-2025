@@ -66,8 +66,7 @@ export default function Atv_Alfabeto_1() {
    };
 
 
-
-
+   
         const carregar_Progresso = async () => {
             try {
               const savedProgress = await AsyncStorage.getItem('progress');
@@ -99,7 +98,10 @@ export default function Atv_Alfabeto_1() {
         </View>
       </View>
 
+          <Text style={styles.titu_tex}>Digite a letra correspondente à imagem:</Text>
+
         <ThemedView style={styles.BlocoFundo}>
+
 
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_a.jpeg')} resizeMode='contain'/>
@@ -203,9 +205,10 @@ const styles = StyleSheet.create({
   },
   titu_tex: {
     color: '#fff',
-    fontSize: 24,
+    fontSize: 25,
     fontWeight: 'bold',
-    marginTop: 40,
+    textAlign: 'justify',
+    padding: 10,
   },
   box: {
     width: 150,

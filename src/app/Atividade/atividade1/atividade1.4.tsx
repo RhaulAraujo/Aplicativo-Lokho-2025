@@ -95,7 +95,9 @@ const checkAnswer = () => {
         </View>
       </View>
 
-        <ThemedView style={styles.BlocoFundo}>
+      <Text style={styles.titu_tex}>Selecione a imagem correspondente à letra:</Text>
+
+      <ThemedView style={styles.BlocoFundo}>
 
       <View style={styles.containeractiv}>
           <TouchableOpacity
@@ -177,9 +179,10 @@ const styles = StyleSheet.create({
   },
   titu_tex: {
     color: '#fff',
-    fontSize: 24,
+    fontSize: 23,
     fontWeight: 'bold',
-    marginTop: 40,
+    textAlign: 'justify',
+    padding: 10,
   },
   box: {
     width: 80,
