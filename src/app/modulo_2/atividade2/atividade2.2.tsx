@@ -13,29 +13,48 @@ import { reload } from 'expo-router/build/global-state/routing';
 
 
 export default function Atv_Soma() {
-    const [palavra_1, setPalavra_1] = useState('');
-    const [palavra_2, setPalavra_2] = useState('');
-    const [palavra_3, setPalavra_3] = useState('');
-    const [palavra_4, setPalavra_4] = useState('');
-    const [palavra_5, setPalavra_5] = useState('');
-    const [palavra_6, setPalavra_6] = useState('');
+    const [palavra_A, setPalavra_A] = useState('');
+    const [palavra_B, setPalavra_B] = useState('');
+    const [palavra_C, setPalavra_C] = useState('');
+    const [palavra_D, setPalavra_D] = useState('');
+    const [palavra_E, setPalavra_E] = useState('');
+    const [palavra_F, setPalavra_F] = useState('');
+
+
+    const [erro_palavra_A, setErro_palavra_A] = useState(false);
+    const [erro_palavra_B, setErro_palavra_B] = useState(false);
+    const [erro_palavra_C, setErro_palavra_C] = useState(false);
+    const [erro_palavra_D, setErro_palavra_D] = useState(false);
+    const [erro_palavra_E, setErro_palavra_E] = useState(false);
+    const [erro_palavra_F, setErro_palavra_F] = useState(false);
 
 
 
-    const [isError, setIsError] = useState(false);
     const router = useRouter();
 
-    const [letter, setLetter] = useState<string>('')
     const [progress, setProgress] = useState(0);
   
 
     const verificarLetra = () => {
-      if (palavra_1.toUpperCase() === '9', palavra_2.toUpperCase() == '3', palavra_3.toUpperCase() == '6', palavra_4.toUpperCase() == '10', palavra_5.toUpperCase() == '10', palavra_6.toUpperCase() == '7') {
-        setIsError(false);
+      const palavra_A_certo = palavra_A.toUpperCase() === '9';
+      const palavra_B_certo = palavra_B.toUpperCase() === '3';
+      const palavra_C_certo = palavra_C.toUpperCase() === '8';
+      const palavra_D_certo = palavra_D.toUpperCase() === '10';
+      const palavra_E_certo = palavra_E.toUpperCase() === '10';
+      const palavra_F_certo = palavra_F.toUpperCase() === '7';
+
+
+      setErro_palavra_A(!palavra_A_certo);
+      setErro_palavra_B(!palavra_B_certo);
+      setErro_palavra_C(!palavra_C_certo);
+      setErro_palavra_D(!palavra_D_certo);
+      setErro_palavra_E(!palavra_E_certo);
+      setErro_palavra_F(!palavra_F_certo);
+
+
+      if (palavra_A_certo && palavra_B_certo && palavra_C_certo && palavra_D_certo && palavra_E_certo && palavra_F_certo) {
         Pressionar_barra ();
         router.push("/modulo_2/atividade2/atividade2.3")
-      } else {
-        setIsError(true);
       }
     };
 
@@ -87,11 +106,11 @@ export default function Atv_Soma() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-4/0,9.jpg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_A && styles.inputErro]} 
           placeholder="" 
           maxLength={2} 
-          value={palavra_1}
-          onChangeText={setPalavra_1}
+          value={palavra_A}
+          onChangeText={setPalavra_A}
           autoCapitalize="characters"
          />
          </View>
@@ -99,11 +118,11 @@ export default function Atv_Soma() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-4/1,2.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_B && styles.inputErro]} 
           placeholder="" 
           maxLength={2} 
-          value={palavra_2}
-          onChangeText={setPalavra_2}
+          value={palavra_B}
+          onChangeText={setPalavra_B}
           autoCapitalize="characters"
          />
          </View>
@@ -111,11 +130,11 @@ export default function Atv_Soma() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-4/3,3.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_C && styles.inputErro]} 
           placeholder=""
           maxLength={2} 
-          value={palavra_3}
-          onChangeText={setPalavra_3}
+          value={palavra_C}
+          onChangeText={setPalavra_C}
           autoCapitalize="characters"
          />
          </View>
@@ -123,11 +142,11 @@ export default function Atv_Soma() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-4/5,5.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_D && styles.inputErro]} 
           placeholder="" 
           maxLength={2} 
-          value={palavra_4}
-          onChangeText={setPalavra_4}
+          value={palavra_D}
+          onChangeText={setPalavra_D}
           autoCapitalize="characters"
          />
          </View>
@@ -135,11 +154,11 @@ export default function Atv_Soma() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-4/3,7.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_E && styles.inputErro]} 
           placeholder="" 
           maxLength={2} 
-          value={palavra_5}
-          onChangeText={setPalavra_5}
+          value={palavra_E}
+          onChangeText={setPalavra_E}
           autoCapitalize="characters"
          />
          </View>
@@ -147,11 +166,11 @@ export default function Atv_Soma() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-4/6,1.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_F && styles.inputErro]} 
           placeholder=""
           maxLength={2} 
-          value={palavra_6}
-          onChangeText={setPalavra_6}
+          value={palavra_F}
+          onChangeText={setPalavra_F}
           autoCapitalize="characters"
          />
          </View>

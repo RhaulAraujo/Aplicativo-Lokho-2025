@@ -13,30 +13,46 @@ import { reload } from 'expo-router/build/global-state/routing';
 
 
 export default function Atv_Reconhecer_numeros_1() {
-    const [palavra_1, setPalavra_1] = useState('');
-    const [palavra_8, setPalavra_8] = useState('');
-    const [palavra_5, setPalavra_5] = useState('');
-    const [palavra_4, setPalavra_4] = useState('');
-    const [palavra_9, setPalavra_9] = useState('');
-    const [palavra_0, setPalavra_0] = useState('');
+    const [palavra_A, setPalavra_A] = useState('');
+    const [palavra_B, setPalavra_B] = useState('');
+    const [palavra_C, setPalavra_C] = useState('');
+    const [palavra_D, setPalavra_D] = useState('');
+    const [palavra_E, setPalavra_E] = useState('');
+    const [palavra_F, setPalavra_F] = useState('');
 
 
+    const [erro_palavra_A, setErro_palavra_A] = useState(false);
+    const [erro_palavra_B, setErro_palavra_B] = useState(false);
+    const [erro_palavra_C, setErro_palavra_C] = useState(false);
+    const [erro_palavra_D, setErro_palavra_D] = useState(false);
+    const [erro_palavra_E, setErro_palavra_E] = useState(false);
+    const [erro_palavra_F, setErro_palavra_F] = useState(false);
 
-    const [isError, setIsError] = useState(false);
     const router = useRouter();
 
-    const [letter, setLetter] = useState<string>('')
     const [progress, setProgress] = useState(0);
   
 
     const verificarLetra = () => {
-      if (palavra_1.toUpperCase() === '1', palavra_8.toUpperCase() == '8', palavra_5.toUpperCase() == '5', palavra_4.toUpperCase() == '4', palavra_9.toUpperCase() == '9', palavra_0.toUpperCase() == '0') {
-        setIsError(false);
+      const palavra_A_certo = palavra_A.toUpperCase() === '1';
+      const palavra_B_certo = palavra_B.toUpperCase() === '8';
+      const palavra_C_certo = palavra_C.toUpperCase() === '5';
+      const palavra_D_certo = palavra_D.toUpperCase() === '4';
+      const palavra_E_certo = palavra_E.toUpperCase() === '9';
+      const palavra_F_certo = palavra_F.toUpperCase() === '0';
+
+      setErro_palavra_A(!palavra_A_certo);
+      setErro_palavra_B(!palavra_B_certo);
+      setErro_palavra_C(!palavra_C_certo);
+      setErro_palavra_D(!palavra_D_certo);
+      setErro_palavra_E(!palavra_E_certo);
+      setErro_palavra_F(!palavra_F_certo);
+
+
+      if (palavra_A_certo && palavra_B_certo && palavra_C_certo && palavra_D_certo && palavra_E_certo && palavra_F_certo) {
         Pressionar_barra ();
         router.push("/Atividade/atividade2/atividade2.4")
-      } else {
-        setIsError(true);
-      }
+      } 
     };
 
    
@@ -87,11 +103,11 @@ export default function Atv_Reconhecer_numeros_1() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/algarismas/1.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_A && styles.inputErro]} 
           placeholder="" 
           maxLength={1} 
-          value={palavra_1}
-          onChangeText={setPalavra_1}
+          value={palavra_A}
+          onChangeText={setPalavra_A}
           autoCapitalize="characters"
          />
          </View>
@@ -99,11 +115,11 @@ export default function Atv_Reconhecer_numeros_1() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/algarismas/8.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_B && styles.inputErro]} 
           placeholder="" 
           maxLength={1} 
-          value={palavra_8}
-          onChangeText={setPalavra_8}
+          value={palavra_B}
+          onChangeText={setPalavra_B}
           autoCapitalize="characters"
          />
          </View>
@@ -111,11 +127,11 @@ export default function Atv_Reconhecer_numeros_1() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/algarismas/5.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_C && styles.inputErro]} 
           placeholder=""
           maxLength={1} 
-          value={palavra_5}
-          onChangeText={setPalavra_5}
+          value={palavra_C}
+          onChangeText={setPalavra_C}
           autoCapitalize="characters"
          />
          </View>
@@ -123,11 +139,11 @@ export default function Atv_Reconhecer_numeros_1() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/algarismas/4.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_D && styles.inputErro]} 
           placeholder="" 
           maxLength={1} 
-          value={palavra_4}
-          onChangeText={setPalavra_4}
+          value={palavra_D}
+          onChangeText={setPalavra_D}
           autoCapitalize="characters"
          />
          </View>
@@ -135,11 +151,11 @@ export default function Atv_Reconhecer_numeros_1() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/algarismas/9.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_E && styles.inputErro]} 
           placeholder="" 
           maxLength={1} 
-          value={palavra_9}
-          onChangeText={setPalavra_9}
+          value={palavra_E}
+          onChangeText={setPalavra_E}
           autoCapitalize="characters"
          />
          </View>
@@ -147,11 +163,11 @@ export default function Atv_Reconhecer_numeros_1() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/algarismas/0.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_F && styles.inputErro]} 
           placeholder=""
           maxLength={1} 
-          value={palavra_0}
-          onChangeText={setPalavra_0}
+          value={palavra_F}
+          onChangeText={setPalavra_F}
           autoCapitalize="characters"
          />
          </View>

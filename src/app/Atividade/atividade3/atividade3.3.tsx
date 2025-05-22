@@ -12,31 +12,49 @@ import { reload } from 'expo-router/build/global-state/routing';
 
 
 
-export default function Atv_Alfabeto() {
-    const [palavra_1, setPalavra_1] = useState('');
-    const [palavra_2, setPalavra_2] = useState('');
-    const [palavra_3, setPalavra_3] = useState('');
-    const [palavra_4, setPalavra_4] = useState('');
-    const [palavra_5, setPalavra_5] = useState('');
-    const [palavra_6, setPalavra_6] = useState('');
+export default function Atv_frases() {
+    const [palavra_A, setPalavra_A] = useState('');
+    const [palavra_B, setPalavra_B] = useState('');
+    const [palavra_C, setPalavra_C] = useState('');
+    const [palavra_D, setPalavra_D] = useState('');
+    const [palavra_E, setPalavra_E] = useState('');
+    const [palavra_F, setPalavra_F] = useState('');
 
 
+    const [erro_palavra_A, setErro_palavra_A] = useState(false);
+    const [erro_palavra_B, setErro_palavra_B] = useState(false);
+    const [erro_palavra_C, setErro_palavra_C] = useState(false);
+    const [erro_palavra_D, setErro_palavra_D] = useState(false);
+    const [erro_palavra_E, setErro_palavra_E] = useState(false);
+    const [erro_palavra_F, setErro_palavra_F] = useState(false);
 
-    const [isError, setIsError] = useState(false);
+
     const router = useRouter();
 
-    const [letter, setLetter] = useState<string>('')
     const [progress, setProgress] = useState(0);
   
 
     const verificarLetra = () => {
-      if (palavra_1.toUpperCase() === 'POR FAVOR', palavra_2.toUpperCase() == 'EU ESTOU BEM', palavra_3.toUpperCase() == 'SAUDADE', palavra_4.toUpperCase() == 'OI', palavra_5.toUpperCase() == 'DESCULPE', palavra_6.toUpperCase() == 'TUDO BEM?') {
-        setIsError(false);
+      const palavra_A_certo = palavra_A.toUpperCase() === 'POR FAVOR';
+      const palavra_B_certo = palavra_B.toUpperCase() === 'ESTOU BEM';
+      const palavra_C_certo = palavra_C.toUpperCase() === 'SAUDADE';
+      const palavra_D_certo = palavra_D.toUpperCase() === 'OI';
+      const palavra_E_certo = palavra_E.toUpperCase() === 'DESCULPE';
+      const palavra_F_certo = palavra_F.toUpperCase() === 'TUDO BEM?';
+
+
+      setErro_palavra_A(!palavra_A_certo);
+      setErro_palavra_B(!palavra_B_certo);
+      setErro_palavra_C(!palavra_C_certo);
+      setErro_palavra_D(!palavra_D_certo);
+      setErro_palavra_E(!palavra_E_certo);
+      setErro_palavra_F(!palavra_F_certo);
+
+
+      if (palavra_A_certo && palavra_B_certo && palavra_C_certo && palavra_D_certo && palavra_E_certo && palavra_F_certo) {
         Pressionar_barra ();
         router.push("/Atividade/atividade3/atividade3.4")
-      } else {
-        setIsError(true);
-      }
+      } 
     };
 
    
@@ -87,11 +105,11 @@ export default function Atv_Alfabeto() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-2/Por favor_gesto.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_A && styles.inputErro]} 
           placeholder="" 
           maxLength={100} 
-          value={palavra_1}
-          onChangeText={setPalavra_1}
+          value={palavra_A}
+          onChangeText={setPalavra_A}
           autoCapitalize="characters"
          />
          </View>
@@ -99,11 +117,11 @@ export default function Atv_Alfabeto() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-2/Estou bem_sinal.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_B && styles.inputErro]} 
           placeholder="" 
           maxLength={100} 
-          value={palavra_2}
-          onChangeText={setPalavra_2}
+          value={palavra_B}
+          onChangeText={setPalavra_B}
           autoCapitalize="characters"
          />
          </View>
@@ -111,11 +129,11 @@ export default function Atv_Alfabeto() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-2/Saudade_gesto.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_C && styles.inputErro]} 
           placeholder=""
           maxLength={100} 
-          value={palavra_3}
-          onChangeText={setPalavra_3}
+          value={palavra_C}
+          onChangeText={setPalavra_C}
           autoCapitalize="characters"
          />
          </View>
@@ -123,11 +141,11 @@ export default function Atv_Alfabeto() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-2/oi-tchau_gesto.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_D && styles.inputErro]} 
           placeholder="" 
           maxLength={100} 
-          value={palavra_4}
-          onChangeText={setPalavra_4}
+          value={palavra_D}
+          onChangeText={setPalavra_D}
           autoCapitalize="characters"
          />
          </View>
@@ -135,11 +153,11 @@ export default function Atv_Alfabeto() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-2/Desculpe_gesto.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_E && styles.inputErro]} 
           placeholder="" 
           maxLength={100} 
-          value={palavra_5}
-          onChangeText={setPalavra_5}
+          value={palavra_E}
+          onChangeText={setPalavra_E}
           autoCapitalize="characters"
          />
          </View>
@@ -147,11 +165,11 @@ export default function Atv_Alfabeto() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-2/Tudo bem_gesto.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_F && styles.inputErro]} 
           placeholder=""
           maxLength={100} 
-          value={palavra_6}
-          onChangeText={setPalavra_6}
+          value={palavra_F}
+          onChangeText={setPalavra_F}
           autoCapitalize="characters"
          />
          </View>

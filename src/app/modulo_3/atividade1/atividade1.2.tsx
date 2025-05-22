@@ -14,28 +14,45 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function atv1_cores_1() {
-
     const [palavra_A, setPalavra_A] = useState('');
-      const [palavra_P, setPalavra_P] = useState('');
-      const [palavra_N, setPalavra_N] = useState('');
-      const [palavra_W, setPalavra_W] = useState('');
-      const [palavra_J, setPalavra_J] = useState('');
-      const [palavra_X, setPalavra_X] = useState('');
+    const [palavra_B, setPalavra_B] = useState('');
+    const [palavra_C, setPalavra_C] = useState('');
+    const [palavra_D, setPalavra_D] = useState('');
+    const [palavra_E, setPalavra_E] = useState('');
+    const [palavra_F, setPalavra_F] = useState('');
+
+
+    const [erro_palavra_A, setErro_palavra_A] = useState(false);
+    const [erro_palavra_B, setErro_palavra_B] = useState(false);
+    const [erro_palavra_C, setErro_palavra_C] = useState(false);
+    const [erro_palavra_D, setErro_palavra_D] = useState(false);
+    const [erro_palavra_E, setErro_palavra_E] = useState(false);
+    const [erro_palavra_F, setErro_palavra_F] = useState(false);
   
   
-  
-      const [isError, setIsError] = useState(false);
       const router = useRouter();
   
-      const [letter, setLetter] = useState<string>('')
     
       const verificarLetra = () => {
-        if (palavra_A.toUpperCase() === 'CINZA', palavra_P.toUpperCase() == 'AZUL', palavra_N.toUpperCase() == 'LILÁS', palavra_W.toUpperCase() == 'VERMELHO', palavra_J.toUpperCase() == 'VERDE', palavra_X.toUpperCase() == 'AMARELO') {
-          setIsError(false);
+      const palavra_A_certo = palavra_A.toUpperCase() === 'CINZA';
+      const palavra_B_certo = palavra_B.toUpperCase() === 'AZUL';
+      const palavra_C_certo = palavra_C.toUpperCase() === 'LILÁS';
+      const palavra_D_certo = palavra_D.toUpperCase() === 'VERMELHO';
+      const palavra_E_certo = palavra_E.toUpperCase() === 'VERDE';
+      const palavra_F_certo = palavra_F.toUpperCase() === 'AMARELO';
+
+
+      setErro_palavra_A(!palavra_A_certo);
+      setErro_palavra_B(!palavra_B_certo);
+      setErro_palavra_C(!palavra_C_certo);
+      setErro_palavra_D(!palavra_D_certo);
+      setErro_palavra_E(!palavra_E_certo);
+      setErro_palavra_F(!palavra_F_certo);
+
+
+        if (palavra_A_certo && palavra_B_certo && palavra_C_certo && palavra_D_certo && palavra_E_certo && palavra_F_certo) {
           Pressionar_barra ();
           router.push("/modulo_3/atividade1/atividade1.3")
-        } else {
-          setIsError(true);
         }
       };
 
@@ -95,7 +112,7 @@ export default function atv1_cores_1() {
         <View style={styles.containeractiv}>
         <Image style={styles.box} source={require('@/assets/images/ativ-6/Cinza_sinal.jpeg')} resizeMode='contain'/>
         <TextInput 
-        style={[styles.input, isError && styles.inputErro]} 
+        style={[styles.input, erro_palavra_A && styles.inputErro]} 
         placeholder="" 
         maxLength={10} 
         value={palavra_A}
@@ -107,11 +124,11 @@ export default function atv1_cores_1() {
         <View style={styles.containeractiv}>
         <Image style={styles.box} source={require('@/assets/images/ativ-6/Azul_sinal.jpeg')} resizeMode='contain'/>
         <TextInput 
-        style={[styles.input, isError && styles.inputErro]} 
+        style={[styles.input, erro_palavra_B && styles.inputErro]} 
         placeholder="" 
         maxLength={10} 
-        value={palavra_P}
-        onChangeText={setPalavra_P}
+        value={palavra_B}
+        onChangeText={setPalavra_B}
         autoCapitalize="characters"
         />
         </View>
@@ -119,11 +136,11 @@ export default function atv1_cores_1() {
         <View style={styles.containeractiv}>
         <Image style={styles.box} source={require('@/assets/images/ativ-6/Lilás_sinal.jpeg')} resizeMode='contain'/>
         <TextInput 
-        style={[styles.input, isError && styles.inputErro]} 
+        style={[styles.input, erro_palavra_C && styles.inputErro]} 
         placeholder=""
         maxLength={10} 
-        value={palavra_N}
-        onChangeText={setPalavra_N}
+        value={palavra_C}
+        onChangeText={setPalavra_C}
         autoCapitalize="characters"
         />
         </View>
@@ -131,11 +148,11 @@ export default function atv1_cores_1() {
         <View style={styles.containeractiv}>
         <Image style={styles.box} source={require('@/assets/images/ativ-6/Vermelho_Sinal.jpeg')} resizeMode='contain'/>
         <TextInput 
-        style={[styles.input, isError && styles.inputErro]} 
+        style={[styles.input, erro_palavra_D && styles.inputErro]} 
         placeholder="" 
         maxLength={10} 
-        value={palavra_W}
-        onChangeText={setPalavra_W}
+        value={palavra_D}
+        onChangeText={setPalavra_D}
         autoCapitalize="characters"
         />
         </View>
@@ -143,11 +160,11 @@ export default function atv1_cores_1() {
         <View style={styles.containeractiv}>
         <Image style={styles.box} source={require('@/assets/images/ativ-6/Verde_sinal.jpeg')} resizeMode='contain'/>
         <TextInput 
-        style={[styles.input, isError && styles.inputErro]} 
+        style={[styles.input, erro_palavra_E && styles.inputErro]} 
         placeholder="" 
         maxLength={10} 
-        value={palavra_J}
-        onChangeText={setPalavra_J}
+        value={palavra_E}
+        onChangeText={setPalavra_E}
         autoCapitalize="characters"
         />
         </View>
@@ -155,11 +172,11 @@ export default function atv1_cores_1() {
         <View style={styles.containeractiv}>
         <Image style={styles.box} source={require('@/assets/images/ativ-6/Amarelo_sinal.jpeg')} resizeMode='contain'/>
         <TextInput 
-        style={[styles.input, isError && styles.inputErro]} 
+        style={[styles.input, erro_palavra_F && styles.inputErro]} 
         placeholder=""
         maxLength={10} 
-        value={palavra_X}
-        onChangeText={setPalavra_X}
+        value={palavra_F}
+        onChangeText={setPalavra_F}
         autoCapitalize="characters"
         />
         </View>

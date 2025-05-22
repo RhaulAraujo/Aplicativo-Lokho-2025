@@ -20,23 +20,40 @@ export default function Atv_Alfabeto_1() {
     const [palavra_J, setPalavra_J] = useState('');
     const [palavra_X, setPalavra_X] = useState('');
 
+    const [erro_palavra_A, setErro_palavra_A] = useState(false);
+    const [erro_palavra_P, setErro_palavra_P] = useState(false);
+    const [erro_palavra_N, setErro_palavra_N] = useState(false);
+    const [erro_palavra_W, setErro_palavra_W] = useState(false);
+    const [erro_palavra_J, setErro_palavra_J] = useState(false);
+    const [erro_palavra_X, setErro_palavra_X] = useState(false);
 
 
-    const [isError, setIsError] = useState(false);
     const router = useRouter();
 
-    const [letter, setLetter] = useState<string>('')
     const [progress, setProgress] = useState(0);
   
 
     const verificarLetra = () => {
-      if (palavra_A.toUpperCase() === 'A', palavra_P.toUpperCase() == 'P', palavra_N.toUpperCase() == 'N', palavra_W.toUpperCase() == 'W', palavra_J.toUpperCase() == 'J', palavra_X.toUpperCase() == 'X') {
-        setIsError(false);
+      const palavra_A_certo = palavra_A.toUpperCase() === 'A';
+      const palavra_P_certo = palavra_P.toUpperCase() === 'P';
+      const palavra_N_certo = palavra_N.toUpperCase() === 'N';
+      const palavra_W_certo = palavra_W.toUpperCase() === 'W';
+      const palavra_J_certo = palavra_J.toUpperCase() === 'J';
+      const palavra_X_certo = palavra_X.toUpperCase() === 'X';
+
+      setErro_palavra_A(!palavra_A_certo);
+      setErro_palavra_P(!palavra_P_certo);
+      setErro_palavra_N(!palavra_N_certo);
+      setErro_palavra_W(!palavra_W_certo);
+      setErro_palavra_J(!palavra_J_certo);
+      setErro_palavra_X(!palavra_X_certo);
+
+
+
+      if (palavra_A_certo && palavra_P_certo && palavra_N_certo && palavra_W_certo && palavra_J_certo && palavra_X_certo) {
         Pressionar_barra ();
         router.push("/Atividade/atividade1/atividade1.4")
-      } else {
-        setIsError(true);
-      }
+      } 
     };
 
    
@@ -87,7 +104,7 @@ export default function Atv_Alfabeto_1() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_a.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_A && styles.inputErro]} 
           placeholder="" 
           maxLength={1} 
           value={palavra_A}
@@ -99,7 +116,7 @@ export default function Atv_Alfabeto_1() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_p.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_P && styles.inputErro]} 
           placeholder="" 
           maxLength={1} 
           value={palavra_P}
@@ -111,7 +128,7 @@ export default function Atv_Alfabeto_1() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_n.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_N && styles.inputErro]} 
           placeholder=""
           maxLength={1} 
           value={palavra_N}
@@ -123,7 +140,7 @@ export default function Atv_Alfabeto_1() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_w.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_W && styles.inputErro]} 
           placeholder="" 
           maxLength={1} 
           value={palavra_W}
@@ -135,7 +152,7 @@ export default function Atv_Alfabeto_1() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_j.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_J && styles.inputErro]} 
           placeholder="" 
           maxLength={1} 
           value={palavra_J}
@@ -147,7 +164,7 @@ export default function Atv_Alfabeto_1() {
          <View style={styles.containeractiv}>
          <Image style={styles.box} source={require('@/assets/images/ativ-1/letra_x.jpeg')} resizeMode='contain'/>
          <TextInput 
-          style={[styles.input, isError && styles.inputErro]} 
+          style={[styles.input, erro_palavra_X && styles.inputErro]} 
           placeholder=""
           maxLength={1} 
           value={palavra_X}
