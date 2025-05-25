@@ -53,7 +53,7 @@ const acesse_Modulo_trancado = () =>{
             setProgresso1(Number(Progresso1_salvo)); 
           }
         } catch (error) {
-          console.error('Failed to load progress', error);
+          console.error('Falhou', error);
         }
       };
 
@@ -227,12 +227,12 @@ const styles = StyleSheet.create({
   },
   Barra_de_navegação: {
     width: '100%',
-    height: 60, // altura da barra
+    height: 60, 
     backgroundColor: 'white',
-    flexDirection: 'row', // Organizar os itens da barra em linha
-    justifyContent: 'space-between', // Espaçar os itens igualmente
-    alignItems: 'center', // Centralizar verticalmente
-    paddingHorizontal: 16, // Distância das bordas   
+    flexDirection: 'row', 
+    justifyContent: 'space-between', 
+    alignItems: 'center', 
+    paddingHorizontal: 16, 
     },
     Item_navegação: {
       padding: 8,

@@ -37,7 +37,7 @@ export default function atv1_animais_1() {
       const palavra_B_certo = palavra_B.toUpperCase() === 'VACA';
       const palavra_C_certo = palavra_C.toUpperCase() === 'URUBU';
       const palavra_D_certo = palavra_D.toUpperCase() === 'VEADO';
-      const palavra_E_certo = palavra_E.toUpperCase() === 'PANDA';
+      const palavra_E_certo = palavra_E.toUpperCase() === 'URSO PANDA';
 
 
       setErro_palavra_A(!palavra_A_certo);

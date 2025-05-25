@@ -14,8 +14,8 @@ export default function RootLayout () {
             headerShown: false,
         }}/>
         <Stack.Screen name="explore"options={{
-          headerShown: false, // Ocultar o cabeçalho
-          gestureEnabled: false, // Desabilitar a navegação por gesto de voltar
+          headerShown: false, 
+          gestureEnabled: false, 
         }}/>
         <Stack.Screen name="Atividade"options={{
             headerShown: false,
