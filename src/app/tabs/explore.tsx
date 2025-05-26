@@ -82,7 +82,7 @@ const acesse_Modulo_trancado = () =>{
 
         <ThemedView style={styles.topo_caixa}>
           <ThemedText style={styles.titulo_texto1}>Módulo 1</ThemedText>
-            <ThemedText style={styles.subtitulo_texto1}>0/4 Atividades</ThemedText>
+            <ThemedText style={styles.subtitulo_texto1}>4 Atividades</ThemedText>
               <View style={styles.container_dividido}>
                 <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
                 <TouchableOpacity onPress={acesse_Atividade1}>
@@ -107,7 +107,7 @@ const acesse_Modulo_trancado = () =>{
               <View style={styles.container_dividido}>
               <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
               <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/Atividade/atividade4/atividade4") : acesse_Modulo_trancado}>
-              <ThemedText style={styles.foto_texto4}>Frases</ThemedText>
+              <ThemedText style={styles.foto_texto4}>Revisão</ThemedText>
               </TouchableOpacity>
               </View>
 
@@ -115,7 +115,7 @@ const acesse_Modulo_trancado = () =>{
 
 
               <ThemedText style={styles.titulo_texto1}>Módulo 2</ThemedText>
-            <ThemedText style={styles.subtitulo_texto1}>0/3 Atividades</ThemedText>
+            <ThemedText style={styles.subtitulo_texto1}>3 Atividades</ThemedText>
               <View style={styles.container_dividido}>
                 <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
                 <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/modulo_2/atividade1/atividade1") : acesse_Modulo_trancado}>   
@@ -140,7 +140,7 @@ const acesse_Modulo_trancado = () =>{
 
 
               <ThemedText style={styles.titulo_texto1}>Módulo 3</ThemedText>
-            <ThemedText style={styles.subtitulo_texto1}>0/3 Atividades</ThemedText>
+            <ThemedText style={styles.subtitulo_texto1}>3 Atividades</ThemedText>
               <View style={styles.container_dividido}>
                 <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
                 <TouchableOpacity style={styles.Item_navegação} onPress={desbloqueio ? () => router.push("/modulo_3/atividade1/atividade1") : acesse_Modulo_trancado}>   
