@@ -86,7 +86,7 @@ const acesse_Modulo_trancado = () =>{
               <View style={styles.container_dividido}>
                 <Image style={styles.Foto_container} source={require('@/assets/images/lbs2.jpg')} resizeMode='contain'></Image>
                 <TouchableOpacity onPress={acesse_Atividade1}>
-                <ThemedText style={styles.foto_texto}>Alfabeto e Números</ThemedText>
+                <ThemedText style={styles.foto_texto}>Alfabeto</ThemedText>
                 </TouchableOpacity>
               </View>
 

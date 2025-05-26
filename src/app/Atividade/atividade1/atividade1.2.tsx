@@ -61,23 +61,16 @@ export default function Alfabeto_Numerico() {
           />
         </View>
       </View>
+             <View style={styles.containeractiv}>
+             <Image style={styles.box} source={require('@/assets/images/LIBRAS.png')} resizeMode='contain'/>
+              </View>
 
         <ThemedView style={styles.BlocoFundo}>
              <View style={styles.containeractiv}>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_1_a_5.jpeg')} resizeMode='contain'/>
-             </View>
-
-             <View style={styles.containeractiv}>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Numeros_de_6_a_9.jpeg')} resizeMode='contain'/>
-             </View>
-
-             <View style={styles.containeractiv}>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_10_a_50.jpeg')} resizeMode='contain'/>
-             </View>
-            
-             <View style={styles.containeractiv}>
-             <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_60_a_100.jpeg')} resizeMode='contain'/>
-             </View>
+              <Text style={styles.titu_tex}>
+                 Nas próximas páginas serão propostas atividades sobre o alfabeto não verbal, que auxiliarão na sua aprendizagem. 
+              </Text>
+           </View>
        </ThemedView>
 
 
@@ -103,12 +96,13 @@ const styles = StyleSheet.create({
   },
   titu_tex: {
     color: '#fff',
-    fontSize: 24,
+    fontSize: 25,
     fontWeight: 'bold',
-    marginTop: 40,
+    textAlign: 'justify',
+    padding: 10,
   },
   box: {
-    width: 200,
+    width: 250,
     height: 180,
     backgroundColor: 'white',
     borderColor: 'black',
@@ -175,5 +169,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fcbf6f',
     borderRadius: 10,
     marginBlock: 10,
+    marginTop: 20,
   },
 });

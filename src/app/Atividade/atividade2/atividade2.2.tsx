@@ -62,6 +62,12 @@ export default function atv1_cumprimentos() {
         </View>
       </View>
 
+       <View style={styles.containeractiv}>
+              <Text style={styles.titu_tex}>
+                 Numeração não verbal: 
+              </Text>
+           </View> 
+
         <ThemedView style={styles.BlocoFundo}>
              <View style={styles.containeractiv}>
              <Image style={styles.box} source={require('@/assets/images/Numeros/Decimais_de_10_a_50.jpeg')} resizeMode='contain'/>
@@ -93,11 +99,12 @@ const styles = StyleSheet.create({
     height: 80,
     width: 80,
   },
-  titu_tex: {
+ titu_tex: {
     color: '#fff',
-    fontSize: 24,
+    fontSize: 25,
     fontWeight: 'bold',
-    marginTop: 40,
+    textAlign: 'justify',
+    padding: 10,
   },
   box: {
     width: 180,
