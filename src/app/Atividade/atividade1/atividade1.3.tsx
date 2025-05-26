@@ -182,7 +182,6 @@ export default function Atv_Alfabeto_1() {
 
 
 
-             
             <TouchableOpacity style={styles.botao} onPress={verificarLetra}>
               <Text style={styles.texto_botao}>Continue</Text>
             </TouchableOpacity>
@@ -207,7 +206,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 25,
     fontWeight: 'bold',
-    textAlign: 'justify',
     padding: 10,
   },
   box: {

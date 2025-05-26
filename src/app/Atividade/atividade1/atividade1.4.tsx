@@ -181,7 +181,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 23,
     fontWeight: 'bold',
-    textAlign: 'justify',
     padding: 10,
   },
   box: {

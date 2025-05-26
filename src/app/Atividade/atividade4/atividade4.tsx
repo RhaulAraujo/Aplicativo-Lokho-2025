@@ -101,8 +101,8 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 25,
     fontWeight: 'bold',
-    textAlign: 'justify',
     padding: 10,
+    marginLeft: 20,
   },
   box: {
     width: 180,
@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 10,
     marginTop: 10,
+    marginLeft: 20,
     alignItems: 'center',
   },
   progressBarContainer: {
@@ -159,7 +160,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4.65,
     elevation:7,
     marginTop: 20,
-    marginLeft: 100,
+    marginLeft: 90,
     marginEnd: 50,
   },
   texto_botao: {

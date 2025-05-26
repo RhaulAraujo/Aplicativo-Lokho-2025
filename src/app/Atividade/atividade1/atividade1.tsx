@@ -50,7 +50,7 @@ export default function Alfabeto() {
 
    <View style={styles.containeractiv}>
               <Text style={styles.titu_tex}>
-                 Alfabeto não verbal: 
+                 Anote e pratique o alfabeto não verbal : 
               </Text>
            </View> 
 
@@ -117,11 +117,9 @@ export default function Alfabeto() {
          </View>
        </ThemedView>
 
-
             <TouchableOpacity style={styles.botao} onPress={gotoActiv}>
               <Text style={styles.texto_botao}>Continue</Text>
             </TouchableOpacity>
-
 
 
 
@@ -142,7 +140,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 25,
     fontWeight: 'bold',
-    textAlign: 'justify',
     padding: 10,
   },
   box: {
@@ -154,7 +151,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginTop: 10,
     alignItems: 'center',
-    marginLeft: 30,
   },
   progressBarContainer: {
     width: '60%',
@@ -182,7 +178,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 1,
   },
   botao: {
     width: 250,
@@ -200,7 +195,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4.65,
     elevation:7,
     marginTop: 20,
-    marginLeft: 100,
+    marginLeft: 80,
     marginEnd: 50,
   },
   texto_botao: {

@@ -190,7 +190,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 25,
     fontWeight: 'bold',
-    textAlign: 'justify',
     padding: 10,
   },
   box: {
@@ -245,7 +244,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4.65,
     elevation:7,
     marginTop: 20,
-    marginLeft: 100,
+    marginLeft: 90,
     marginEnd: 50,
   },
   texto_botao: {
