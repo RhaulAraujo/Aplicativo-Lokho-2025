@@ -150,6 +150,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 10,
     marginTop: 10,
+    marginLeft: 20,
     alignItems: 'center',
   },
   progressBarContainer: {

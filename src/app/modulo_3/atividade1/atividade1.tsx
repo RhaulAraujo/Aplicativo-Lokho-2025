@@ -51,7 +51,7 @@ export default function atv1_Cores() {
 
    <View style={styles.containeractiv}>
               <Text style={styles.titu_tex}>
-                 Cores em LIBRAS: 
+                Pratique como gesticular as cores em LIBRAS: 
               </Text>
            </View> 
 
@@ -112,7 +112,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 25,
     fontWeight: 'bold',
-    marginLeft: 20,
     padding: 10,
   },
   box: {

@@ -54,7 +54,7 @@ export default function frases() {
 
        <View style={styles.containeractiv}>
               <Text style={styles.titu_tex}>
-                 Revisão LIBRAS: 
+                Pratique a revisão de LIBRAS: 
               </Text>
            </View> 
            
@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
     padding: 10,
-    marginLeft: 20,
   },
   box: {
     width: 180,

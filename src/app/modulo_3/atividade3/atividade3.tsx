@@ -51,7 +51,7 @@ export default function atv3_soletrando() {
 
    <View style={styles.containeractiv}>
               <Text style={styles.titu_tex}>
-                 Formas Geométricas em LIBRAS: 
+                Pratique como gesticular as formas Geométricas em LIBRAS: 
               </Text>
            </View> 
 

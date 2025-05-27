@@ -64,7 +64,7 @@ export default function atv1_soletrando() {
 
        <View style={styles.containeractiv}>
               <Text style={styles.titu_tex}>
-                 Cumprimentos em LIBRAS: 
+                Anote e pratique cumprimentos em LIBRAS: 
               </Text>
            </View> 
 

@@ -64,7 +64,7 @@ export default function atv3_soletrando() {
 
        <View style={styles.containeractiv}>
               <Text style={styles.titu_tex}>
-                 Revisão LIBRAS: 
+                Pratique a revisão de LIBRAS: 
               </Text>
            </View> 
 
@@ -112,7 +112,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 25,
     fontWeight: 'bold',
-    marginLeft: 20,
     padding: 10,
   },
   box: {

@@ -64,7 +64,7 @@ export default function atv1_cumprimentos() {
 
        <View style={styles.containeractiv}>
               <Text style={styles.titu_tex}>
-                 Numeração não verbal: 
+                Anote e pratique a numeração não verbal: 
               </Text>
            </View> 
 

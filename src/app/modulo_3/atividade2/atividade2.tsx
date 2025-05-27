@@ -50,7 +50,7 @@ export default function atv1_animais() {
 
    <View style={styles.containeractiv}>
               <Text style={styles.titu_tex}>
-                 Animais em LIBRAS: 
+                Pratique como gesticular os animais em LIBRAS: 
               </Text>
            </View> 
 
@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 25,
     fontWeight: 'bold',
-    marginLeft: 20,
     padding: 10,
   },
   box: {

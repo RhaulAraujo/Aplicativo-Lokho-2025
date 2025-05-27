@@ -51,7 +51,7 @@ export default function atv3_soletrando() {
 
    <View style={styles.containeractiv}>
               <Text style={styles.titu_tex}>
-                 Numeração não verbal: 
+                Pratique a numeração não verbal: 
               </Text>
            </View> 
 
@@ -99,7 +99,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 25,
     fontWeight: 'bold',
-    marginLeft: 20,
     padding: 10,
   },
   box: {
