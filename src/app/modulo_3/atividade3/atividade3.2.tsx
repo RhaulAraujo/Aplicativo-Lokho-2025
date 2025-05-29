@@ -1,9 +1,8 @@
-import { Image, StyleSheet, Platform, TouchableOpacity, View, ViewStyle, Text, ScrollView, Alert  } from 'react-native';
+import { Image, StyleSheet, Platform, TouchableOpacity, View, ViewStyle, Text, ScrollView, Alert, TextInput  } from 'react-native';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Dimensions } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
 import { MaterialIcons } from '@expo/vector-icons';
 import React, {useState, useEffect} from 'react';
 import { Link, router } from 'expo-router';
@@ -37,7 +36,7 @@ export default function atv1_formas() {
       const palavra_B_certo = palavra_B.toUpperCase() === 'RETÂNGULO';
       const palavra_C_certo = palavra_C.toUpperCase() === 'ESTRELA';
       const palavra_D_certo = palavra_D.toUpperCase() === 'TRIÂNGULO';
-      const palavra_E_certo = palavra_E.toUpperCase() === 'CIRCULO';
+      const palavra_E_certo = palavra_E.toUpperCase() === 'CÍRCULO';
 
 
       setErro_palavra_A(!palavra_A_certo);

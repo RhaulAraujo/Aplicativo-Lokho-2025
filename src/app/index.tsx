@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform, TouchableOpacity, TextInput, View, Text, Alert} from 'react-native';
+import { Image, StyleSheet, Platform, TouchableOpacity, TextInput, View, Text, Alert, Linking} from 'react-native';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -47,13 +47,21 @@ export default function index() {
             router.push("/registrar")
         }
 
+
+        const Ir_para_site = () =>{
+          const url = 'https://pure-evil-villains.fandom.com/wiki/Femto'
+            Linking.openURL(url);
+        }
+
         //const [password, setPassword] = useState<string>('');
 
   return (
     <ThemedView style={styles.container}>
 
     <ThemedView style={styles.Topo_da_caixa}>
+      <TouchableOpacity onPress={Ir_para_site}>
     <Image style={styles.logo} source={require('@/assets/images/lbs.png')} resizeMode='contain'></Image>
+      </TouchableOpacity>
     <ThemedText style={styles.titulo_texto}>LBS  -  LOKHO</ThemedText>
     <ThemedText style={styles.titulo_texto}>Bem Vindo de Volta</ThemedText>
    </ThemedView>
@@ -152,8 +160,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logo: {
-    height: 100,
-    width: 80,
+    height: 200,
+    width: 200,
     resizeMode: 'contain',
   },
   titulo_texto: {
