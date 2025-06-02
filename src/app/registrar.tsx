@@ -84,7 +84,6 @@ export default function registrar() {
 
 const styles = StyleSheet.create({
   Topo_caixa: {
-   // backgroundImage: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
    backgroundColor:  '#be6704',
    height: Dimensions.get('window').height/3,
     width: '100%',
@@ -93,12 +92,10 @@ const styles = StyleSheet.create({
   },
   Meio_caixa: {
     backgroundColor: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
-    //height: Dimensions.get('window').height/4,
     width: '100%',
     paddingHorizontal: 37,
   },
   caixa_botão: {
-    //height: Dimensions.get('window').height/3,
     width: '100%',
     alignItems:'center',
     justifyContent: 'center',
@@ -112,8 +109,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logo: {
-    height: 80,
-    width: 80,
+    height: 200,
+    width: 200,
+    resizeMode: 'contain',
   },
   titulo_texto: {
     color: '#fff',

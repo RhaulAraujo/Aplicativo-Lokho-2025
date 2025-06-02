@@ -67,9 +67,6 @@ const [email, setEmail] = useState<string>('');
             style={styles.box}
            />
           <View style={styles.caixa_botão2}>
-         <TouchableOpacity style={styles.botão2} onPress={selectImagem}>
-          <Text style={styles.texto_botão}>Foto</Text>
-         </TouchableOpacity>
          </View>
 
          </View>
@@ -97,7 +94,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
   },
   topo_caixa: {
-   // backgroundImage: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
    backgroundColor:  '#be6704',
    height: Dimensions.get('window').height/2,
     width: '100%',
@@ -124,7 +120,6 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
     caixa_botão1: {
-    //height: Dimensions.get('window').height/3,
     width: '100%',
     alignItems:'center',
     justifyContent: 'center',
@@ -132,7 +127,6 @@ const styles = StyleSheet.create({
     marginLeft: 3,
   },
     caixa_botão2: {
-    //height: Dimensions.get('window').height/3,
     width: '100%',
     alignItems:'center',
     justifyContent: 'center',

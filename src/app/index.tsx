@@ -48,18 +48,17 @@ export default function index() {
         }
 
 
-        const Ir_para_site = () =>{
-          const url = 'https://pure-evil-villains.fandom.com/wiki/Femto'
-            Linking.openURL(url);
-        }
+       // const Ir_para_site = () =>{
+        //  const url = 'https://pure-evil-villains.fandom.com/wiki/Femto'
+       //     Linking.openURL(url);
+       // }
 
-        //const [password, setPassword] = useState<string>('');
 
   return (
     <ThemedView style={styles.container}>
 
     <ThemedView style={styles.Topo_da_caixa}>
-      <TouchableOpacity onPress={Ir_para_site}>
+      <TouchableOpacity>
     <Image style={styles.logo} source={require('@/assets/images/lbs.png')} resizeMode='contain'></Image>
       </TouchableOpacity>
     <ThemedText style={styles.titulo_texto}>LBS  -  LOKHO</ThemedText>
@@ -124,7 +123,6 @@ const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   Topo_da_caixa: {
-   // backgroundImage: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
    backgroundColor:  '#be6704',
    height: Dimensions.get('window').height/3,
     width: '100%',
@@ -133,12 +131,10 @@ const styles = StyleSheet.create({
   },
   Meio_da_caixa: {
     backgroundColor: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
-    //height: Dimensions.get('window').height/4,
     width: '100%',
     paddingHorizontal: 37,
   },
   caixa_botão: {
-    //height: Dimensions.get('window').height/3,
     width: '100%',
     alignItems:'center',
     justifyContent: 'center',
@@ -146,7 +142,6 @@ const styles = StyleSheet.create({
     marginLeft: 4,
   },
   caixa_botão1: {
-    //height: Dimensions.get('window').height/3,
     width: '100%',
     alignItems:'center',
     justifyContent: 'center',

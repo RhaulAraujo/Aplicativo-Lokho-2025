@@ -175,8 +175,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
- //   alignItems: 'center',
-   // justifyContent: 'center',
   },
   progresso_Barra_Container: {
     width: '60%',
@@ -191,9 +189,7 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   topo_caixa: {
-   // backgroundImage: 'linear-gradient(to bottom,rgb(190, 103, 4) 0%,rgb(48, 27, 1) 51%)',
    backgroundColor:  '#be6704',
-   //height: Dimensions.get('window').height/2,
     width: '100%',
     padding: 15,
     marginLeft: 5,

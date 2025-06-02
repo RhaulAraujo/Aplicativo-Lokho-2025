@@ -24,34 +24,6 @@ export default function RootLayout () {
     </Stack>
     
 
-    /*
-     <Stack.Screen name="explorar" options={{  
-            headerShown: false,
-        }}/>  
-    
-    
-    
-    
-    
-    <Tabs>
-        <Tabs.Screen
-            name="index"
-            options={{
-                headerShown: false,
-                title: "login",
-                tabBarIcon: ({ focused, color, size }) => {
-                    if (focused){
-                        return <FontAwesome name="tags" color={color} size={size} />
-                    }
-
-                    return <FontAwesome name="tag" color={color} size={size} />
-
-                }
-            }}
-        
-        />
-    </Tabs>*/
-
 
     );
 }
