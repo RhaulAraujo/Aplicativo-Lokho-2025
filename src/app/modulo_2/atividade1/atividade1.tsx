@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform, TouchableOpacity, View, ViewStyle, Text, ScrollView  } from 'react-native';
+import { Image, StyleSheet, Platform, TouchableOpacity, View, ViewStyle, Text, ScrollView, Button, Modal  } from 'react-native';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -8,6 +8,8 @@ import { MaterialIcons } from '@expo/vector-icons';
 import React, {useState, useEffect} from 'react';
 import { Link, router } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import  {ResizeMode, Video} from 'expo-av' ;
+import { AVPlaybackStatus } from 'expo-av';
 
 
 
@@ -22,6 +24,22 @@ export default function atv3_soletrando() {
        AsyncStorage.setItem('progress', String(progress + 1)); 
      }
    };
+
+
+
+    const [TelaVisivel, setTelaVisivel] = useState(false);
+            const [Video1, setVideo1] = useState<string | null>(null);
+            
+            const AbrirVideo = (uri: string) => {
+              setVideo1(uri);
+              setTelaVisivel(true);
+            };
+    
+            const FecharVideo = () => {
+              setTelaVisivel(false);
+              setVideo1(null);
+            };
+
 
 
 
@@ -51,73 +69,172 @@ export default function atv3_soletrando() {
       </View>
 
  <View style={styles.containeractiv}>
-              <Text style={styles.titu_tex}>
-                Pratique o alfabeto não verbal: 
-              </Text>
-           </View> 
+              
+                            <Text style={styles.titu_tex}>
+                               Anote e pratique o alfabeto não verbal : 
+                            </Text>
+                         </View> 
+              
+                      <ThemedView style={styles.BlocoFundo}>
+                       <View style={styles.containeractiv}>
+                       <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/a.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraA.jpeg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+                       
+                       <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/b.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraB.jpg')} resizeMode='contain'/>
+                        </TouchableOpacity>
+              
+                        <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/c.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraC.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       </View>
+              
+              
+                       <View style={styles.containeractiv}>
+                        <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/d.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraD.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/e.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraE.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/f.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraF.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       </View>
+              
+              
+                       <View style={styles.containeractiv}>
+                        <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/g.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraG.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/h.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraH.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/i.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraI.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       </View>
+              
+              
+                       <View style={styles.containeractiv}>
+                        <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/j.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraJ.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/k.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraK.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/L.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraL.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       </View>
+              
+              
+                       <View style={styles.containeractiv}>
+                        <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/m.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraM.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/n.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraN.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/o.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraO.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       </View>
+              
+              
+                       <View style={styles.containeractiv}>
+                        <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/p.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraP.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/q.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraQ.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/r.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraR.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       </View>
+              
+              
+                       <View style={styles.containeractiv}>
+                        <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/s.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraS.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/t.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraT.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/u.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraU.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       </View>
+              
+              
+                       <View style={styles.containeractiv}>
+                        <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/v.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraV.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/w.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraW.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/x.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraX.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       </View>
+              
+              
+                       <View style={styles.containeractiv}>
+                        <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/y.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraY.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+              
+                       <TouchableOpacity onPress={() => AbrirVideo('https://rickkskj.github.io/Videos1/z.mp4')}>
+                       <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraZ.jpg')} resizeMode='contain'/>
+                       </TouchableOpacity>
+                       </View>
+                     </ThemedView>
 
-        <ThemedView style={styles.BlocoFundo}>
-        <View style={styles.containeractiv}>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraA.jpeg')} resizeMode='contain'/>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraB.jpg')} resizeMode='contain'/>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraC.jpg')} resizeMode='contain'/>
-         </View>
 
+          <Modal visible={TelaVisivel} transparent={true} animationType="slide">
+            <View style={styles.modalContainer}>
+              {Video1 && (
+              <Video
+                source={{ uri: Video1 }}
+                style={styles.video}
+                useNativeControls
+                resizeMode={ResizeMode.CONTAIN}
+                shouldPlay
+                onPlaybackStatusUpdate={(status: AVPlaybackStatus) =>{
+                  if (status.isLoaded && status.playableDurationMillis && status.positionMillis >= status.playableDurationMillis ){
+                    FecharVideo();
+                  }
+                  }}
+              />
+            )}
+            </View>
+          </Modal>
 
-         <View style={styles.containeractiv}>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraD.jpg')} resizeMode='contain'/>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraE.jpg')} resizeMode='contain'/>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraF.jpg')} resizeMode='contain'/>
-         </View>
-
-
-         <View style={styles.containeractiv}>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraG.jpg')} resizeMode='contain'/>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraH.jpg')} resizeMode='contain'/>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraI.jpg')} resizeMode='contain'/>
-         </View>
-
-
-         <View style={styles.containeractiv}>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraJ.jpg')} resizeMode='contain'/>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraK.jpg')} resizeMode='contain'/>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraL.jpg')} resizeMode='contain'/>
-         </View>
-
-
-         <View style={styles.containeractiv}>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraM.jpg')} resizeMode='contain'/>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraN.jpg')} resizeMode='contain'/>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraO.jpg')} resizeMode='contain'/>
-         </View>
-
-
-         <View style={styles.containeractiv}>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraP.jpg')} resizeMode='contain'/>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraQ.jpg')} resizeMode='contain'/>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraR.jpg')} resizeMode='contain'/>
-         </View>
-
-
-         <View style={styles.containeractiv}>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraS.jpg')} resizeMode='contain'/>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraT.jpg')} resizeMode='contain'/>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraU.jpg')} resizeMode='contain'/>
-         </View>
-
-
-         <View style={styles.containeractiv}>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraV.jpg')} resizeMode='contain'/>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraW.jpg')} resizeMode='contain'/>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraX.jpg')} resizeMode='contain'/>
-         </View>
-
-
-         <View style={styles.containeractiv}>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraY.jpg')} resizeMode='contain'/>
-         <Image style={styles.box} source={require('@/assets/images/Alfabeto/LetraZ.jpg')} resizeMode='contain'/>
-         </View>
-       </ThemedView>
 
 
             <TouchableOpacity style={styles.botao} onPress={gotoActiv}>
@@ -167,6 +284,24 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginLeft: 90,
 
+  },
+    modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: 'rgba(0,0,0,0.8)',
+  },
+  video: {
+    width: '100%',
+    height: 300,
+  },
+  box1: {
+    width: 80,
+    height: 80,
+    backgroundColor: 'white',
+    borderColor: 'black',
+    borderWidth: 2,
+    borderRadius: 10,
+    alignItems: 'center',
   },
   progressBar: {
     height: '100%',
