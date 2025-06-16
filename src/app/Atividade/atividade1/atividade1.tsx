@@ -63,7 +63,7 @@ export default function Alfabeto() {
    <View style={styles.containeractiv}>
 
               <Text style={styles.titu_tex}>
-                 Anote e pratique o alfabeto não verbal : 
+                 Clique nas Imagens, Anote e pratique o alfabeto não verbal : 
               </Text>
            </View> 
 
