@@ -71,7 +71,7 @@ export default function atv3_soletrando() {
  <View style={styles.containeractiv}>
               
                             <Text style={styles.titu_tex}>
-                              Clique nas Imagens, Anote e pratique o alfabeto não verbal : 
+                 Anote e pratique o alfabeto não verbal: (ao clicar na imagem irá aparecer um vídeo ensinando a fazer os gestos corretamente)  
                             </Text>
                          </View> 
               
